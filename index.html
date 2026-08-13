@@ -2,30 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>ONLINE MATH ACADEMY</title>
 
 <style>
-
-:root{
-    --navy:#071A3D;
-    --navy2:#0B285C;
-    --blue:#1677FF;
-    --cyan:#00C6E8;
-    --violet:#7357FF;
-    --coral:#F0445E;
-    --white:#FFFFFF;
-    --light:#F5F8FC;
-    --text:#102B57;
-    --muted:#71819B;
-    --border:#E4EAF2;
-}
-
-/* =========================
-   RESET
-========================= */
-
 *{
     margin:0;
     padding:0;
@@ -37,1763 +18,927 @@ html{
 }
 
 body{
-    font-family:
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-    background:var(--light);
-    color:var(--text);
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#f5f8fc;
+    color:#09255f;
     overflow-x:hidden;
 }
 
-
-/* =========================
+/* =================================
    HEADER
-========================= */
+================================= */
 
 .header{
-
     height:88px;
-
+    background:#fff;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 5%;
-
-    background:
-        rgba(255,255,255,.96);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid #e9edf3;
-
     position:relative;
     z-index:1000;
-
-    box-shadow:
-        0 5px 25px rgba(7,26,61,.07);
+    box-shadow:0 3px 18px rgba(0,0,0,.10);
 }
 
-
 .logo{
-
     display:flex;
     align-items:center;
     gap:12px;
-
     text-decoration:none;
 }
 
-
 .logoMark{
-
     width:52px;
     height:52px;
-
-    border-radius:15px;
-
+    border-radius:16px;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    color:white;
-
+    color:#fff;
     font-size:29px;
     font-weight:900;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--navy),
-            var(--blue)
-        );
-
-    box-shadow:
-        0 10px 28px
-        rgba(22,119,255,.25);
+    background:linear-gradient(135deg,#07195d,#087ff1);
+    box-shadow:0 8px 25px rgba(8,127,241,.28);
 }
-
 
 .logoText .small{
-
     font-size:8px;
-
     letter-spacing:2.5px;
-
-    color:var(--coral);
-
+    color:#e21d49;
     font-weight:900;
 }
 
-
 .logoText .big{
-
-    color:var(--navy);
-
+    color:#08256b;
     font-size:17px;
-
     font-weight:900;
-
     letter-spacing:.5px;
 }
 
-
 .headerActions{
-
     display:flex;
     align-items:center;
-
-    gap:12px;
+    gap:13px;
 }
-
 
 .circleBtn,
 .menuBtn{
-
     width:55px;
     height:55px;
-
     border-radius:50%;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
-
 .circleBtn{
-
-    background:white;
-
-    border:2px solid var(--navy);
-
-    color:var(--navy);
-
-    font-size:20px;
+    background:#fff;
+    border:2px solid #092d78;
+    color:#092d78;
+    font-size:21px;
 }
 
-
 .circleBtn:hover{
-
-    background:var(--navy);
-
-    color:white;
-
+    background:#092d78;
+    color:#fff;
     transform:translateY(-3px);
 }
 
-
 .menuBtn{
-
     border:0;
-
-    background:
-        linear-gradient(
-            145deg,
-            #EEF4FF,
-            #E3EBF9
-        );
-
-    color:var(--navy);
-
-    font-size:24px;
+    background:#e9eef7;
+    color:#092d78;
+    font-size:25px;
 }
-
 
 .menuBtn:hover{
-
-    background:var(--navy);
-
-    color:white;
+    background:#092d78;
+    color:#fff;
 }
 
-
-/* =========================
-   MENU
-========================= */
+/* MENU */
 
 .mobileMenu{
-
     position:absolute;
-
     top:88px;
     right:5%;
-
     width:270px;
-
-    padding:12px;
-
-    border-radius:
-        0 0 20px 20px;
-
     background:white;
-
-    box-shadow:
-        0 20px 50px
-        rgba(7,26,61,.16);
-
+    padding:12px;
+    border-radius:0 0 20px 20px;
+    box-shadow:0 20px 45px rgba(0,0,0,.17);
     display:none;
 }
-
 
 .mobileMenu.show{
     display:block;
 }
 
-
 .mobileMenu a{
-
     display:block;
-
-    padding:14px;
-
-    border-radius:10px;
-
-    color:var(--navy);
-
+    color:#092d78;
     text-decoration:none;
-
+    padding:14px;
+    border-radius:10px;
     font-weight:800;
-
-    font-size:13px;
 }
-
 
 .mobileMenu a:hover{
-
-    background:#EFF5FF;
-
-    color:var(--blue);
+    background:#edf4ff;
 }
 
-
-/* =========================
+/* =================================
    CTA BAR
-========================= */
+================================= */
 
 .quoteBar{
-
     width:94%;
     max-width:1450px;
-
     min-height:70px;
-
     margin:17px auto;
-
     display:flex;
     align-items:center;
-
+    border-radius:19px;
     overflow:hidden;
-
-    border-radius:18px;
-
-    color:white;
-
     cursor:pointer;
-
-    background:
-
-        linear-gradient(
-            100deg,
-            #EDF2F8 0%,
-            #DDE6F2 14%,
-            var(--blue) 14%,
-            #1754B9 60%,
-            var(--violet) 100%
-        );
-
-    box-shadow:
-        0 10px 30px
-        rgba(7,26,61,.14);
+    color:white;
+    background:linear-gradient(
+        100deg,
+        #f0f2f5 0%,
+        #e3e7ed 15%,
+        #e51a47 15%,
+        #c90936 60%,
+        #f02755 100%
+    );
+    box-shadow:0 8px 24px rgba(0,0,0,.13);
 }
 
-
 .quoteIcon{
-
     width:15%;
     min-width:100px;
-
     height:70px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-size:34px;
-
-    background:
-        linear-gradient(
-            145deg,
-            white,
-            #DCE6F2
-        );
+    font-size:35px;
+    background:linear-gradient(145deg,#fff,#d5dae1);
 }
-
 
 .quoteText{
-
     flex:1;
-
     text-align:center;
-
-    font-size:19px;
-
+    font-size:20px;
     font-weight:900;
-
-    letter-spacing:.2px;
 }
-
 
 .quoteText span{
-    font-weight:400;
+    font-weight:500;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* =================================
+   HERO SLIDER
+================================= */
 
 .heroSlider{
-
     height:650px;
-
     position:relative;
-
     overflow:hidden;
-
     color:white;
 }
 
-
-/* =========================
-   SLIDE BACKGROUNDS
-========================= */
+/* SLIDE */
 
 .slide{
-
     position:absolute;
-
     inset:0;
-
     opacity:0;
-
     visibility:hidden;
-
-    transform:scale(1.035);
-
+    transform:scale(1.04);
     transition:
         opacity .8s ease,
         transform 1.2s ease;
 }
 
-
 .slide.active{
-
     opacity:1;
-
     visibility:visible;
-
     transform:scale(1);
 }
 
-
-/* SLIDE 1 */
+/* different slide backgrounds */
 
 .slide1{
-
     background:
-
-        radial-gradient(
-            circle at 12% 25%,
-            rgba(0,198,232,.30),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 82% 75%,
-            rgba(22,119,255,.40),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            125deg,
-            #041332,
-            #09285C,
-            #0750A4
-        );
+        radial-gradient(circle at 15% 20%,rgba(0,239,255,.30),transparent 30%),
+        radial-gradient(circle at 85% 75%,rgba(29,102,255,.38),transparent 35%),
+        linear-gradient(125deg,#020f3c,#063e91,#006bb0);
 }
-
-
-/* SLIDE 2 */
 
 .slide2{
-
     background:
-
-        radial-gradient(
-            circle at 80% 15%,
-            rgba(115,87,255,.42),
-            transparent 32%
-        ),
-
-        radial-gradient(
-            circle at 15% 80%,
-            rgba(0,198,232,.20),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            125deg,
-            #100C32,
-            #252061,
-            #164E9B
-        );
+        radial-gradient(circle at 80% 20%,rgba(142,81,255,.40),transparent 32%),
+        radial-gradient(circle at 15% 80%,rgba(0,207,255,.20),transparent 30%),
+        linear-gradient(125deg,#110b42,#30218d,#1459b5);
 }
-
-
-/* SLIDE 3 */
 
 .slide3{
-
     background:
-
-        radial-gradient(
-            circle at 18% 20%,
-            rgba(0,198,232,.34),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(22,119,255,.35),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            125deg,
-            #032C3A,
-            #075B70,
-            #074B92
-        );
+        radial-gradient(circle at 20% 20%,rgba(0,255,214,.30),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(0,113,255,.35),transparent 35%),
+        linear-gradient(125deg,#032c3b,#00647b,#0751a0);
 }
-
-
-/* SLIDE 4 */
 
 .slide4{
-
     background:
-
-        radial-gradient(
-            circle at 80% 15%,
-            rgba(240,68,94,.24),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 15% 80%,
-            rgba(115,87,255,.35),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            125deg,
-            #100B32,
-            #29215D,
-            #071D55
-        );
+        radial-gradient(circle at 80% 20%,rgba(255,66,122,.26),transparent 30%),
+        radial-gradient(circle at 20% 75%,rgba(75,55,255,.35),transparent 35%),
+        linear-gradient(125deg,#160b47,#302079,#071d68);
 }
 
-
-/* =========================
-   BACKGROUND MATH
-========================= */
+/* math background */
 
 .mathBG{
-
     position:absolute;
-
     inset:0;
-
     pointer-events:none;
-
     overflow:hidden;
 }
 
-
 .mathBG span{
-
     position:absolute;
-
-    color:
-        rgba(255,255,255,.075);
-
+    color:rgba(255,255,255,.08);
     font-weight:900;
-
-    animation:
-        mathFloat 9s
-        infinite ease-in-out;
+    animation:mathFloat 9s infinite ease-in-out;
 }
 
-
 .mathBG span:nth-child(1){
-
     left:6%;
     top:15%;
-
     font-size:80px;
 }
 
-
 .mathBG span:nth-child(2){
-
     right:8%;
     top:10%;
-
     font-size:100px;
-
     animation-delay:2s;
 }
 
-
 .mathBG span:nth-child(3){
-
     left:30%;
     bottom:5%;
-
     font-size:65px;
-
     animation-delay:4s;
 }
 
-
 .mathBG span:nth-child(4){
-
     right:30%;
     bottom:10%;
-
     font-size:80px;
-
     animation-delay:1s;
 }
 
-
 .mathBG span:nth-child(5){
-
     left:55%;
     top:8%;
-
     font-size:45px;
-
     animation-delay:3s;
 }
 
-
 @keyframes mathFloat{
-
     50%{
-        transform:
-            translateY(-22px)
-            rotate(8deg);
+        transform:translateY(-22px) rotate(8deg);
     }
-
 }
 
-
-/* =========================
-   HERO CONTENT
-========================= */
+/* hero content */
 
 .heroInner{
-
     width:100%;
     max-width:1450px;
-
     height:100%;
-
     margin:auto;
-
-    padding:
-        50px 7%;
-
+    padding:50px 7%;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     position:relative;
-
     z-index:3;
 }
-
 
 .heroCopy{
     width:56%;
 }
 
-
 .slideNumber{
-
-    color:#73E9FF;
-
+    color:#75eaff;
     font-size:10px;
-
     font-weight:900;
-
     letter-spacing:3px;
-
     margin-bottom:18px;
 }
 
-
 .heroCopy h1{
-
-    font-size:
-        clamp(43px,6vw,77px);
-
+    font-size:clamp(43px,6vw,77px);
     line-height:.94;
-
     letter-spacing:-3px;
-
     margin-bottom:22px;
-
-    text-shadow:
-        0 8px 25px
-        rgba(0,0,0,.18);
+    text-shadow:0 6px 20px rgba(0,0,0,.22);
 }
-
 
 .heroCopy h1 span{
-
-    color:#55DFFF;
+    color:#ff3159;
 }
 
-
 .heroCopy h2{
-
     font-size:25px;
-
     margin-bottom:15px;
 }
 
-
 .heroCopy p{
-
     max-width:650px;
-
-    color:#D9ECFF;
-
+    color:#d9ecff;
     font-size:15px;
-
     line-height:1.85;
 }
 
-
 .heroButtons{
-
     display:flex;
-
     gap:12px;
-
     margin-top:28px;
 }
 
-
 .primaryBtn,
 .secondaryBtn{
-
-    padding:
-        14px 21px;
-
+    padding:14px 21px;
     border-radius:9px;
-
     text-decoration:none;
-
-    font-size:10px;
-
+    font-size:11px;
     font-weight:900;
-
     transition:.3s;
 }
 
-
 .primaryBtn{
-
-    color:white;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            var(--blue),
-            #3B55FF
-        );
-
-    box-shadow:
-        0 12px 30px
-        rgba(22,119,255,.32);
+    color:#fff;
+    background:linear-gradient(135deg,#ef1749,#d20b3b);
+    box-shadow:0 12px 28px rgba(225,20,70,.30);
 }
-
 
 .secondaryBtn{
-
-    color:white;
-
-    border:
-        1px solid
-        rgba(255,255,255,.28);
-
-    background:
-        rgba(255,255,255,.08);
-
-    backdrop-filter:
-        blur(12px);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
 }
-
 
 .primaryBtn:hover,
 .secondaryBtn:hover{
-
-    transform:
-        translateY(-4px);
+    transform:translateY(-4px);
 }
 
-
-/* =========================
-   VISUAL PANEL
-========================= */
+/* =================================
+   MATHEMATICAL VISUAL
+================================= */
 
 .visualArea{
-
     width:40%;
-
     height:430px;
-
     position:relative;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 }
 
+/* glass panel */
 
 .mathPanel{
-
     width:350px;
     min-height:350px;
-
     border-radius:32px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.16),
-            rgba(255,255,255,.035)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.25);
-
-    backdrop-filter:
-        blur(20px);
-
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.17),
+        rgba(255,255,255,.035)
+    );
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(18px);
     box-shadow:
-
-        0 30px 80px
-        rgba(0,0,0,.28),
-
-        inset
-        0 1px
-        rgba(255,255,255,.30);
-
+        0 25px 70px rgba(0,0,0,.28),
+        inset 0 1px rgba(255,255,255,.25);
     position:relative;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 }
 
+/* glowing circle */
 
 .glowCircle{
-
     width:215px;
     height:215px;
-
     border-radius:50%;
-
     background:
-
         radial-gradient(
             circle at 35% 25%,
-            #FFFFFF 0%,
-            #8CEFFF 8%,
-            #1677FF 43%,
-            #071A3D 78%
+            #fff 0%,
+            #8cefff 8%,
+            #178de5 42%,
+            #07265f 75%
         );
-
     box-shadow:
-
-        0 0 70px
-        rgba(0,198,232,.42),
-
-        inset
-        -25px -25px 35px
-        rgba(0,0,0,.28);
-
+        0 0 65px rgba(0,230,255,.45),
+        inset -25px -25px 35px rgba(0,0,0,.30);
     display:flex;
-
     align-items:center;
-
     justify-content:center;
+    position:relative;
 }
-
 
 .bigFormula{
-
-    color:white;
-
+    color:#fff;
     font-size:75px;
-
     font-weight:900;
-
-    text-shadow:
-        0 6px 15px
-        rgba(0,0,0,.35);
+    text-shadow:0 5px 12px rgba(0,0,0,.3);
 }
 
+/* floating formulas */
 
 .formula{
-
     position:absolute;
-
-    color:white;
-
+    color:#fff;
     font-weight:900;
-
-    text-shadow:
-        0 4px 12px
-        rgba(0,0,0,.4);
+    text-shadow:0 4px 12px rgba(0,0,0,.4);
 }
 
-
 .formula.a{
-
     top:38px;
     left:42px;
-
     font-size:35px;
 }
 
-
 .formula.b{
-
     top:62px;
     right:35px;
-
     font-size:29px;
 }
 
-
 .formula.c{
-
     bottom:42px;
     left:45px;
-
     font-size:30px;
 }
 
-
 .formula.d{
-
     bottom:55px;
     right:42px;
-
     font-size:27px;
 }
 
+/* small cards */
 
 .miniCard{
-
     position:absolute;
-
-    padding:
-        11px 14px;
-
+    padding:11px 14px;
     border-radius:13px;
-
-    background:
-        rgba(255,255,255,.10);
-
-    border:
-        1px solid
-        rgba(255,255,255,.20);
-
-    backdrop-filter:
-        blur(12px);
-
-    font-size:9px;
-
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(10px);
+    font-size:10px;
     font-weight:900;
 }
 
-
 .miniCard.one{
-
     left:-25px;
     top:80px;
 }
 
-
 .miniCard.two{
-
     right:-25px;
     bottom:75px;
 }
 
-
-/* =========================
-   ARROWS
-========================= */
+/* =================================
+   SLIDE CONTROLS
+================================= */
 
 .arrow{
-
     position:absolute;
-
     top:50%;
-
-    transform:
-        translateY(-50%);
-
+    transform:translateY(-50%);
     width:56px;
     height:56px;
-
     border-radius:50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.30);
-
-    background:
-        rgba(3,23,63,.55);
-
-    backdrop-filter:
-        blur(12px);
-
+    border:1px solid rgba(255,255,255,.30);
+    background:rgba(2,22,70,.55);
+    backdrop-filter:blur(10px);
     color:white;
-
     font-size:32px;
-
     cursor:pointer;
-
     z-index:10;
-
     transition:.3s;
 }
 
-
 .arrow:hover{
-
-    background:
-        var(--blue);
-
-    border-color:
-        var(--blue);
-
-    transform:
-        translateY(-50%)
-        scale(1.08);
+    background:#e51c49;
+    transform:translateY(-50%) scale(1.08);
 }
-
 
 .arrow.left{
     left:22px;
 }
 
-
 .arrow.right{
     right:22px;
 }
 
-
-/* =========================
-   SLIDER CONTROLS
-========================= */
+/* bottom controls */
 
 .sliderControls{
-
     position:absolute;
-
     z-index:15;
-
     bottom:28px;
-
     left:7%;
     right:7%;
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
 }
 
-
 .progressLine{
-
     height:4px;
-
     flex:1;
-
-    background:
-        rgba(255,255,255,.22);
-
+    background:rgba(255,255,255,.25);
     border-radius:10px;
-
     overflow:hidden;
-
     cursor:pointer;
 }
 
-
 .progressLine span{
-
     display:block;
-
     width:0%;
-
     height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--cyan),
-            var(--blue)
-        );
+    background:#ff3158;
 }
-
 
 .progressLine.active span{
-
-    animation:
-        progress 4.5s linear;
+    animation:progress 4.5s linear;
 }
-
 
 @keyframes progress{
-
-    from{
-        width:0;
-    }
-
-    to{
-        width:100%;
-    }
-
+    from{width:0}
+    to{width:100%}
 }
 
-
 .slideCounter{
-
     min-width:60px;
-
     text-align:right;
-
     font-size:11px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* =================================
+   CURRICULUM
+================================= */
 
 .section{
-
-    padding:
-        80px 5%;
+    padding:80px 5%;
 }
 
-
 .container{
-
     max-width:1450px;
-
     margin:auto;
 }
 
-
 .sectionIntro{
-
     max-width:760px;
-
     margin-bottom:42px;
 }
 
-
 .sectionTag{
-
-    color:
-        var(--blue);
-
+    color:#df1847;
     font-size:10px;
-
     letter-spacing:2px;
-
     font-weight:900;
-
     margin-bottom:11px;
 }
 
-
 .sectionIntro h2{
-
-    font-size:
-        clamp(35px,5vw,58px);
-
+    font-size:clamp(35px,5vw,58px);
     line-height:1;
-
     letter-spacing:-2px;
-
-    color:var(--navy);
-
+    color:#082568;
     margin-bottom:15px;
 }
 
-
 .sectionIntro p{
-
-    color:var(--muted);
-
+    color:#6e7c94;
     font-size:14px;
-
     line-height:1.8;
 }
 
-
-/* =========================
-   CURRICULUM
-========================= */
+/* curriculum cards */
 
 .curriculum{
-
-    background:
-        linear-gradient(
-            180deg,
-            #F5F8FC,
-            #EDF3FA
-        );
+    background:#f5f8fc;
 }
 
-
 .curriculumGrid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
 
-
 .curriculumCard{
-
     min-height:285px;
-
     padding:27px;
-
     border-radius:24px;
-
-    color:white;
-
+    color:#fff;
     position:relative;
-
     overflow:hidden;
-
     cursor:pointer;
-
     transition:.4s;
 }
 
-
 .curriculumCard:hover{
-
-    transform:
-        translateY(-9px);
-
-    box-shadow:
-        0 25px 50px
-        rgba(7,26,61,.16);
+    transform:translateY(-9px);
+    box-shadow:0 25px 45px rgba(0,30,90,.16);
 }
-
-
-/* NEW PROFESSIONAL GRADIENTS */
 
 .pakistan{
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #071A3D,
-            #0B4DA2,
-            #00AFCB
-        );
+    background:linear-gradient(135deg,#051a5b,#0754c7,#13b8e9);
 }
-
 
 .gcse{
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #111A4E,
-            #3152C9,
-            #7357FF
-        );
+    background:linear-gradient(135deg,#21105f,#4732a9,#2386ed);
 }
-
 
 .igcse{
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #053844,
-            #087C91,
-            #00C6E8
-        );
+    background:linear-gradient(135deg,#043c50,#057f91,#22bce5);
 }
-
 
 .olevel{
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #24164D,
-            #5732A5,
-            #8D62FF
-        );
+    background:linear-gradient(135deg,#35115e,#6824ad,#a64ed9);
 }
 
-
 .cardNo{
-
     font-size:9px;
-
     letter-spacing:2px;
-
     font-weight:900;
 }
 
-
 .cardIcon{
-
     margin-top:32px;
-
     width:57px;
     height:57px;
-
     border-radius:16px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-        rgba(255,255,255,.11);
-
-    border:
-        1px solid
-        rgba(255,255,255,.22);
-
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.22);
     font-size:27px;
 }
 
-
 .curriculumCard h3{
-
     margin-top:18px;
-
     font-size:22px;
 }
 
-
 .curriculumCard p{
-
     margin-top:8px;
-
-    color:
-        rgba(255,255,255,.78);
-
+    color:rgba(255,255,255,.78);
     font-size:12px;
-
     line-height:1.7;
 }
 
-
 .cardArrow{
-
     position:absolute;
-
     right:20px;
     bottom:20px;
-
     width:38px;
     height:38px;
-
     border-radius:50%;
-
-    background:
-        rgba(255,255,255,.13);
-
+    background:rgba(255,255,255,.14);
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 }
 
-
-/* =========================
-   RESOURCE SECTION
-========================= */
+/* =================================
+   RESOURCES
+================================= */
 
 .resources{
-
-    background:white;
+    background:#fff;
 }
 
-
 .resourceGrid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
 
-
 .resourceCard{
-
     min-height:185px;
-
-    border:
-        1px solid
-        var(--border);
-
+    border:1px solid #e3e9f1;
     border-radius:20px;
-
     padding:25px;
-
-    background:white;
-
+    background:#fff;
     transition:.3s;
 }
 
-
 .resourceCard:hover{
-
-    transform:
-        translateY(-6px);
-
-    border-color:
-        #C9DBF6;
-
-    box-shadow:
-        0 20px 45px
-        rgba(7,26,61,.08);
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,30,90,.10);
 }
 
-
 .resourceIcon{
-
     width:50px;
     height:50px;
-
     border-radius:14px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #EEF5FF,
-            #E6F9FF
-        );
-
-    color:var(--blue);
-
+    background:#edf4ff;
     font-size:22px;
-
     margin-bottom:16px;
 }
 
-
 .resourceCard h3{
-
-    color:var(--navy);
-
+    color:#09266e;
     font-size:17px;
-
     margin-bottom:7px;
 }
 
-
 .resourceCard p{
-
-    color:var(--muted);
-
+    color:#748198;
     font-size:12px;
-
     line-height:1.7;
 }
 
-
-/* =========================
+/* =================================
    DARK SECTION
-========================= */
+================================= */
 
 .darkSection{
-
-    background:
-
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(22,119,255,.22),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #061532,
-            #071F4D,
-            #092C69
-        );
-
-    color:white;
+    background:#061a62;
+    color:#fff;
 }
-
 
 .darkSection .sectionIntro h2{
-
-    color:white;
+    color:#fff;
 }
-
 
 .darkSection .sectionIntro p{
-
-    color:#B8CAE7;
+    color:#b8c9e9;
 }
-
 
 .paperGrid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:18px;
 }
-
 
 .paperCard{
-
     min-height:220px;
-
     padding:28px;
-
     border-radius:22px;
-
-    background:
-        rgba(255,255,255,.055);
-
-    border:
-        1px solid
-        rgba(255,255,255,.11);
-
-    backdrop-filter:
-        blur(10px);
-
-    transition:.3s;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.12);
 }
-
-
-.paperCard:hover{
-
-    transform:
-        translateY(-6px);
-
-    background:
-        rgba(255,255,255,.085);
-}
-
 
 .paperCard small{
-
-    color:#68E8FF;
-
+    color:#70dfff;
     font-weight:900;
-
     font-size:9px;
-
     letter-spacing:1.5px;
 }
 
-
 .paperCard h3{
-
     font-size:25px;
-
-    margin:
-        20px 0 9px;
+    margin:20px 0 9px;
 }
 
-
 .paperCard p{
-
-    color:#AABDDC;
-
+    color:#aabbd9;
     font-size:12px;
-
     line-height:1.7;
 }
 
-
 .paperCard a{
-
     display:inline-block;
-
     margin-top:18px;
-
-    color:white;
-
+    color:#fff;
     font-size:10px;
-
     font-weight:900;
-
-    text-decoration:none;
 }
 
-
-/* =========================
+/* =================================
    TOPICS
-========================= */
+================================= */
 
 .topicGrid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:18px;
 }
 
-
 .topicCard{
-
     min-height:210px;
-
-    background:white;
-
-    border:
-        1px solid
-        var(--border);
-
+    background:#fff;
+    border:1px solid #e3e8ef;
     border-radius:21px;
-
     padding:26px;
-
     position:relative;
-
     overflow:hidden;
-
     transition:.3s;
 }
 
-
 .topicCard:hover{
-
-    transform:
-        translateY(-6px);
-
-    box-shadow:
-        0 20px 45px
-        rgba(7,26,61,.08);
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,30,90,.08);
 }
-
 
 .topicFormula{
-
     position:absolute;
-
     right:18px;
     top:10px;
-
     font-size:65px;
-
     font-weight:900;
-
-    color:#EDF2F8;
+    color:#edf2f8;
 }
-
 
 .topicCard small{
-
-    color:
-        var(--blue);
-
+    color:#dd1947;
     font-size:9px;
-
     letter-spacing:1.5px;
-
     font-weight:900;
 }
 
-
 .topicCard h3{
-
     margin-top:40px;
-
     font-size:22px;
-
-    color:var(--navy);
+    color:#09266d;
 }
 
-
 .topicCard p{
-
-    color:var(--muted);
-
+    color:#758096;
     font-size:12px;
-
     line-height:1.7;
-
     margin-top:7px;
 }
 
-
-/* =========================
+/* =================================
    FOOTER
-========================= */
+================================= */
 
 footer{
-
-    background:
-        #040F2B;
-
-    color:white;
-
-    padding:
-        55px 5% 20px;
+    background:#03113d;
+    color:#fff;
+    padding:55px 5% 20px;
 }
 
-
 .footerGrid{
-
     max-width:1450px;
-
     margin:auto;
-
     display:grid;
-
-    grid-template-columns:
-        1.5fr 1fr 1fr 1fr;
-
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
     gap:40px;
 }
 
-
 footer h4{
-
     font-size:12px;
-
     margin-bottom:15px;
 }
 
-
 footer a{
-
     display:block;
-
-    color:#8799BA;
-
+    color:#8596b9;
     font-size:11px;
-
     margin-bottom:9px;
-
     text-decoration:none;
 }
 
-
-footer a:hover{
-
-    color:#55DFFF;
-}
-
-
 footer p{
-
-    color:#8193B7;
-
+    color:#8193b7;
     font-size:12px;
-
     line-height:1.8;
 }
 
-
 .footerBottom{
-
     max-width:1450px;
-
-    margin:
-        40px auto 0;
-
+    margin:40px auto 0;
     padding-top:18px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.08);
-
+    border-top:1px solid rgba(255,255,255,.08);
     display:flex;
-
     justify-content:space-between;
-
-    color:#667BA1;
-
+    color:#667ba1;
     font-size:10px;
 }
 
-
-/* =========================
+/* =================================
    RESPONSIVE
-========================= */
+================================= */
 
 @media(max-width:1100px){
 
@@ -1810,24 +955,18 @@ footer p{
     }
 
     .mathPanel{
-
         width:300px;
         height:300px;
     }
 
     .curriculumGrid{
-
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .resourceGrid{
-
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 }
-
 
 @media(max-width:800px){
 
@@ -1848,15 +987,10 @@ footer p{
     }
 
     .heroInner{
-
         flex-direction:column;
-
         text-align:center;
-
         justify-content:center;
-
-        padding:
-            40px 7% 90px;
+        padding:40px 7% 90px;
     }
 
     .heroCopy{
@@ -1876,24 +1010,18 @@ footer p{
     }
 
     .visualArea{
-
         width:100%;
-
         height:300px;
-
         margin-top:20px;
     }
 
     .mathPanel{
-
         width:260px;
         height:260px;
-
         min-height:260px;
     }
 
     .glowCircle{
-
         width:160px;
         height:160px;
     }
@@ -1911,10 +1039,8 @@ footer p{
     }
 
     .arrow{
-
         width:45px;
         height:45px;
-
         font-size:25px;
     }
 
@@ -1928,22 +1054,17 @@ footer p{
 
     .paperGrid,
     .topicGrid{
-
         grid-template-columns:1fr;
     }
 
     .footerGrid{
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns:1fr 1fr;
     }
 }
-
 
 @media(max-width:560px){
 
     .logoMark{
-
         width:45px;
         height:45px;
     }
@@ -1957,7 +1078,6 @@ footer p{
     }
 
     .menuBtn{
-
         width:47px;
         height:47px;
     }
@@ -1967,10 +1087,8 @@ footer p{
     }
 
     .quoteIcon{
-
         width:75px;
         min-width:75px;
-
         height:58px;
     }
 
@@ -1987,9 +1105,7 @@ footer p{
     }
 
     .heroCopy h1{
-
         font-size:45px;
-
         letter-spacing:-2px;
     }
 
@@ -2002,15 +1118,12 @@ footer p{
     }
 
     .heroButtons{
-
         flex-direction:column;
-
         align-items:center;
     }
 
     .primaryBtn,
     .secondaryBtn{
-
         width:210px;
     }
 
@@ -2019,13 +1132,11 @@ footer p{
     }
 
     .mathPanel{
-
         width:225px;
         height:225px;
     }
 
     .glowCircle{
-
         width:140px;
         height:140px;
     }
@@ -2035,25 +1146,21 @@ footer p{
     }
 
     .formula.a{
-
         font-size:25px;
         left:25px;
     }
 
     .formula.b{
-
         font-size:22px;
         right:22px;
     }
 
     .formula.c{
-
         font-size:22px;
         left:27px;
     }
 
     .formula.d{
-
         font-size:20px;
         right:25px;
     }
@@ -2071,633 +1178,456 @@ footer p{
     }
 
     .sliderControls{
-
         left:6%;
         right:6%;
     }
 
     .section{
-
-        padding:
-            65px 5%;
+        padding:65px 5%;
     }
 
     .curriculumGrid,
     .resourceGrid{
-
         grid-template-columns:1fr;
     }
 
     .footerGrid{
-
         grid-template-columns:1fr;
     }
 
     .footerBottom{
-
         flex-direction:column;
-
         gap:8px;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
-<a href="#" class="logo">
+    <a href="#" class="logo">
 
-<div class="logoMark">∑</div>
+        <div class="logoMark">∑</div>
 
-<div class="logoText">
+        <div class="logoText">
+            <div class="small">LEARN • EXPLORE • MASTER</div>
+            <div class="big">ONLINE MATH ACADEMY</div>
+        </div>
 
-<div class="small">
-LEARN • EXPLORE • MASTER
-</div>
+    </a>
 
-<div class="big">
-ONLINE MATH ACADEMY
-</div>
+    <div class="headerActions">
 
-</div>
+        <button class="circleBtn">✉</button>
+        <button class="circleBtn">☎</button>
+        <button class="menuBtn" id="menuBtn">☰</button>
 
-</a>
+    </div>
 
+    <nav class="mobileMenu" id="mobileMenu">
 
-<div class="headerActions">
+        <a href="#curriculum">Curriculum</a>
+        <a href="#resources">Resources</a>
+        <a href="#papers">Past Papers</a>
+        <a href="#topics">Mathematics Topics</a>
+        <a href="#start">Start Learning</a>
 
-<button class="circleBtn">✉</button>
-
-<button class="circleBtn">☎</button>
-
-<button class="menuBtn" id="menuBtn">
-☰
-</button>
-
-</div>
-
-
-<nav class="mobileMenu" id="mobileMenu">
-
-<a href="#curriculum">
-Curriculum
-</a>
-
-<a href="#resources">
-Resources
-</a>
-
-<a href="#papers">
-Past Papers
-</a>
-
-<a href="#topics">
-Mathematics Topics
-</a>
-
-</nav>
+    </nav>
 
 </header>
 
 
-
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 
 <div class="quoteBar"
 onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})">
 
-<div class="quoteIcon">
-🧮
-</div>
+    <div class="quoteIcon">🧮</div>
 
-<div class="quoteText">
-
-CHOOSE YOUR CURRICULUM
-
-<span>
-&nbsp; | &nbsp; START LEARNING MATHEMATICS
-</span>
-
-</div>
+    <div class="quoteText">
+        CHOOSE YOUR CURRICULUM
+        <span> | START LEARNING MATHEMATICS</span>
+    </div>
 
 </div>
 
 
-
-<!-- HERO -->
+<!-- =====================================================
+                     REAL HERO SLIDER
+===================================================== -->
 
 <section class="heroSlider" id="heroSlider">
 
 
-<!-- SLIDE 1 -->
+<!-- ================= SLIDE 1 ================= -->
 
 <div class="slide slide1 active">
 
-<div class="mathBG">
+    <div class="mathBG">
+        <span>∑</span>
+        <span>π</span>
+        <span>√x</span>
+        <span>∫</span>
+        <span>x²</span>
+    </div>
 
-<span>∑</span>
-<span>π</span>
-<span>√x</span>
-<span>∫</span>
-<span>x²</span>
+    <div class="heroInner">
 
-</div>
+        <div class="heroCopy">
 
+            <div class="slideNumber">
+                01 / PAKISTAN CURRICULUM
+            </div>
 
-<div class="heroInner">
+            <h1>
+                Mathematics
+                <span>Made Simple.</span>
+            </h1>
 
+            <h2>
+                Class 9 • Class 10 • 1st Year • 2nd Year
+            </h2>
 
-<div class="heroCopy">
+            <p>
+                Learn mathematics through clear explanations,
+                visual concepts, solved questions, practice,
+                MCQs and examination preparation.
+            </p>
 
-<div class="slideNumber">
-01 / PAKISTAN CURRICULUM
-</div>
+            <div class="heroButtons">
 
+                <a href="#curriculum" class="primaryBtn">
+                    EXPLORE PAKISTAN CURRICULUM →
+                </a>
 
-<h1>
+                <a href="#resources" class="secondaryBtn">
+                    VIEW RESOURCES
+                </a>
 
-Mathematics
+            </div>
 
-<span>
-Made Simple.
-</span>
-
-</h1>
-
-
-<h2>
-Class 9 • Class 10 • 1st Year • 2nd Year
-</h2>
-
-
-<p>
-
-Learn mathematics through clear explanations,
-visual concepts, solved questions, practice,
-MCQs and examination preparation.
-
-</p>
-
-
-<div class="heroButtons">
-
-<a href="#curriculum"
-class="primaryBtn">
-
-EXPLORE PAKISTAN CURRICULUM →
-
-</a>
-
-<a href="#resources"
-class="secondaryBtn">
-
-VIEW RESOURCES
-
-</a>
-
-</div>
-
-</div>
+        </div>
 
 
+        <div class="visualArea">
 
-<div class="visualArea">
+            <div class="mathPanel">
 
-<div class="mathPanel">
+                <div class="formula a">x²</div>
+                <div class="formula b">√x</div>
+                <div class="formula c">2x + 5</div>
+                <div class="formula d">πr²</div>
 
-<div class="formula a">
-x²
-</div>
+                <div class="glowCircle">
+                    <div class="bigFormula">∑</div>
+                </div>
 
-<div class="formula b">
-√x
-</div>
+                <div class="miniCard one">
+                    STEP-BY-STEP
+                </div>
 
-<div class="formula c">
-2x + 5
-</div>
+                <div class="miniCard two">
+                    SOLVED QUESTIONS
+                </div>
 
-<div class="formula d">
-πr²
-</div>
+            </div>
 
+        </div>
 
-<div class="glowCircle">
-
-<div class="bigFormula">
-∑
-</div>
+    </div>
 
 </div>
 
 
-<div class="miniCard one">
-STEP-BY-STEP
-</div>
-
-<div class="miniCard two">
-SOLVED QUESTIONS
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- SLIDE 2 -->
+<!-- ================= SLIDE 2 ================= -->
 
 <div class="slide slide2">
 
-<div class="mathBG">
+    <div class="mathBG">
+        <span>f(x)</span>
+        <span>△</span>
+        <span>π</span>
+        <span>sin θ</span>
+        <span>∞</span>
+    </div>
 
-<span>f(x)</span>
-<span>△</span>
-<span>π</span>
-<span>sin θ</span>
-<span>∞</span>
+    <div class="heroInner">
 
-</div>
+        <div class="heroCopy">
 
+            <div class="slideNumber">
+                02 / GCSE
+            </div>
 
-<div class="heroInner">
+            <h1>
+                Master
+                <span>GCSE Maths.</span>
+            </h1>
 
-<div class="heroCopy">
+            <h2>
+                Foundation • Higher
+            </h2>
 
-<div class="slideNumber">
-02 / GCSE
-</div>
+            <p>
+                Build strong mathematical foundations,
+                practise exam-style questions and
+                understand concepts instead of simply
+                memorising formulas.
+            </p>
 
-<h1>
+            <div class="heroButtons">
 
-Master
+                <a href="#curriculum" class="primaryBtn">
+                    EXPLORE GCSE →
+                </a>
 
-<span>
-GCSE Maths.
-</span>
+                <a href="#papers" class="secondaryBtn">
+                    PAST PAPERS
+                </a>
 
-</h1>
+            </div>
 
-<h2>
-Foundation • Higher
-</h2>
-
-<p>
-
-Build strong mathematical foundations,
-practise exam-style questions and
-understand concepts instead of simply
-memorising formulas.
-
-</p>
-
-<div class="heroButtons">
-
-<a href="#curriculum"
-class="primaryBtn">
-EXPLORE GCSE →
-</a>
-
-<a href="#papers"
-class="secondaryBtn">
-PAST PAPERS
-</a>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="visualArea">
+        <div class="visualArea">
 
-<div class="mathPanel">
+            <div class="mathPanel">
 
-<div class="formula a">
-f(x)
-</div>
+                <div class="formula a">f(x)</div>
+                <div class="formula b">△ABC</div>
+                <div class="formula c">sin θ</div>
+                <div class="formula d">a²+b²</div>
 
-<div class="formula b">
-△ABC
-</div>
+                <div class="glowCircle">
+                    <div class="bigFormula">x²</div>
+                </div>
 
-<div class="formula c">
-sin θ
-</div>
+                <div class="miniCard one">
+                    FOUNDATION
+                </div>
 
-<div class="formula d">
-a²+b²
-</div>
+                <div class="miniCard two">
+                    HIGHER
+                </div>
 
-<div class="glowCircle">
+            </div>
 
-<div class="bigFormula">
-x²
-</div>
+        </div>
 
-</div>
-
-<div class="miniCard one">
-FOUNDATION
-</div>
-
-<div class="miniCard two">
-HIGHER
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
 
-
-<!-- SLIDE 3 -->
+<!-- ================= SLIDE 3 ================= -->
 
 <div class="slide slide3">
 
-<div class="mathBG">
+    <div class="mathBG">
+        <span>∫</span>
+        <span>dx</span>
+        <span>σ</span>
+        <span>μ</span>
+        <span>∞</span>
+    </div>
 
-<span>∫</span>
-<span>dx</span>
-<span>σ</span>
-<span>μ</span>
-<span>∞</span>
+    <div class="heroInner">
 
-</div>
+        <div class="heroCopy">
 
+            <div class="slideNumber">
+                03 / IGCSE
+            </div>
 
-<div class="heroInner">
+            <h1>
+                Think.
+                <span>Calculate.</span>
+            </h1>
 
-<div class="heroCopy">
+            <h2>
+                Core • Extended
+            </h2>
 
-<div class="slideNumber">
-03 / IGCSE
-</div>
+            <p>
+                Prepare for IGCSE Mathematics with
+                structured learning, topic practice,
+                past papers and visual explanations
+                designed for deeper understanding.
+            </p>
 
-<h1>
+            <div class="heroButtons">
 
-Think.
+                <a href="#curriculum" class="primaryBtn">
+                    EXPLORE IGCSE →
+                </a>
 
-<span>
-Calculate.
-</span>
+                <a href="#papers" class="secondaryBtn">
+                    EXAM CENTRE
+                </a>
 
-</h1>
+            </div>
 
-<h2>
-Core • Extended
-</h2>
-
-<p>
-
-Prepare for IGCSE Mathematics with
-structured learning, topic practice,
-past papers and visual explanations
-designed for deeper understanding.
-
-</p>
-
-<div class="heroButtons">
-
-<a href="#curriculum"
-class="primaryBtn">
-EXPLORE IGCSE →
-</a>
-
-<a href="#papers"
-class="secondaryBtn">
-EXAM CENTRE
-</a>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="visualArea">
+        <div class="visualArea">
 
-<div class="mathPanel">
+            <div class="mathPanel">
 
-<div class="formula a">
-∫x dx
-</div>
+                <div class="formula a">∫x dx</div>
+                <div class="formula b">σ²</div>
+                <div class="formula c">dy/dx</div>
+                <div class="formula d">P(A)</div>
 
-<div class="formula b">
-σ²
-</div>
+                <div class="glowCircle">
+                    <div class="bigFormula">π</div>
+                </div>
 
-<div class="formula c">
-dy/dx
-</div>
+                <div class="miniCard one">
+                    CORE
+                </div>
 
-<div class="formula d">
-P(A)
-</div>
+                <div class="miniCard two">
+                    EXTENDED
+                </div>
 
-<div class="glowCircle">
+            </div>
 
-<div class="bigFormula">
-π
-</div>
+        </div>
 
-</div>
-
-<div class="miniCard one">
-CORE
-</div>
-
-<div class="miniCard two">
-EXTENDED
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
 
-
-<!-- SLIDE 4 -->
+<!-- ================= SLIDE 4 ================= -->
 
 <div class="slide slide4">
 
-<div class="mathBG">
+    <div class="mathBG">
+        <span>∫</span>
+        <span>eˣ</span>
+        <span>π</span>
+        <span>θ</span>
+        <span>Σ</span>
+    </div>
 
-<span>∫</span>
-<span>eˣ</span>
-<span>π</span>
-<span>θ</span>
-<span>Σ</span>
+    <div class="heroInner">
 
-</div>
+        <div class="heroCopy">
 
+            <div class="slideNumber">
+                04 / O LEVEL & A LEVEL
+            </div>
 
-<div class="heroInner">
+            <h1>
+                Go Beyond
+                <span>the Formula.</span>
+            </h1>
 
-<div class="heroCopy">
+            <h2>
+                O Level • A Level Mathematics
+            </h2>
 
-<div class="slideNumber">
-04 / O LEVEL & A LEVEL
-</div>
+            <p>
+                Develop advanced mathematical thinking
+                through algebra, trigonometry, calculus,
+                statistics and problem-solving.
+            </p>
 
-<h1>
+            <div class="heroButtons">
 
-Go Beyond
+                <a href="#curriculum" class="primaryBtn">
+                    EXPLORE O / A LEVEL →
+                </a>
 
-<span>
-the Formula.
-</span>
+                <a href="#topics" class="secondaryBtn">
+                    EXPLORE TOPICS
+                </a>
 
-</h1>
+            </div>
 
-<h2>
-O Level • A Level Mathematics
-</h2>
-
-<p>
-
-Develop advanced mathematical thinking
-through algebra, trigonometry, calculus,
-statistics and problem-solving.
-
-</p>
-
-<div class="heroButtons">
-
-<a href="#curriculum"
-class="primaryBtn">
-EXPLORE O / A LEVEL →
-</a>
-
-<a href="#topics"
-class="secondaryBtn">
-EXPLORE TOPICS
-</a>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="visualArea">
+        <div class="visualArea">
 
-<div class="mathPanel">
+            <div class="mathPanel">
 
-<div class="formula a">
-eˣ
-</div>
+                <div class="formula a">eˣ</div>
+                <div class="formula b">dy/dx</div>
+                <div class="formula c">∫f(x)dx</div>
+                <div class="formula d">θ</div>
 
-<div class="formula b">
-dy/dx
-</div>
+                <div class="glowCircle">
+                    <div class="bigFormula">∫</div>
+                </div>
 
-<div class="formula c">
-∫f(x)dx
-</div>
+                <div class="miniCard one">
+                    O LEVEL
+                </div>
 
-<div class="formula d">
-θ
-</div>
+                <div class="miniCard two">
+                    A LEVEL
+                </div>
 
-<div class="glowCircle">
+            </div>
 
-<div class="bigFormula">
-∫
-</div>
+        </div>
 
-</div>
-
-<div class="miniCard one">
-O LEVEL
-</div>
-
-<div class="miniCard two">
-A LEVEL
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
 
-
-<!-- ARROWS -->
+<!-- ================= ARROWS ================= -->
 
 <button class="arrow left" id="prevBtn">
-‹
+    ‹
 </button>
 
 <button class="arrow right" id="nextBtn">
-›
+    ›
 </button>
 
 
-
-<!-- PROGRESS -->
+<!-- ================= CONTROLS ================= -->
 
 <div class="sliderControls">
 
-<div class="progressLine active"
-data-slide="0">
-<span></span>
-</div>
+    <div class="progressLine active" data-slide="0">
+        <span></span>
+    </div>
 
-<div class="progressLine"
-data-slide="1">
-<span></span>
-</div>
+    <div class="progressLine" data-slide="1">
+        <span></span>
+    </div>
 
-<div class="progressLine"
-data-slide="2">
-<span></span>
-</div>
+    <div class="progressLine" data-slide="2">
+        <span></span>
+    </div>
 
-<div class="progressLine"
-data-slide="3">
-<span></span>
-</div>
+    <div class="progressLine" data-slide="3">
+        <span></span>
+    </div>
 
-<div class="slideCounter">
-
-<span id="currentSlide">
-01
-</span>
-
-/ 04
-
-</div>
+    <div class="slideCounter">
+        <span id="currentSlide">01</span> / 04
+    </div>
 
 </div>
 
 </section>
 
 
+<!-- ================= CURRICULUM ================= -->
 
-<!-- CURRICULUM -->
-
-<section class="section curriculum"
-id="curriculum">
+<section class="section curriculum" id="curriculum">
 
 <div class="container">
 
@@ -2722,16 +1652,13 @@ for your level.
 
 <div class="curriculumGrid">
 
-
 <div class="curriculumCard pakistan">
 
 <div class="cardNo">
 01 / PAKISTAN
 </div>
 
-<div class="cardIcon">
-🇵🇰
-</div>
+<div class="cardIcon">🇵🇰</div>
 
 <h3>
 Pakistan Curriculum
@@ -2742,12 +1669,9 @@ Class 9, Class 10, 1st Year
 and 2nd Year mathematics.
 </p>
 
-<div class="cardArrow">
-→
-</div>
+<div class="cardArrow">→</div>
 
 </div>
-
 
 
 <div class="curriculumCard gcse">
@@ -2756,9 +1680,7 @@ and 2nd Year mathematics.
 02 / GCSE
 </div>
 
-<div class="cardIcon">
-🇬🇧
-</div>
+<div class="cardIcon">🇬🇧</div>
 
 <h3>
 GCSE
@@ -2769,12 +1691,9 @@ Foundation and Higher
 mathematics pathways.
 </p>
 
-<div class="cardArrow">
-→
-</div>
+<div class="cardArrow">→</div>
 
 </div>
-
 
 
 <div class="curriculumCard igcse">
@@ -2783,9 +1702,7 @@ mathematics pathways.
 03 / IGCSE
 </div>
 
-<div class="cardIcon">
-🌍
-</div>
+<div class="cardIcon">🌍</div>
 
 <h3>
 IGCSE
@@ -2796,12 +1713,9 @@ Core and Extended
 mathematics preparation.
 </p>
 
-<div class="cardArrow">
-→
-</div>
+<div class="cardArrow">→</div>
 
 </div>
-
 
 
 <div class="curriculumCard olevel">
@@ -2810,9 +1724,7 @@ mathematics preparation.
 04 / CAMBRIDGE
 </div>
 
-<div class="cardIcon">
-📐
-</div>
+<div class="cardIcon">📐</div>
 
 <h3>
 O Level / A Level
@@ -2823,12 +1735,9 @@ Advanced mathematics
 learning and preparation.
 </p>
 
-<div class="cardArrow">
-→
-</div>
+<div class="cardArrow">→</div>
 
 </div>
-
 
 </div>
 
@@ -2837,11 +1746,9 @@ learning and preparation.
 </section>
 
 
+<!-- ================= RESOURCES ================= -->
 
-<!-- RESOURCES -->
-
-<section class="section resources"
-id="resources">
+<section class="section resources" id="resources">
 
 <div class="container">
 
@@ -2865,142 +1772,69 @@ practice and interactive learning.
 
 <div class="resourceGrid">
 
-
 <div class="resourceCard">
-
-<div class="resourceIcon">
-📚
-</div>
-
-<h3>
-Chapter Notes
-</h3>
-
+<div class="resourceIcon">📚</div>
+<h3>Chapter Notes</h3>
 <p>
 Clear and organised mathematics notes.
 </p>
-
 </div>
-
 
 <div class="resourceCard">
-
-<div class="resourceIcon">
-📄
-</div>
-
-<h3>
-Past Papers
-</h3>
-
+<div class="resourceIcon">📄</div>
+<h3>Past Papers</h3>
 <p>
 Organised papers by curriculum and year.
 </p>
-
 </div>
-
 
 <div class="resourceCard">
-
-<div class="resourceIcon">
-✏️
-</div>
-
-<h3>
-Practice Questions
-</h3>
-
+<div class="resourceIcon">✏️</div>
+<h3>Practice Questions</h3>
 <p>
 Topic-wise practice for stronger concepts.
 </p>
-
 </div>
-
 
 <div class="resourceCard">
-
-<div class="resourceIcon">
-✓
-</div>
-
-<h3>
-MCQs & Quizzes
-</h3>
-
+<div class="resourceIcon">✓</div>
+<h3>MCQs & Quizzes</h3>
 <p>
 Interactive questions and instant feedback.
 </p>
-
 </div>
-
 
 <div class="resourceCard">
-
-<div class="resourceIcon">
-⭐
-</div>
-
-<h3>
-Important Questions
-</h3>
-
+<div class="resourceIcon">⭐</div>
+<h3>Important Questions</h3>
 <p>
 Focus on important examination concepts.
 </p>
-
 </div>
-
 
 <div class="resourceCard">
-
-<div class="resourceIcon">
-🔍
-</div>
-
-<h3>
-Solved Questions
-</h3>
-
+<div class="resourceIcon">🔍</div>
+<h3>Solved Questions</h3>
 <p>
 Step-by-step mathematical solutions.
 </p>
-
 </div>
-
 
 <div class="resourceCard">
-
-<div class="resourceIcon">
-📖
-</div>
-
-<h3>
-Books & Material
-</h3>
-
+<div class="resourceIcon">📖</div>
+<h3>Books & Material</h3>
 <p>
 Mathematics books and supporting material.
 </p>
-
 </div>
-
 
 <div class="resourceCard">
-
-<div class="resourceIcon">
-🎮
-</div>
-
-<h3>
-Math Games
-</h3>
-
+<div class="resourceIcon">🎮</div>
+<h3>Math Games</h3>
 <p>
 Learn mathematics through interactive games.
 </p>
-
 </div>
-
 
 </div>
 
@@ -3009,11 +1843,9 @@ Learn mathematics through interactive games.
 </section>
 
 
+<!-- ================= PAST PAPERS ================= -->
 
-<!-- PAST PAPERS -->
-
-<section class="section darkSection"
-id="papers">
+<section class="section darkSection" id="papers">
 
 <div class="container">
 
@@ -3037,12 +1869,9 @@ mathematics examination resources.
 
 <div class="paperGrid">
 
-
 <div class="paperCard">
 
-<small>
-PAKISTAN CURRICULUM
-</small>
+<small>PAKISTAN CURRICULUM</small>
 
 <h3>
 Class 9 – 12
@@ -3062,9 +1891,7 @@ EXPLORE PAPERS →
 
 <div class="paperCard">
 
-<small>
-CAMBRIDGE
-</small>
+<small>CAMBRIDGE</small>
 
 <h3>
 IGCSE / O Level
@@ -3083,9 +1910,7 @@ EXPLORE PAPERS →
 
 <div class="paperCard">
 
-<small>
-INTERNATIONAL
-</small>
+<small>INTERNATIONAL</small>
 
 <h3>
 GCSE / A Level
@@ -3102,7 +1927,6 @@ EXPLORE PAPERS →
 
 </div>
 
-
 </div>
 
 </div>
@@ -3110,11 +1934,9 @@ EXPLORE PAPERS →
 </section>
 
 
+<!-- ================= TOPICS ================= -->
 
-<!-- TOPICS -->
-
-<section class="section"
-id="topics">
+<section class="section" id="topics">
 
 <div class="container">
 
@@ -3138,16 +1960,11 @@ to advanced calculus.
 
 <div class="topicGrid">
 
-
 <div class="topicCard">
 
-<div class="topicFormula">
-x²
-</div>
+<div class="topicFormula">x²</div>
 
-<small>
-ALGEBRA
-</small>
+<small>ALGEBRA</small>
 
 <h3>
 Algebra
@@ -3161,16 +1978,11 @@ factorisation and identities.
 </div>
 
 
-
 <div class="topicCard">
 
-<div class="topicFormula">
-△
-</div>
+<div class="topicFormula">△</div>
 
-<small>
-GEOMETRY
-</small>
+<small>GEOMETRY</small>
 
 <h3>
 Geometry
@@ -3183,16 +1995,11 @@ Shapes, angles and theorems.
 </div>
 
 
-
 <div class="topicCard">
 
-<div class="topicFormula">
-sin
-</div>
+<div class="topicFormula">sin</div>
 
-<small>
-TRIGONOMETRY
-</small>
+<small>TRIGONOMETRY</small>
 
 <h3>
 Trigonometry
@@ -3205,16 +2012,11 @@ Sine, cosine, tangent and graphs.
 </div>
 
 
-
 <div class="topicCard">
 
-<div class="topicFormula">
-∫
-</div>
+<div class="topicFormula">∫</div>
 
-<small>
-CALCULUS
-</small>
+<small>CALCULUS</small>
 
 <h3>
 Calculus
@@ -3227,16 +2029,11 @@ Differentiation and integration.
 </div>
 
 
-
 <div class="topicCard">
 
-<div class="topicFormula">
-σ
-</div>
+<div class="topicFormula">σ</div>
 
-<small>
-STATISTICS
-</small>
+<small>STATISTICS</small>
 
 <h3>
 Statistics
@@ -3249,16 +2046,11 @@ Data, averages and probability.
 </div>
 
 
-
 <div class="topicCard">
 
-<div class="topicFormula">
-π
-</div>
+<div class="topicFormula">π</div>
 
-<small>
-NUMBER
-</small>
+<small>NUMBER</small>
 
 <h3>
 Number
@@ -3271,7 +2063,6 @@ powers and roots.
 
 </div>
 
-
 </div>
 
 </div>
@@ -3279,13 +2070,11 @@ powers and roots.
 </section>
 
 
+<!-- ================= FOOTER ================= -->
 
-<!-- FOOTER -->
-
-<footer>
+<footer id="start">
 
 <div class="footerGrid">
-
 
 <div>
 
@@ -3301,8 +2090,7 @@ powers and roots.
 LEARN • EXPLORE • MASTER
 </div>
 
-<div class="big"
-style="color:white">
+<div class="big" style="color:white">
 ONLINE MATH ACADEMY
 </div>
 
@@ -3311,10 +2099,8 @@ ONLINE MATH ACADEMY
 </div>
 
 <p style="margin-top:18px">
-
 A modern mathematics learning
 platform for students and teachers.
-
 </p>
 
 </div>
@@ -3322,90 +2108,41 @@ platform for students and teachers.
 
 <div>
 
-<h4>
-CURRICULUM
-</h4>
+<h4>CURRICULUM</h4>
 
-<a href="#curriculum">
-Pakistan Curriculum
-</a>
-
-<a href="#curriculum">
-GCSE
-</a>
-
-<a href="#curriculum">
-IGCSE
-</a>
-
-<a href="#curriculum">
-O Level
-</a>
-
-<a href="#curriculum">
-A Level
-</a>
+<a href="#curriculum">Pakistan Curriculum</a>
+<a href="#curriculum">GCSE</a>
+<a href="#curriculum">IGCSE</a>
+<a href="#curriculum">O Level</a>
+<a href="#curriculum">A Level</a>
 
 </div>
 
 
 <div>
 
-<h4>
-RESOURCES
-</h4>
+<h4>RESOURCES</h4>
 
-<a href="#resources">
-Notes
-</a>
-
-<a href="#papers">
-Past Papers
-</a>
-
-<a href="#resources">
-MCQs
-</a>
-
-<a href="#resources">
-Solved Questions
-</a>
-
-<a href="#resources">
-Math Games
-</a>
+<a href="#resources">Notes</a>
+<a href="#papers">Past Papers</a>
+<a href="#resources">MCQs</a>
+<a href="#resources">Solved Questions</a>
+<a href="#resources">Math Games</a>
 
 </div>
 
 
 <div>
 
-<h4>
-MATHEMATICS
-</h4>
+<h4>MATHEMATICS</h4>
 
-<a href="#topics">
-Algebra
-</a>
-
-<a href="#topics">
-Geometry
-</a>
-
-<a href="#topics">
-Trigonometry
-</a>
-
-<a href="#topics">
-Calculus
-</a>
-
-<a href="#topics">
-Statistics
-</a>
+<a href="#topics">Algebra</a>
+<a href="#topics">Geometry</a>
+<a href="#topics">Trigonometry</a>
+<a href="#topics">Calculus</a>
+<a href="#topics">Statistics</a>
 
 </div>
-
 
 </div>
 
@@ -3425,12 +2162,11 @@ LEARN • EXPLORE • MASTER
 </footer>
 
 
-
 <script>
 
-/* =========================
-   MENU
-========================= */
+/* =================================
+   MOBILE MENU
+================================= */
 
 const menuBtn =
 document.getElementById("menuBtn");
@@ -3438,29 +2174,27 @@ document.getElementById("menuBtn");
 const mobileMenu =
 document.getElementById("mobileMenu");
 
-menuBtn.onclick = () => {
+menuBtn.addEventListener("click",()=>{
 
     mobileMenu.classList.toggle("show");
 
-};
+});
 
+document.querySelectorAll(".mobileMenu a")
+.forEach(link=>{
 
-document.querySelectorAll(
-    ".mobileMenu a"
-).forEach(link => {
-
-    link.onclick = () => {
+    link.addEventListener("click",()=>{
 
         mobileMenu.classList.remove("show");
 
-    };
+    });
 
 });
 
 
-/* =========================
-   SLIDER
-========================= */
+/* =================================
+   REAL HERO SLIDER
+================================= */
 
 const slides =
 document.querySelectorAll(".slide");
@@ -3487,68 +2221,54 @@ let timer;
 function showSlide(index){
 
     if(index < 0){
-
-        index =
-            slides.length - 1;
-
+        index = slides.length - 1;
     }
-
 
     if(index >= slides.length){
-
         index = 0;
-
     }
-
 
     current = index;
 
 
-    slides.forEach(slide => {
+    /* remove active */
 
-        slide.classList.remove(
-            "active"
-        );
-
+    slides.forEach(slide=>{
+        slide.classList.remove("active");
     });
 
 
-    bars.forEach(bar => {
-
-        bar.classList.remove(
-            "active"
-        );
+    bars.forEach(bar=>{
+        bar.classList.remove("active");
 
         const progress =
-            bar.querySelector("span");
+        bar.querySelector("span");
 
-        progress.style.animation =
-            "none";
+        progress.style.animation = "none";
+
+        /* force browser reflow */
 
         void progress.offsetWidth;
 
     });
 
 
-    slides[current].classList.add(
-        "active"
-    );
+    /* activate */
 
+    slides[current].classList.add("active");
 
-    bars[current].classList.add(
-        "active"
-    );
+    bars[current].classList.add("active");
 
 
     counter.textContent =
-        String(current + 1)
-        .padStart(2,"0");
+        String(current + 1).padStart(2,"0");
 
+
+    /* restart timer */
 
     clearTimeout(timer);
 
-
-    timer = setTimeout(() => {
+    timer = setTimeout(()=>{
 
         showSlide(current + 1);
 
@@ -3559,31 +2279,31 @@ function showSlide(index){
 
 /* NEXT */
 
-nextBtn.onclick = () => {
+nextBtn.addEventListener("click",()=>{
 
     showSlide(current + 1);
 
-};
+});
 
 
 /* PREVIOUS */
 
-prevBtn.onclick = () => {
+prevBtn.addEventListener("click",()=>{
 
     showSlide(current - 1);
 
-};
+});
 
 
-/* INDICATORS */
+/* CLICK ON PROGRESS */
 
-bars.forEach((bar,index) => {
+bars.forEach((bar,index)=>{
 
-    bar.onclick = () => {
+    bar.addEventListener("click",()=>{
 
         showSlide(index);
 
-    };
+    });
 
 });
 
@@ -3593,60 +2313,58 @@ bars.forEach((bar,index) => {
 showSlide(0);
 
 
-/* =========================
-   TOUCH SWIPE
-========================= */
+/* =================================
+   SWIPE SUPPORT FOR MOBILE
+================================= */
 
-let startX = 0;
+let touchStartX = 0;
 
-let endX = 0;
+let touchEndX = 0;
 
 const slider =
 document.getElementById("heroSlider");
 
 
-slider.addEventListener(
-    "touchstart",
-    e => {
+slider.addEventListener("touchstart",(e)=>{
 
-        startX =
-            e.changedTouches[0]
-            .screenX;
+    touchStartX =
+        e.changedTouches[0].screenX;
+
+});
+
+
+slider.addEventListener("touchend",(e)=>{
+
+    touchEndX =
+        e.changedTouches[0].screenX;
+
+    handleSwipe();
+
+});
+
+
+function handleSwipe(){
+
+    const distance =
+        touchEndX - touchStartX;
+
+
+    if(Math.abs(distance) < 50){
+        return;
+    }
+
+
+    if(distance < 0){
+
+        showSlide(current + 1);
+
+    }else{
+
+        showSlide(current - 1);
 
     }
-);
 
-
-slider.addEventListener(
-    "touchend",
-    e => {
-
-        endX =
-            e.changedTouches[0]
-            .screenX;
-
-
-        const distance =
-            endX - startX;
-
-
-        if(Math.abs(distance) < 50){
-            return;
-        }
-
-
-        if(distance < 0){
-
-            showSlide(current + 1);
-
-        }else{
-
-            showSlide(current - 1);
-
-        }
-
-    }
-);
+}
 
 </script>
 
