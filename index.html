@@ -2,143 +2,3653 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Online Math Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ONLINE MATH ACADEMY</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Segoe UI,Arial,sans-serif;background:#f5f8ff;color:#10284b}
-button{font:inherit;cursor:pointer}
-.container{width:min(1120px,calc(100% - 28px));margin:auto}
-header{height:68px;background:#fff;border-bottom:1px solid #e6edf7;display:flex;align-items:center;justify-content:space-between;padding:0 20px;position:sticky;top:0;z-index:10}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900}
-.logoIcon{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#1268ff,#7754ff);font-size:21px}
-.logo small{display:block;font-size:7px;letter-spacing:1.5px;color:#7890ad}.logo strong{font-size:13px}
-nav{display:flex;gap:22px}nav a{text-decoration:none;color:#536a85;font-size:11px;font-weight:700}
-.hero{min-height:570px;color:#fff;background:linear-gradient(135deg,#061a3d,#0d4b91 58%,#6645b5);position:relative;overflow:hidden}
-.slide{display:none;min-height:570px}.slide.active{display:block;animation:in .5s ease}@keyframes in{from{opacity:0;transform:translateX(25px)}to{opacity:1;transform:none}}
-.heroGrid{min-height:570px;display:grid;grid-template-columns:1fr .8fr;align-items:center;gap:30px}
-.num{font-size:9px;letter-spacing:2px;color:#9fc4ff;font-weight:800;margin-bottom:18px}
-h1{font-size:clamp(44px,7vw,78px);line-height:.94;letter-spacing:-3px}
-.hero h2{font-size:21px;margin:20px 0 10px}.hero p{max-width:540px;color:#c9d8eb;font-size:12px;line-height:1.8}
-.actions{display:flex;gap:9px;margin-top:23px}.btn{border:0;border-radius:10px;padding:12px 16px;font-size:9px;font-weight:900}.primary{background:#fff;color:#153462}.secondary{background:#ffffff14;color:#fff;border:1px solid #ffffff38}
-.visual{height:350px;display:grid;place-items:center}.math{width:280px;height:280px;border-radius:42px;background:#ffffff10;border:1px solid #ffffff30;display:grid;place-items:center;position:relative;box-shadow:0 25px 70px #0005}.main{font-size:48px;font-weight:900;z-index:2}.float{position:absolute;font-size:23px;font-weight:900;color:#d3e6ff}.a{top:30px;left:30px}.b{top:35px;right:30px}.c{bottom:30px;left:30px}.d{bottom:35px;right:30px}
-.arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:1px solid #ffffff40;border-radius:50%;background:#ffffff12;color:#fff;font-size:25px;z-index:3}.prev{left:12px}.next{right:12px}.dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:6px}.dot{width:8px;height:8px;border:0;border-radius:50%;background:#ffffff55}.dot.active{width:25px;border-radius:8px;background:#fff}
-.section{padding:65px 0}.tag{font-size:8px;letter-spacing:2px;color:#3474cf;font-weight:900;margin-bottom:9px}.title{font-size:40px;letter-spacing:-2px}.desc{max-width:620px;color:#71839b;font-size:11px;line-height:1.7;margin-top:8px}
-.curriculumGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:30px}.curCard{min-height:190px;border:0;border-radius:20px;padding:20px;text-align:left;color:#fff;position:relative;overflow:hidden;box-shadow:0 18px 40px #17386418;transition:.2s}.curCard:hover{transform:translateY(-5px)}.pak{background:linear-gradient(135deg,#087dff,#2148bd)}.gcse{background:linear-gradient(135deg,#8051ff,#3e2ba5)}.igcse{background:linear-gradient(135deg,#00a99c,#126b86)}.olevel{background:linear-gradient(135deg,#ff7c3d,#cc3e7d)}.curIcon{margin-top:22px;font-size:27px}.curCard h3{margin-top:10px;font-size:16px}.curCard p{font-size:8px;line-height:1.5;margin-top:5px;color:#ffffffd9}
-#pakistan{display:none;margin-top:35px}.dashTop{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}.back{border:0;background:#eaf2ff;color:#1768df;border-radius:9px;padding:9px 13px;font-size:8px;font-weight:900}
-.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.classBtn{background:#fff;border:1px solid #e0e9f5;border-radius:17px;padding:17px;text-align:left;min-height:130px;transition:.2s}.classBtn:hover,.classBtn.selected{border-color:#1768df;transform:translateY(-3px);box-shadow:0 12px 30px #1768df18}.classNo{font-size:31px;color:#d9e5f5;font-weight:900}.selected .classNo{color:#1768df}.classBtn strong{display:block;font-size:14px;margin-top:6px}.classBtn small{color:#7b8da5;font-size:8px}
-.resourceGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.resource{background:#fff;border:1px solid #e2eaf4;border-radius:17px;padding:17px;min-height:160px;position:relative}.icon{width:38px;height:38px;border-radius:11px;background:#eaf2ff;display:grid;place-items:center;font-size:17px;margin-bottom:12px}.resource h4{font-size:13px}.resource p{font-size:8px;color:#74869e;line-height:1.5;margin-top:5px}.open{position:absolute;bottom:13px;left:17px;border:0;background:#edf4ff;color:#1768df;border-radius:7px;padding:6px 9px;font-size:7px;font-weight:900}
-#detail{display:none;margin-top:25px;padding:22px;border-radius:20px;background:linear-gradient(135deg,#102f60,#176be6);color:#fff}.detailHead{display:flex;justify-content:space-between;align-items:center}.detailHead h3{font-size:21px}.close{border:1px solid #ffffff40;background:#ffffff15;color:#fff;border-radius:8px;padding:7px 10px;font-size:7px}.items{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.item{border:1px solid #ffffff30;background:#ffffff10;color:#fff;border-radius:10px;padding:13px;text-align:left;font-size:8px}.item:hover{background:#fff;color:#123262}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:28px}.info{background:#fff;border:1px solid #e2eaf4;border-radius:18px;padding:19px;min-height:145px}.info h3{font-size:14px}.info p{font-size:8px;color:#74869e;line-height:1.6;margin-top:6px}
-footer{background:#071a3d;color:#c6d3e5;padding:35px 0;font-size:8px;margin-top:20px}
-@media(max-width:850px){nav{display:none}.heroGrid{grid-template-columns:1fr;text-align:center;padding:40px 0 70px}.hero p{margin:auto}.actions{justify-content:center}.visual{height:220px}.math{width:190px;height:190px;border-radius:28px}.main{font-size:35px}.curriculumGrid,.resourceGrid,.cards{grid-template-columns:repeat(2,1fr)}.classes{grid-template-columns:repeat(2,1fr)}.items{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){header{padding:0 12px}.logo strong{font-size:10px}.logo small{font-size:5px}.hero,.slide,.heroGrid{min-height:610px}.hero h1{font-size:43px}.hero h2{font-size:15px}.hero p{font-size:10px}.visual{height:190px}.math{width:165px;height:165px}.float{font-size:15px}.curriculumGrid,.resourceGrid{gap:8px}.curCard{min-height:145px;padding:14px;border-radius:15px}.curIcon{margin-top:14px;font-size:20px}.curCard h3{font-size:12px}.curCard p{font-size:7px}.classes{gap:7px}.classBtn{min-height:105px;padding:13px}.classNo{font-size:25px}.classBtn strong{font-size:11px}.resource{min-height:140px;padding:13px}.resource h4{font-size:10px}.resource p{font-size:7px}.open{left:13px}.cards{grid-template-columns:repeat(2,1fr);gap:8px}.info{min-height:125px;padding:13px}.title{font-size:29px}.section{padding:48px 0}}
+
+:root{
+    --navy:#071A3D;
+    --navy2:#0B285C;
+    --blue:#1677FF;
+    --cyan:#00C6E8;
+    --violet:#7357FF;
+    --coral:#F0445E;
+    --white:#FFFFFF;
+    --light:#F5F8FC;
+    --text:#102B57;
+    --muted:#71819B;
+    --border:#E4EAF2;
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:var(--light);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    height:88px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    background:
+        rgba(255,255,255,.96);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid #e9edf3;
+
+    position:relative;
+    z-index:1000;
+
+    box-shadow:
+        0 5px 25px rgba(7,26,61,.07);
+}
+
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+}
+
+
+.logoMark{
+
+    width:52px;
+    height:52px;
+
+    border-radius:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-size:29px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 10px 28px
+        rgba(22,119,255,.25);
+}
+
+
+.logoText .small{
+
+    font-size:8px;
+
+    letter-spacing:2.5px;
+
+    color:var(--coral);
+
+    font-weight:900;
+}
+
+
+.logoText .big{
+
+    color:var(--navy);
+
+    font-size:17px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
+}
+
+
+.headerActions{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+}
+
+
+.circleBtn,
+.menuBtn{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+.circleBtn{
+
+    background:white;
+
+    border:2px solid var(--navy);
+
+    color:var(--navy);
+
+    font-size:20px;
+}
+
+
+.circleBtn:hover{
+
+    background:var(--navy);
+
+    color:white;
+
+    transform:translateY(-3px);
+}
+
+
+.menuBtn{
+
+    border:0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #EEF4FF,
+            #E3EBF9
+        );
+
+    color:var(--navy);
+
+    font-size:24px;
+}
+
+
+.menuBtn:hover{
+
+    background:var(--navy);
+
+    color:white;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.mobileMenu{
+
+    position:absolute;
+
+    top:88px;
+    right:5%;
+
+    width:270px;
+
+    padding:12px;
+
+    border-radius:
+        0 0 20px 20px;
+
+    background:white;
+
+    box-shadow:
+        0 20px 50px
+        rgba(7,26,61,.16);
+
+    display:none;
+}
+
+
+.mobileMenu.show{
+    display:block;
+}
+
+
+.mobileMenu a{
+
+    display:block;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    color:var(--navy);
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    font-size:13px;
+}
+
+
+.mobileMenu a:hover{
+
+    background:#EFF5FF;
+
+    color:var(--blue);
+}
+
+
+/* =========================
+   CTA BAR
+========================= */
+
+.quoteBar{
+
+    width:94%;
+    max-width:1450px;
+
+    min-height:70px;
+
+    margin:17px auto;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            #EDF2F8 0%,
+            #DDE6F2 14%,
+            var(--blue) 14%,
+            #1754B9 60%,
+            var(--violet) 100%
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(7,26,61,.14);
+}
+
+
+.quoteIcon{
+
+    width:15%;
+    min-width:100px;
+
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            white,
+            #DCE6F2
+        );
+}
+
+
+.quoteText{
+
+    flex:1;
+
+    text-align:center;
+
+    font-size:19px;
+
+    font-weight:900;
+
+    letter-spacing:.2px;
+}
+
+
+.quoteText span{
+    font-weight:400;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.heroSlider{
+
+    height:650px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+}
+
+
+/* =========================
+   SLIDE BACKGROUNDS
+========================= */
+
+.slide{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:scale(1.035);
+
+    transition:
+        opacity .8s ease,
+        transform 1.2s ease;
+}
+
+
+.slide.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:scale(1);
+}
+
+
+/* SLIDE 1 */
+
+.slide1{
+
+    background:
+
+        radial-gradient(
+            circle at 12% 25%,
+            rgba(0,198,232,.30),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 82% 75%,
+            rgba(22,119,255,.40),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            125deg,
+            #041332,
+            #09285C,
+            #0750A4
+        );
+}
+
+
+/* SLIDE 2 */
+
+.slide2{
+
+    background:
+
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(115,87,255,.42),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0,198,232,.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            125deg,
+            #100C32,
+            #252061,
+            #164E9B
+        );
+}
+
+
+/* SLIDE 3 */
+
+.slide3{
+
+    background:
+
+        radial-gradient(
+            circle at 18% 20%,
+            rgba(0,198,232,.34),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(22,119,255,.35),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            125deg,
+            #032C3A,
+            #075B70,
+            #074B92
+        );
+}
+
+
+/* SLIDE 4 */
+
+.slide4{
+
+    background:
+
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(240,68,94,.24),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(115,87,255,.35),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            125deg,
+            #100B32,
+            #29215D,
+            #071D55
+        );
+}
+
+
+/* =========================
+   BACKGROUND MATH
+========================= */
+
+.mathBG{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+
+.mathBG span{
+
+    position:absolute;
+
+    color:
+        rgba(255,255,255,.075);
+
+    font-weight:900;
+
+    animation:
+        mathFloat 9s
+        infinite ease-in-out;
+}
+
+
+.mathBG span:nth-child(1){
+
+    left:6%;
+    top:15%;
+
+    font-size:80px;
+}
+
+
+.mathBG span:nth-child(2){
+
+    right:8%;
+    top:10%;
+
+    font-size:100px;
+
+    animation-delay:2s;
+}
+
+
+.mathBG span:nth-child(3){
+
+    left:30%;
+    bottom:5%;
+
+    font-size:65px;
+
+    animation-delay:4s;
+}
+
+
+.mathBG span:nth-child(4){
+
+    right:30%;
+    bottom:10%;
+
+    font-size:80px;
+
+    animation-delay:1s;
+}
+
+
+.mathBG span:nth-child(5){
+
+    left:55%;
+    top:8%;
+
+    font-size:45px;
+
+    animation-delay:3s;
+}
+
+
+@keyframes mathFloat{
+
+    50%{
+        transform:
+            translateY(-22px)
+            rotate(8deg);
+    }
+
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.heroInner{
+
+    width:100%;
+    max-width:1450px;
+
+    height:100%;
+
+    margin:auto;
+
+    padding:
+        50px 7%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    z-index:3;
+}
+
+
+.heroCopy{
+    width:56%;
+}
+
+
+.slideNumber{
+
+    color:#73E9FF;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+}
+
+
+.heroCopy h1{
+
+    font-size:
+        clamp(43px,6vw,77px);
+
+    line-height:.94;
+
+    letter-spacing:-3px;
+
+    margin-bottom:22px;
+
+    text-shadow:
+        0 8px 25px
+        rgba(0,0,0,.18);
+}
+
+
+.heroCopy h1 span{
+
+    color:#55DFFF;
+}
+
+
+.heroCopy h2{
+
+    font-size:25px;
+
+    margin-bottom:15px;
+}
+
+
+.heroCopy p{
+
+    max-width:650px;
+
+    color:#D9ECFF;
+
+    font-size:15px;
+
+    line-height:1.85;
+}
+
+
+.heroButtons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:28px;
+}
+
+
+.primaryBtn,
+.secondaryBtn{
+
+    padding:
+        14px 21px;
+
+    border-radius:9px;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    transition:.3s;
+}
+
+
+.primaryBtn{
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--blue),
+            #3B55FF
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(22,119,255,.32);
+}
+
+
+.secondaryBtn{
+
+    color:white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.28);
+
+    background:
+        rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.primaryBtn:hover,
+.secondaryBtn:hover{
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================
+   VISUAL PANEL
+========================= */
+
+.visualArea{
+
+    width:40%;
+
+    height:430px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+.mathPanel{
+
+    width:350px;
+    min-height:350px;
+
+    border-radius:32px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.16),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0,0,0,.28),
+
+        inset
+        0 1px
+        rgba(255,255,255,.30);
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.glowCircle{
+
+    width:215px;
+    height:215px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 25%,
+            #FFFFFF 0%,
+            #8CEFFF 8%,
+            #1677FF 43%,
+            #071A3D 78%
+        );
+
+    box-shadow:
+
+        0 0 70px
+        rgba(0,198,232,.42),
+
+        inset
+        -25px -25px 35px
+        rgba(0,0,0,.28);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.bigFormula{
+
+    color:white;
+
+    font-size:75px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 6px 15px
+        rgba(0,0,0,.35);
+}
+
+
+.formula{
+
+    position:absolute;
+
+    color:white;
+
+    font-weight:900;
+
+    text-shadow:
+        0 4px 12px
+        rgba(0,0,0,.4);
+}
+
+
+.formula.a{
+
+    top:38px;
+    left:42px;
+
+    font-size:35px;
+}
+
+
+.formula.b{
+
+    top:62px;
+    right:35px;
+
+    font-size:29px;
+}
+
+
+.formula.c{
+
+    bottom:42px;
+    left:45px;
+
+    font-size:30px;
+}
+
+
+.formula.d{
+
+    bottom:55px;
+    right:42px;
+
+    font-size:27px;
+}
+
+
+.miniCard{
+
+    position:absolute;
+
+    padding:
+        11px 14px;
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size:9px;
+
+    font-weight:900;
+}
+
+
+.miniCard.one{
+
+    left:-25px;
+    top:80px;
+}
+
+
+.miniCard.two{
+
+    right:-25px;
+    bottom:75px;
+}
+
+
+/* =========================
+   ARROWS
+========================= */
+
+.arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.30);
+
+    background:
+        rgba(3,23,63,.55);
+
+    backdrop-filter:
+        blur(12px);
+
+    color:white;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    transition:.3s;
+}
+
+
+.arrow:hover{
+
+    background:
+        var(--blue);
+
+    border-color:
+        var(--blue);
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+.arrow.left{
+    left:22px;
+}
+
+
+.arrow.right{
+    right:22px;
+}
+
+
+/* =========================
+   SLIDER CONTROLS
+========================= */
+
+.sliderControls{
+
+    position:absolute;
+
+    z-index:15;
+
+    bottom:28px;
+
+    left:7%;
+    right:7%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+
+.progressLine{
+
+    height:4px;
+
+    flex:1;
+
+    background:
+        rgba(255,255,255,.22);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+
+.progressLine span{
+
+    display:block;
+
+    width:0%;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--blue)
+        );
+}
+
+
+.progressLine.active span{
+
+    animation:
+        progress 4.5s linear;
+}
+
+
+@keyframes progress{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+
+
+.slideCounter{
+
+    min-width:60px;
+
+    text-align:right;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section{
+
+    padding:
+        80px 5%;
+}
+
+
+.container{
+
+    max-width:1450px;
+
+    margin:auto;
+}
+
+
+.sectionIntro{
+
+    max-width:760px;
+
+    margin-bottom:42px;
+}
+
+
+.sectionTag{
+
+    color:
+        var(--blue);
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    font-weight:900;
+
+    margin-bottom:11px;
+}
+
+
+.sectionIntro h2{
+
+    font-size:
+        clamp(35px,5vw,58px);
+
+    line-height:1;
+
+    letter-spacing:-2px;
+
+    color:var(--navy);
+
+    margin-bottom:15px;
+}
+
+
+.sectionIntro p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   CURRICULUM
+========================= */
+
+.curriculum{
+
+    background:
+        linear-gradient(
+            180deg,
+            #F5F8FC,
+            #EDF3FA
+        );
+}
+
+
+.curriculumGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+
+.curriculumCard{
+
+    min-height:285px;
+
+    padding:27px;
+
+    border-radius:24px;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+
+.curriculumCard:hover{
+
+    transform:
+        translateY(-9px);
+
+    box-shadow:
+        0 25px 50px
+        rgba(7,26,61,.16);
+}
+
+
+/* NEW PROFESSIONAL GRADIENTS */
+
+.pakistan{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #071A3D,
+            #0B4DA2,
+            #00AFCB
+        );
+}
+
+
+.gcse{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #111A4E,
+            #3152C9,
+            #7357FF
+        );
+}
+
+
+.igcse{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #053844,
+            #087C91,
+            #00C6E8
+        );
+}
+
+
+.olevel{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #24164D,
+            #5732A5,
+            #8D62FF
+        );
+}
+
+
+.cardNo{
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    font-weight:900;
+}
+
+
+.cardIcon{
+
+    margin-top:32px;
+
+    width:57px;
+    height:57px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        rgba(255,255,255,.11);
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    font-size:27px;
+}
+
+
+.curriculumCard h3{
+
+    margin-top:18px;
+
+    font-size:22px;
+}
+
+
+.curriculumCard p{
+
+    margin-top:8px;
+
+    color:
+        rgba(255,255,255,.78);
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+.cardArrow{
+
+    position:absolute;
+
+    right:20px;
+    bottom:20px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.13);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* =========================
+   RESOURCE SECTION
+========================= */
+
+.resources{
+
+    background:white;
+}
+
+
+.resourceGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+
+.resourceCard{
+
+    min-height:185px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    background:white;
+
+    transition:.3s;
+}
+
+
+.resourceCard:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        #C9DBF6;
+
+    box-shadow:
+        0 20px 45px
+        rgba(7,26,61,.08);
+}
+
+
+.resourceIcon{
+
+    width:50px;
+    height:50px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #EEF5FF,
+            #E6F9FF
+        );
+
+    color:var(--blue);
+
+    font-size:22px;
+
+    margin-bottom:16px;
+}
+
+
+.resourceCard h3{
+
+    color:var(--navy);
+
+    font-size:17px;
+
+    margin-bottom:7px;
+}
+
+
+.resourceCard p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   DARK SECTION
+========================= */
+
+.darkSection{
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(22,119,255,.22),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #061532,
+            #071F4D,
+            #092C69
+        );
+
+    color:white;
+}
+
+
+.darkSection .sectionIntro h2{
+
+    color:white;
+}
+
+
+.darkSection .sectionIntro p{
+
+    color:#B8CAE7;
+}
+
+
+.paperGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+
+.paperCard{
+
+    min-height:220px;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:.3s;
+}
+
+
+.paperCard:hover{
+
+    transform:
+        translateY(-6px);
+
+    background:
+        rgba(255,255,255,.085);
+}
+
+
+.paperCard small{
+
+    color:#68E8FF;
+
+    font-weight:900;
+
+    font-size:9px;
+
+    letter-spacing:1.5px;
+}
+
+
+.paperCard h3{
+
+    font-size:25px;
+
+    margin:
+        20px 0 9px;
+}
+
+
+.paperCard p{
+
+    color:#AABDDC;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+.paperCard a{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    color:white;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-decoration:none;
+}
+
+
+/* =========================
+   TOPICS
+========================= */
+
+.topicGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+
+.topicCard{
+
+    min-height:210px;
+
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:21px;
+
+    padding:26px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+
+.topicCard:hover{
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(7,26,61,.08);
+}
+
+
+.topicFormula{
+
+    position:absolute;
+
+    right:18px;
+    top:10px;
+
+    font-size:65px;
+
+    font-weight:900;
+
+    color:#EDF2F8;
+}
+
+
+.topicCard small{
+
+    color:
+        var(--blue);
+
+    font-size:9px;
+
+    letter-spacing:1.5px;
+
+    font-weight:900;
+}
+
+
+.topicCard h3{
+
+    margin-top:40px;
+
+    font-size:22px;
+
+    color:var(--navy);
+}
+
+
+.topicCard p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    margin-top:7px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:
+        #040F2B;
+
+    color:white;
+
+    padding:
+        55px 5% 20px;
+}
+
+
+.footerGrid{
+
+    max-width:1450px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap:40px;
+}
+
+
+footer h4{
+
+    font-size:12px;
+
+    margin-bottom:15px;
+}
+
+
+footer a{
+
+    display:block;
+
+    color:#8799BA;
+
+    font-size:11px;
+
+    margin-bottom:9px;
+
+    text-decoration:none;
+}
+
+
+footer a:hover{
+
+    color:#55DFFF;
+}
+
+
+footer p{
+
+    color:#8193B7;
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+
+.footerBottom{
+
+    max-width:1450px;
+
+    margin:
+        40px auto 0;
+
+    padding-top:18px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#667BA1;
+
+    font-size:10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .heroSlider{
+        height:700px;
+    }
+
+    .heroInner{
+        padding:45px 6%;
+    }
+
+    .visualArea{
+        width:38%;
+    }
+
+    .mathPanel{
+
+        width:300px;
+        height:300px;
+    }
+
+    .curriculumGrid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .resourceGrid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:800px){
+
+    .header{
+        height:78px;
+    }
+
+    .mobileMenu{
+        top:78px;
+    }
+
+    .circleBtn{
+        display:none;
+    }
+
+    .heroSlider{
+        height:780px;
+    }
+
+    .heroInner{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        justify-content:center;
+
+        padding:
+            40px 7% 90px;
+    }
+
+    .heroCopy{
+        width:100%;
+    }
+
+    .heroCopy h1{
+        font-size:52px;
+    }
+
+    .heroCopy p{
+        margin:auto;
+    }
+
+    .heroButtons{
+        justify-content:center;
+    }
+
+    .visualArea{
+
+        width:100%;
+
+        height:300px;
+
+        margin-top:20px;
+    }
+
+    .mathPanel{
+
+        width:260px;
+        height:260px;
+
+        min-height:260px;
+    }
+
+    .glowCircle{
+
+        width:160px;
+        height:160px;
+    }
+
+    .bigFormula{
+        font-size:55px;
+    }
+
+    .miniCard.one{
+        left:8%;
+    }
+
+    .miniCard.two{
+        right:8%;
+    }
+
+    .arrow{
+
+        width:45px;
+        height:45px;
+
+        font-size:25px;
+    }
+
+    .arrow.left{
+        left:10px;
+    }
+
+    .arrow.right{
+        right:10px;
+    }
+
+    .paperGrid,
+    .topicGrid{
+
+        grid-template-columns:1fr;
+    }
+
+    .footerGrid{
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+
+
+@media(max-width:560px){
+
+    .logoMark{
+
+        width:45px;
+        height:45px;
+    }
+
+    .logoText .big{
+        font-size:12px;
+    }
+
+    .logoText .small{
+        font-size:6px;
+    }
+
+    .menuBtn{
+
+        width:47px;
+        height:47px;
+    }
+
+    .quoteBar{
+        min-height:58px;
+    }
+
+    .quoteIcon{
+
+        width:75px;
+        min-width:75px;
+
+        height:58px;
+    }
+
+    .quoteText{
+        font-size:11px;
+    }
+
+    .quoteText span{
+        display:none;
+    }
+
+    .heroSlider{
+        height:760px;
+    }
+
+    .heroCopy h1{
+
+        font-size:45px;
+
+        letter-spacing:-2px;
+    }
+
+    .heroCopy h2{
+        font-size:19px;
+    }
+
+    .heroCopy p{
+        font-size:13px;
+    }
+
+    .heroButtons{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .primaryBtn,
+    .secondaryBtn{
+
+        width:210px;
+    }
+
+    .visualArea{
+        margin-top:10px;
+    }
+
+    .mathPanel{
+
+        width:225px;
+        height:225px;
+    }
+
+    .glowCircle{
+
+        width:140px;
+        height:140px;
+    }
+
+    .bigFormula{
+        font-size:47px;
+    }
+
+    .formula.a{
+
+        font-size:25px;
+        left:25px;
+    }
+
+    .formula.b{
+
+        font-size:22px;
+        right:22px;
+    }
+
+    .formula.c{
+
+        font-size:22px;
+        left:27px;
+    }
+
+    .formula.d{
+
+        font-size:20px;
+        right:25px;
+    }
+
+    .miniCard{
+        font-size:8px;
+    }
+
+    .miniCard.one{
+        left:0;
+    }
+
+    .miniCard.two{
+        right:0;
+    }
+
+    .sliderControls{
+
+        left:6%;
+        right:6%;
+    }
+
+    .section{
+
+        padding:
+            65px 5%;
+    }
+
+    .curriculumGrid,
+    .resourceGrid{
+
+        grid-template-columns:1fr;
+    }
+
+    .footerGrid{
+
+        grid-template-columns:1fr;
+    }
+
+    .footerBottom{
+
+        flex-direction:column;
+
+        gap:8px;
+    }
+}
+
 </style>
 </head>
+
+
 <body>
 
-<header>
-  <div class="logo"><div class="logoIcon">∑</div><div><small>PREMIUM MATH EDUCATION</small><strong>ONLINE MATH ACADEMY</strong></div></div>
-  <nav><a href="#curriculum">Curriculum</a><a href="#resources">Resources</a><a href="#papers">Past Papers</a></nav>
+
+<!-- HEADER -->
+
+<header class="header">
+
+<a href="#" class="logo">
+
+<div class="logoMark">∑</div>
+
+<div class="logoText">
+
+<div class="small">
+LEARN • EXPLORE • MASTER
+</div>
+
+<div class="big">
+ONLINE MATH ACADEMY
+</div>
+
+</div>
+
+</a>
+
+
+<div class="headerActions">
+
+<button class="circleBtn">✉</button>
+
+<button class="circleBtn">☎</button>
+
+<button class="menuBtn" id="menuBtn">
+☰
+</button>
+
+</div>
+
+
+<nav class="mobileMenu" id="mobileMenu">
+
+<a href="#curriculum">
+Curriculum
+</a>
+
+<a href="#resources">
+Resources
+</a>
+
+<a href="#papers">
+Past Papers
+</a>
+
+<a href="#topics">
+Mathematics Topics
+</a>
+
+</nav>
+
 </header>
 
-<section class="hero">
-  <div class="slide active"><div class="container heroGrid"><div><div class="num">01 / 06 — PAKISTAN CURRICULUM</div><h1>Master Math<br>Your Way.</h1><h2>Class 9 • 10 • 1st Year • 2nd Year</h2><p>Complete mathematics learning with notes, MCQs, quizzes, past papers and interactive practice.</p><div class="actions"><button class="btn primary" onclick="openPakistan()">EXPLORE PAKISTAN →</button><a class="btn secondary" href="#curriculum">START LEARNING</a></div></div><div class="visual"><div class="math"><span class="float a">x²</span><span class="float b">π</span><span class="float c">∑</span><span class="float d">√x</span><span class="main">9 → 12</span></div></div></div></div>
-  <div class="slide"><div class="container heroGrid"><div><div class="num">02 / 06 — GCSE</div><h1>GCSE Math<br>Made Clear.</h1><h2>Foundation • Higher</h2><p>Build strong foundations through clear lessons, examples, practice and exam preparation.</p><div class="actions"><button class="btn primary" onclick="scrollCurriculum()">EXPLORE GCSE →</button></div></div><div class="visual"><div class="math"><span class="float a">y=mx+c</span><span class="float b">π</span><span class="float c">x²</span><span class="float d">△</span><span class="main">GCSE</span></div></div></div></div>
-  <div class="slide"><div class="container heroGrid"><div><div class="num">03 / 06 — IGCSE</div><h1>Understand.<br>Don't Memorize.</h1><h2>Core • Extended</h2><p>Visual explanations, worked examples and exam preparation for IGCSE Mathematics.</p><div class="actions"><button class="btn primary" onclick="scrollCurriculum()">EXPLORE IGCSE →</button></div></div><div class="visual"><div class="math"><span class="float a">sin θ</span><span class="float b">cos θ</span><span class="float c">∫</span><span class="float d">√</span><span class="main">IGCSE</span></div></div></div></div>
-  <div class="slide"><div class="container heroGrid"><div><div class="num">04 / 06 — O LEVEL</div><h1>O Level<br>Mathematics.</h1><h2>Learn • Practice • Excel</h2><p>Topic-wise notes, solved questions, exam strategies and past papers.</p><div class="actions"><button class="btn primary" onclick="scrollCurriculum()">EXPLORE O LEVEL →</button></div></div><div class="visual"><div class="math"><span class="float a">f(x)</span><span class="float b">∑</span><span class="float c">θ</span><span class="float d">∞</span><span class="main">O LEVEL</span></div></div></div></div>
-  <div class="slide"><div class="container heroGrid"><div><div class="num">05 / 06 — A LEVEL</div><h1>Think Beyond<br>Numbers.</h1><h2>Advanced Mathematics</h2><p>Explore calculus, functions, trigonometry, statistics and advanced concepts.</p><div class="actions"><button class="btn primary" onclick="scrollCurriculum()">EXPLORE A LEVEL →</button></div></div><div class="visual"><div class="math"><span class="float a">d/dx</span><span class="float b">∫</span><span class="float c">lim</span><span class="float d">∞</span><span class="main">∫f(x)dx</span></div></div></div></div>
-  <div class="slide"><div class="container heroGrid"><div><div class="num">06 / 06 — EXAM PREPARATION</div><h1>Practice.<br>Improve.</h1><h2>Past Papers • MCQs • Quizzes</h2><p>Prepare smarter with focused exam practice and detailed mathematical solutions.</p><div class="actions"><a class="btn primary" href="#papers">VIEW PAST PAPERS →</a></div></div><div class="visual"><div class="math"><span class="float a">✓</span><span class="float b">A+</span><span class="float c">100%</span><span class="float d">★</span><span class="main">A+</span></div></div></div></div>
-  <button class="arrow prev" onclick="changeSlide(-1)">‹</button><button class="arrow next" onclick="changeSlide(1)">›</button>
-  <div class="dots" id="dots"></div>
+
+
+<!-- CTA -->
+
+<div class="quoteBar"
+onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})">
+
+<div class="quoteIcon">
+🧮
+</div>
+
+<div class="quoteText">
+
+CHOOSE YOUR CURRICULUM
+
+<span>
+&nbsp; | &nbsp; START LEARNING MATHEMATICS
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- HERO -->
+
+<section class="heroSlider" id="heroSlider">
+
+
+<!-- SLIDE 1 -->
+
+<div class="slide slide1 active">
+
+<div class="mathBG">
+
+<span>∑</span>
+<span>π</span>
+<span>√x</span>
+<span>∫</span>
+<span>x²</span>
+
+</div>
+
+
+<div class="heroInner">
+
+
+<div class="heroCopy">
+
+<div class="slideNumber">
+01 / PAKISTAN CURRICULUM
+</div>
+
+
+<h1>
+
+Mathematics
+
+<span>
+Made Simple.
+</span>
+
+</h1>
+
+
+<h2>
+Class 9 • Class 10 • 1st Year • 2nd Year
+</h2>
+
+
+<p>
+
+Learn mathematics through clear explanations,
+visual concepts, solved questions, practice,
+MCQs and examination preparation.
+
+</p>
+
+
+<div class="heroButtons">
+
+<a href="#curriculum"
+class="primaryBtn">
+
+EXPLORE PAKISTAN CURRICULUM →
+
+</a>
+
+<a href="#resources"
+class="secondaryBtn">
+
+VIEW RESOURCES
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="visualArea">
+
+<div class="mathPanel">
+
+<div class="formula a">
+x²
+</div>
+
+<div class="formula b">
+√x
+</div>
+
+<div class="formula c">
+2x + 5
+</div>
+
+<div class="formula d">
+πr²
+</div>
+
+
+<div class="glowCircle">
+
+<div class="bigFormula">
+∑
+</div>
+
+</div>
+
+
+<div class="miniCard one">
+STEP-BY-STEP
+</div>
+
+<div class="miniCard two">
+SOLVED QUESTIONS
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SLIDE 2 -->
+
+<div class="slide slide2">
+
+<div class="mathBG">
+
+<span>f(x)</span>
+<span>△</span>
+<span>π</span>
+<span>sin θ</span>
+<span>∞</span>
+
+</div>
+
+
+<div class="heroInner">
+
+<div class="heroCopy">
+
+<div class="slideNumber">
+02 / GCSE
+</div>
+
+<h1>
+
+Master
+
+<span>
+GCSE Maths.
+</span>
+
+</h1>
+
+<h2>
+Foundation • Higher
+</h2>
+
+<p>
+
+Build strong mathematical foundations,
+practise exam-style questions and
+understand concepts instead of simply
+memorising formulas.
+
+</p>
+
+<div class="heroButtons">
+
+<a href="#curriculum"
+class="primaryBtn">
+EXPLORE GCSE →
+</a>
+
+<a href="#papers"
+class="secondaryBtn">
+PAST PAPERS
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visualArea">
+
+<div class="mathPanel">
+
+<div class="formula a">
+f(x)
+</div>
+
+<div class="formula b">
+△ABC
+</div>
+
+<div class="formula c">
+sin θ
+</div>
+
+<div class="formula d">
+a²+b²
+</div>
+
+<div class="glowCircle">
+
+<div class="bigFormula">
+x²
+</div>
+
+</div>
+
+<div class="miniCard one">
+FOUNDATION
+</div>
+
+<div class="miniCard two">
+HIGHER
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SLIDE 3 -->
+
+<div class="slide slide3">
+
+<div class="mathBG">
+
+<span>∫</span>
+<span>dx</span>
+<span>σ</span>
+<span>μ</span>
+<span>∞</span>
+
+</div>
+
+
+<div class="heroInner">
+
+<div class="heroCopy">
+
+<div class="slideNumber">
+03 / IGCSE
+</div>
+
+<h1>
+
+Think.
+
+<span>
+Calculate.
+</span>
+
+</h1>
+
+<h2>
+Core • Extended
+</h2>
+
+<p>
+
+Prepare for IGCSE Mathematics with
+structured learning, topic practice,
+past papers and visual explanations
+designed for deeper understanding.
+
+</p>
+
+<div class="heroButtons">
+
+<a href="#curriculum"
+class="primaryBtn">
+EXPLORE IGCSE →
+</a>
+
+<a href="#papers"
+class="secondaryBtn">
+EXAM CENTRE
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visualArea">
+
+<div class="mathPanel">
+
+<div class="formula a">
+∫x dx
+</div>
+
+<div class="formula b">
+σ²
+</div>
+
+<div class="formula c">
+dy/dx
+</div>
+
+<div class="formula d">
+P(A)
+</div>
+
+<div class="glowCircle">
+
+<div class="bigFormula">
+π
+</div>
+
+</div>
+
+<div class="miniCard one">
+CORE
+</div>
+
+<div class="miniCard two">
+EXTENDED
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SLIDE 4 -->
+
+<div class="slide slide4">
+
+<div class="mathBG">
+
+<span>∫</span>
+<span>eˣ</span>
+<span>π</span>
+<span>θ</span>
+<span>Σ</span>
+
+</div>
+
+
+<div class="heroInner">
+
+<div class="heroCopy">
+
+<div class="slideNumber">
+04 / O LEVEL & A LEVEL
+</div>
+
+<h1>
+
+Go Beyond
+
+<span>
+the Formula.
+</span>
+
+</h1>
+
+<h2>
+O Level • A Level Mathematics
+</h2>
+
+<p>
+
+Develop advanced mathematical thinking
+through algebra, trigonometry, calculus,
+statistics and problem-solving.
+
+</p>
+
+<div class="heroButtons">
+
+<a href="#curriculum"
+class="primaryBtn">
+EXPLORE O / A LEVEL →
+</a>
+
+<a href="#topics"
+class="secondaryBtn">
+EXPLORE TOPICS
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visualArea">
+
+<div class="mathPanel">
+
+<div class="formula a">
+eˣ
+</div>
+
+<div class="formula b">
+dy/dx
+</div>
+
+<div class="formula c">
+∫f(x)dx
+</div>
+
+<div class="formula d">
+θ
+</div>
+
+<div class="glowCircle">
+
+<div class="bigFormula">
+∫
+</div>
+
+</div>
+
+<div class="miniCard one">
+O LEVEL
+</div>
+
+<div class="miniCard two">
+A LEVEL
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ARROWS -->
+
+<button class="arrow left" id="prevBtn">
+‹
+</button>
+
+<button class="arrow right" id="nextBtn">
+›
+</button>
+
+
+
+<!-- PROGRESS -->
+
+<div class="sliderControls">
+
+<div class="progressLine active"
+data-slide="0">
+<span></span>
+</div>
+
+<div class="progressLine"
+data-slide="1">
+<span></span>
+</div>
+
+<div class="progressLine"
+data-slide="2">
+<span></span>
+</div>
+
+<div class="progressLine"
+data-slide="3">
+<span></span>
+</div>
+
+<div class="slideCounter">
+
+<span id="currentSlide">
+01
+</span>
+
+/ 04
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section" id="curriculum">
+
+
+<!-- CURRICULUM -->
+
+<section class="section curriculum"
+id="curriculum">
+
 <div class="container">
-<div class="tag">01 / CHOOSE YOUR CURRICULUM</div><h2 class="title">Choose your curriculum.</h2><p class="desc">Select your curriculum and continue into a complete mathematics learning environment.</p>
-<div class="curriculumGrid" id="mainCurriculum">
-<button class="curCard pak" onclick="openPakistan()"><div>01 / PAKISTAN</div><div class="curIcon">🇵🇰</div><h3>Pakistan Curriculum</h3><p>Class 9, Class 10, 1st Year and 2nd Year.</p></button>
-<button class="curCard gcse" onclick="alert('GCSE pathway is ready to be connected.')"><div>02 / INTERNATIONAL</div><div class="curIcon">x²</div><h3>GCSE</h3><p>Foundation and Higher mathematics.</p></button>
-<button class="curCard igcse" onclick="alert('IGCSE pathway is ready to be connected.')"><div>03 / CAMBRIDGE</div><div class="curIcon">π</div><h3>IGCSE</h3><p>Core and Extended mathematics.</p></button>
-<button class="curCard olevel" onclick="alert('O Level / A Level pathway is ready to be connected.')"><div>04 / CAMBRIDGE</div><div class="curIcon">∫</div><h3>O Level / A Level</h3><p>Advanced mathematics learning.</p></button>
+
+<div class="sectionIntro">
+
+<div class="sectionTag">
+01 / CHOOSE YOUR PATH
 </div>
 
-<div id="pakistan">
-<div class="dashTop"><div><div class="tag">PAKISTAN CURRICULUM</div><h2 class="title">Select Your Class</h2><p class="desc">Choose a class to access its mathematics resources.</p></div><button class="back" onclick="closePakistan()">← BACK</button></div>
-<div class="classes">
-<button class="classBtn" onclick="selectClass(this,'Class 9')"><div class="classNo">09</div><strong>Class 9</strong><small>Mathematics</small></button>
-<button class="classBtn" onclick="selectClass(this,'Class 10')"><div class="classNo">10</div><strong>Class 10</strong><small>Mathematics</small></button>
-<button class="classBtn" onclick="selectClass(this,'1st Year')"><div class="classNo">11</div><strong>1st Year</strong><small>Mathematics</small></button>
-<button class="classBtn" onclick="selectClass(this,'2nd Year')"><div class="classNo">12</div><strong>2nd Year</strong><small>Mathematics</small></button>
+<h2>
+Choose your curriculum.
+</h2>
+
+<p>
+Select your curriculum and explore
+the mathematics resources designed
+for your level.
+</p>
+
 </div>
-<div class="resourceGrid" id="resourceGrid"></div>
-<div id="detail"><div class="detailHead"><h3 id="detailTitle"></h3><button class="close" onclick="closeDetail()">CLOSE</button></div><div class="items" id="items"></div></div>
+
+
+<div class="curriculumGrid">
+
+
+<div class="curriculumCard pakistan">
+
+<div class="cardNo">
+01 / PAKISTAN
 </div>
+
+<div class="cardIcon">
+🇵🇰
 </div>
+
+<h3>
+Pakistan Curriculum
+</h3>
+
+<p>
+Class 9, Class 10, 1st Year
+and 2nd Year mathematics.
+</p>
+
+<div class="cardArrow">
+→
+</div>
+
+</div>
+
+
+
+<div class="curriculumCard gcse">
+
+<div class="cardNo">
+02 / GCSE
+</div>
+
+<div class="cardIcon">
+🇬🇧
+</div>
+
+<h3>
+GCSE
+</h3>
+
+<p>
+Foundation and Higher
+mathematics pathways.
+</p>
+
+<div class="cardArrow">
+→
+</div>
+
+</div>
+
+
+
+<div class="curriculumCard igcse">
+
+<div class="cardNo">
+03 / IGCSE
+</div>
+
+<div class="cardIcon">
+🌍
+</div>
+
+<h3>
+IGCSE
+</h3>
+
+<p>
+Core and Extended
+mathematics preparation.
+</p>
+
+<div class="cardArrow">
+→
+</div>
+
+</div>
+
+
+
+<div class="curriculumCard olevel">
+
+<div class="cardNo">
+04 / CAMBRIDGE
+</div>
+
+<div class="cardIcon">
+📐
+</div>
+
+<h3>
+O Level / A Level
+</h3>
+
+<p>
+Advanced mathematics
+learning and preparation.
+</p>
+
+<div class="cardArrow">
+→
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section" id="resources"><div class="container"><div class="tag">02 / LEARNING HUB</div><h2 class="title">Everything you need.</h2><p class="desc">One place for notes, practice, videos, quizzes and mathematics tools.</p><div class="cards"><div class="info"><h3>📚 Notes & Lessons</h3><p>Structured mathematics notes and chapter-wise lessons.</p></div><div class="info"><h3>📝 MCQs</h3><p>Topic-wise multiple choice questions and practice.</p></div><div class="info"><h3>🎯 Quizzes</h3><p>Interactive quizzes with instant results.</p></div><div class="info"><h3>🧮 Math Tools</h3><p>Calculators, graphs and visualizers.</p></div></div></div></section>
 
-<section class="section" id="papers" style="background:#edf4fb"><div class="container"><div class="tag">03 / EXAM PREPARATION</div><h2 class="title">Past Papers.</h2><p class="desc">Practice real examination questions and improve your preparation.</p><div class="cards"><div class="info"><h3>📄 Board Past Papers</h3><p>Previous examination papers for Pakistan boards.</p></div><div class="info"><h3>📋 Pairing Schemes</h3><p>Prepare according to exam patterns.</p></div><div class="info"><h3>⭐ Important Questions</h3><p>Focus on high-priority questions.</p></div><div class="info"><h3>✓ Solved Papers</h3><p>Understand solutions step by step.</p></div></div></div></section>
 
-<footer><div class="container">© 2026 Online Math Academy — Learn Mathematics. Build Confidence.</div></footer>
+<!-- RESOURCES -->
+
+<section class="section resources"
+id="resources">
+
+<div class="container">
+
+<div class="sectionIntro">
+
+<div class="sectionTag">
+02 / LEARNING RESOURCES
+</div>
+
+<h2>
+Everything you need to learn.
+</h2>
+
+<p>
+Notes, past papers, MCQs, solved questions,
+practice and interactive learning.
+</p>
+
+</div>
+
+
+<div class="resourceGrid">
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+📚
+</div>
+
+<h3>
+Chapter Notes
+</h3>
+
+<p>
+Clear and organised mathematics notes.
+</p>
+
+</div>
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+📄
+</div>
+
+<h3>
+Past Papers
+</h3>
+
+<p>
+Organised papers by curriculum and year.
+</p>
+
+</div>
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+✏️
+</div>
+
+<h3>
+Practice Questions
+</h3>
+
+<p>
+Topic-wise practice for stronger concepts.
+</p>
+
+</div>
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+✓
+</div>
+
+<h3>
+MCQs & Quizzes
+</h3>
+
+<p>
+Interactive questions and instant feedback.
+</p>
+
+</div>
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+⭐
+</div>
+
+<h3>
+Important Questions
+</h3>
+
+<p>
+Focus on important examination concepts.
+</p>
+
+</div>
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+🔍
+</div>
+
+<h3>
+Solved Questions
+</h3>
+
+<p>
+Step-by-step mathematical solutions.
+</p>
+
+</div>
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+📖
+</div>
+
+<h3>
+Books & Material
+</h3>
+
+<p>
+Mathematics books and supporting material.
+</p>
+
+</div>
+
+
+<div class="resourceCard">
+
+<div class="resourceIcon">
+🎮
+</div>
+
+<h3>
+Math Games
+</h3>
+
+<p>
+Learn mathematics through interactive games.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PAST PAPERS -->
+
+<section class="section darkSection"
+id="papers">
+
+<div class="container">
+
+<div class="sectionIntro">
+
+<div class="sectionTag">
+03 / EXAMINATION CENTRE
+</div>
+
+<h2>
+Past papers. Practice. Confidence.
+</h2>
+
+<p>
+Prepare intelligently with structured
+mathematics examination resources.
+</p>
+
+</div>
+
+
+<div class="paperGrid">
+
+
+<div class="paperCard">
+
+<small>
+PAKISTAN CURRICULUM
+</small>
+
+<h3>
+Class 9 – 12
+</h3>
+
+<p>
+Board examination papers,
+sessions and years.
+</p>
+
+<a href="#">
+EXPLORE PAPERS →
+</a>
+
+</div>
+
+
+<div class="paperCard">
+
+<small>
+CAMBRIDGE
+</small>
+
+<h3>
+IGCSE / O Level
+</h3>
+
+<p>
+Core, Extended and examination practice.
+</p>
+
+<a href="#">
+EXPLORE PAPERS →
+</a>
+
+</div>
+
+
+<div class="paperCard">
+
+<small>
+INTERNATIONAL
+</small>
+
+<h3>
+GCSE / A Level
+</h3>
+
+<p>
+Structured mathematics examination
+preparation.
+</p>
+
+<a href="#">
+EXPLORE PAPERS →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- TOPICS -->
+
+<section class="section"
+id="topics">
+
+<div class="container">
+
+<div class="sectionIntro">
+
+<div class="sectionTag">
+04 / EXPLORE MATHEMATICS
+</div>
+
+<h2>
+Mathematics, beautifully organised.
+</h2>
+
+<p>
+Explore mathematics from numbers
+to advanced calculus.
+</p>
+
+</div>
+
+
+<div class="topicGrid">
+
+
+<div class="topicCard">
+
+<div class="topicFormula">
+x²
+</div>
+
+<small>
+ALGEBRA
+</small>
+
+<h3>
+Algebra
+</h3>
+
+<p>
+Expressions, equations,
+factorisation and identities.
+</p>
+
+</div>
+
+
+
+<div class="topicCard">
+
+<div class="topicFormula">
+△
+</div>
+
+<small>
+GEOMETRY
+</small>
+
+<h3>
+Geometry
+</h3>
+
+<p>
+Shapes, angles and theorems.
+</p>
+
+</div>
+
+
+
+<div class="topicCard">
+
+<div class="topicFormula">
+sin
+</div>
+
+<small>
+TRIGONOMETRY
+</small>
+
+<h3>
+Trigonometry
+</h3>
+
+<p>
+Sine, cosine, tangent and graphs.
+</p>
+
+</div>
+
+
+
+<div class="topicCard">
+
+<div class="topicFormula">
+∫
+</div>
+
+<small>
+CALCULUS
+</small>
+
+<h3>
+Calculus
+</h3>
+
+<p>
+Differentiation and integration.
+</p>
+
+</div>
+
+
+
+<div class="topicCard">
+
+<div class="topicFormula">
+σ
+</div>
+
+<small>
+STATISTICS
+</small>
+
+<h3>
+Statistics
+</h3>
+
+<p>
+Data, averages and probability.
+</p>
+
+</div>
+
+
+
+<div class="topicCard">
+
+<div class="topicFormula">
+π
+</div>
+
+<small>
+NUMBER
+</small>
+
+<h3>
+Number
+</h3>
+
+<p>
+Fractions, percentages,
+powers and roots.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footerGrid">
+
+
+<div>
+
+<div class="logo">
+
+<div class="logoMark">
+∑
+</div>
+
+<div class="logoText">
+
+<div class="small">
+LEARN • EXPLORE • MASTER
+</div>
+
+<div class="big"
+style="color:white">
+ONLINE MATH ACADEMY
+</div>
+
+</div>
+
+</div>
+
+<p style="margin-top:18px">
+
+A modern mathematics learning
+platform for students and teachers.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+CURRICULUM
+</h4>
+
+<a href="#curriculum">
+Pakistan Curriculum
+</a>
+
+<a href="#curriculum">
+GCSE
+</a>
+
+<a href="#curriculum">
+IGCSE
+</a>
+
+<a href="#curriculum">
+O Level
+</a>
+
+<a href="#curriculum">
+A Level
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+RESOURCES
+</h4>
+
+<a href="#resources">
+Notes
+</a>
+
+<a href="#papers">
+Past Papers
+</a>
+
+<a href="#resources">
+MCQs
+</a>
+
+<a href="#resources">
+Solved Questions
+</a>
+
+<a href="#resources">
+Math Games
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+MATHEMATICS
+</h4>
+
+<a href="#topics">
+Algebra
+</a>
+
+<a href="#topics">
+Geometry
+</a>
+
+<a href="#topics">
+Trigonometry
+</a>
+
+<a href="#topics">
+Calculus
+</a>
+
+<a href="#topics">
+Statistics
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footerBottom">
+
+<span>
+© 2026 ONLINE MATH ACADEMY
+</span>
+
+<span>
+LEARN • EXPLORE • MASTER
+</span>
+
+</div>
+
+</footer>
+
+
 
 <script>
-const slides=[...document.querySelectorAll('.slide')],dotsBox=document.getElementById('dots');
-let current=0,timer;
-slides.forEach((_,i)=>{const b=document.createElement('button');b.className='dot'+(i===0?' active':'');b.onclick=()=>showSlide(i);dotsBox.appendChild(b)});
-function showSlide(i){current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===current));[...dotsBox.children].forEach((d,n)=>d.classList.toggle('active',n===current));}
-function changeSlide(n){showSlide(current+n);restartTimer()}
-function restartTimer(){clearInterval(timer);timer=setInterval(()=>showSlide(current+1),5000)}
-restartTimer();
 
-function openPakistan(){
- document.getElementById('mainCurriculum').style.display='none';
- document.getElementById('pakistan').style.display='block';
- document.getElementById('pakistan').scrollIntoView({behavior:'smooth',block:'start'});
-}
-function closePakistan(){
- document.getElementById('pakistan').style.display='none';
- document.getElementById('mainCurriculum').style.display='grid';
-}
-const data={
-"Notes":["Chapter 1","Chapter 2","Chapter 3","Chapter 4","Chapter 5","Chapter 6","Chapter 7","Chapter 8"],
-"Past Papers":["2026 Paper","2025 Paper","2024 Paper","2023 Paper","2022 Paper","Model Paper","Solved Papers","Final Paper"],
-"Pairing Schemes":["Latest Scheme","Chapter Distribution","Short Questions","Long Questions","MCQ Distribution","Important Chapters","Exam Pattern","Preparation Guide"],
-"MCQs":["Algebra MCQs","Geometry MCQs","Trigonometry MCQs","Statistics MCQs","Chapter MCQs","Mixed MCQs","Exam MCQs","Final MCQs"],
-"Quizzes":["Quick Quiz","Chapter Quiz","Topic Quiz","Timed Quiz","Challenge Quiz","Mixed Quiz","Exam Quiz","Final Test"],
-"Important Questions":["Most Important","Short Questions","Long Questions","Repeated Questions","Board Questions","Concept Questions","Expected Questions","Final Revision"],
-"Video Lectures":["Chapter Videos","Concept Videos","Solved Examples","Revision Videos","Exam Tips","Short Lessons","Full Lectures","Quick Revision"],
-"Math Tools":["Scientific Calculator","Graphing Calculator","Equation Solver","Geometry Tool","Fraction Tool","Quadratic Visualizer","Unit Converter","Math Practice"]
+/* =========================
+   MENU
+========================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+menuBtn.onclick = () => {
+
+    mobileMenu.classList.toggle("show");
+
 };
-let selectedClass='';
-const resources=[['📚','Notes','Chapter-wise mathematics notes and lessons.'],['📄','Past Papers','Previous board examination papers.'],['📋','Pairing Schemes','Exam preparation and pairing schemes.'],['📝','MCQs','Topic-wise multiple choice questions.'],['🎯','Quizzes','Interactive mathematics quizzes.'],['⭐','Important Questions','Important exam questions.'],['🎥','Video Lectures','Visual mathematics lessons.'],['🧮','Math Tools','Calculators, graphs and visualizers.']];
-function selectClass(btn,name){
- selectedClass=name;
- document.querySelectorAll('.classBtn').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');
- const grid=document.getElementById('resourceGrid');grid.innerHTML='';
- resources.forEach(r=>{
-  const c=document.createElement('div');c.className='resource';
-  c.innerHTML=`<div class="icon">${r[0]}</div><h4>${r[1]}</h4><p>${r[2]}<br><b>${name}</b></p><button class="open">OPEN →</button>`;
-  c.querySelector('.open').onclick=()=>openResource(r[1]);
-  grid.appendChild(c);
- });
- document.getElementById('detail').style.display='none';
-}
-function openResource(name){
- if(!selectedClass)return;
- document.getElementById('detailTitle').textContent=selectedClass+' — '+name;
- const box=document.getElementById('items');box.innerHTML='';
- data[name].forEach(x=>{const b=document.createElement('button');b.className='item';b.textContent=x;b.onclick=()=>alert(x+' for '+selectedClass+' — this section is ready for your actual links/content.');box.appendChild(b)});
- document.getElementById('detail').style.display='block';
- document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'center'});
-}
-function closeDetail(){document.getElementById('detail').style.display='none'}
-function scrollCurriculum(){document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})}
 
-let sx=0;
-document.querySelector('.hero').addEventListener('touchstart',e=>sx=e.changedTouches[0].screenX,{passive:true});
-document.querySelector('.hero').addEventListener('touchend',e=>{let dx=e.changedTouches[0].screenX-sx;if(Math.abs(dx)>45)changeSlide(dx<0?1:-1)},{passive:true});
+
+document.querySelectorAll(
+    ".mobileMenu a"
+).forEach(link => {
+
+    link.onclick = () => {
+
+        mobileMenu.classList.remove("show");
+
+    };
+
+});
+
+
+/* =========================
+   SLIDER
+========================= */
+
+const slides =
+document.querySelectorAll(".slide");
+
+const bars =
+document.querySelectorAll(".progressLine");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+const prevBtn =
+document.getElementById("prevBtn");
+
+const counter =
+document.getElementById("currentSlide");
+
+let current = 0;
+
+let timer;
+
+
+/* SHOW SLIDE */
+
+function showSlide(index){
+
+    if(index < 0){
+
+        index =
+            slides.length - 1;
+
+    }
+
+
+    if(index >= slides.length){
+
+        index = 0;
+
+    }
+
+
+    current = index;
+
+
+    slides.forEach(slide => {
+
+        slide.classList.remove(
+            "active"
+        );
+
+    });
+
+
+    bars.forEach(bar => {
+
+        bar.classList.remove(
+            "active"
+        );
+
+        const progress =
+            bar.querySelector("span");
+
+        progress.style.animation =
+            "none";
+
+        void progress.offsetWidth;
+
+    });
+
+
+    slides[current].classList.add(
+        "active"
+    );
+
+
+    bars[current].classList.add(
+        "active"
+    );
+
+
+    counter.textContent =
+        String(current + 1)
+        .padStart(2,"0");
+
+
+    clearTimeout(timer);
+
+
+    timer = setTimeout(() => {
+
+        showSlide(current + 1);
+
+    },4500);
+
+}
+
+
+/* NEXT */
+
+nextBtn.onclick = () => {
+
+    showSlide(current + 1);
+
+};
+
+
+/* PREVIOUS */
+
+prevBtn.onclick = () => {
+
+    showSlide(current - 1);
+
+};
+
+
+/* INDICATORS */
+
+bars.forEach((bar,index) => {
+
+    bar.onclick = () => {
+
+        showSlide(index);
+
+    };
+
+});
+
+
+/* START */
+
+showSlide(0);
+
+
+/* =========================
+   TOUCH SWIPE
+========================= */
+
+let startX = 0;
+
+let endX = 0;
+
+const slider =
+document.getElementById("heroSlider");
+
+
+slider.addEventListener(
+    "touchstart",
+    e => {
+
+        startX =
+            e.changedTouches[0]
+            .screenX;
+
+    }
+);
+
+
+slider.addEventListener(
+    "touchend",
+    e => {
+
+        endX =
+            e.changedTouches[0]
+            .screenX;
+
+
+        const distance =
+            endX - startX;
+
+
+        if(Math.abs(distance) < 50){
+            return;
+        }
+
+
+        if(distance < 0){
+
+            showSlide(current + 1);
+
+        }else{
+
+            showSlide(current - 1);
+
+        }
+
+    }
+);
+
 </script>
+
 </body>
 </html>
