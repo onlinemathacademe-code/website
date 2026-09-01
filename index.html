@@ -4,23 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Online Math Academy | Class 10 Mathematics</title>
+<title>Online Math Academy | Pakistan Boards</title>
 
 <style>
-
-:root{
-    --bg:#f3f5f7;
-    --paper:#ffffff;
-    --navy:#142b4a;
-    --navy-light:#274d73;
-    --gold:#b58a4a;
-    --text:#263442;
-    --muted:#737d88;
-    --border:#dce2e8;
-    --step-bg:#f8fafc;
-    --answer:#c62828;
-    --shadow:0 14px 42px rgba(20,43,74,.09);
-}
 
 *{
     margin:0;
@@ -28,360 +14,326 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     min-height:100vh;
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:#334155;
 
     background:
         radial-gradient(
-            circle at 5% 0%,
-            rgba(20,43,74,.07),
-            transparent 32%
+            circle at 8% 8%,
+            rgba(96,165,250,.14),
+            transparent 30%
         ),
         radial-gradient(
-            circle at 100% 100%,
-            rgba(181,138,74,.08),
-            transparent 32%
+            circle at 92% 12%,
+            rgba(139,92,246,.12),
+            transparent 30%
         ),
-        var(--bg);
+        linear-gradient(
+            135deg,
+            #f9fbff,
+            #f5f7ff,
+            #ffffff
+        );
 
-    color:var(--text);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
+    overflow-x:hidden;
 }
 
 
-/* =====================================================
-   FRONT PAGE
-===================================================== */
+/* =========================
+   MAIN
+========================= */
 
-.title-page{
+main{
+    width:min(690px,calc(100% - 30px));
+    margin:70px auto 0;
+    text-align:center;
+}
+
+
+/* =========================
+   PREMIUM TITLE BOX
+========================= */
+
+.title-box{
+    display:inline-block;
+    max-width:100%;
+
+    padding:16px 28px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            105deg,
+            #eef4ff 0%,
+            #e9f8ff 48%,
+            #f1edff 100%
+        );
+
+    border:1px solid rgba(150,175,220,.38);
+
+    box-shadow:
+        0 12px 32px rgba(49,87,213,.10),
+        0 3px 10px rgba(90,100,150,.05);
+
     position:relative;
-
-    min-height:330px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:40px 20px 75px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f8fafc
-        );
-
-    border:1px solid #d7dde5;
-
-    border-radius:25px;
-
-    box-shadow:var(--shadow);
-
     overflow:hidden;
-
-    margin-bottom:22px;
-}
-
-.title-page::before{
-    content:"";
-
-    position:absolute;
-
-    top:14px;
-    left:6%;
-    right:6%;
-
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
-}
-
-.title-page::after{
-    content:"";
-
-    position:absolute;
-
-    bottom:14px;
-    left:6%;
-    right:6%;
-
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
-}
-
-.platform-title{
-    color:var(--gold);
-
-    font-size:14px;
-
-    font-weight:700;
-
-    letter-spacing:1.5px;
-
-    margin-bottom:10px;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-}
-
-.academy-title{
-    color:var(--navy);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:clamp(32px,6vw,50px);
-
-    font-weight:700;
-
-    line-height:1.15;
-}
-
-.title-divider{
-    width:82px;
-    height:3px;
-
-    background:var(--gold);
-
-    border-radius:20px;
-
-    margin:15px auto;
-}
-
-.class-title{
-    color:var(--navy-light);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:clamp(18px,3vw,25px);
-
-    font-weight:600;
-}
-
-.unit-title{
-    color:var(--muted);
-
-    font-size:14px;
-
-    margin-top:7px;
-}
-
-.designed-by{
-    position:absolute;
-
-    bottom:32px;
-
-    left:15px;
-    right:15px;
-
-    text-align:center;
-
-    color:var(--navy);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:14px;
-
-    font-weight:600;
-}
-
-.designed-by strong{
-    color:var(--gold);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-}
-
-
-/* =====================================================
-   SELECTOR
-===================================================== */
-
-.selector{
-    background:var(--paper);
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    padding:24px;
-
-    box-shadow:var(--shadow);
-
-    margin-bottom:20px;
-}
-
-.selector-title{
-    text-align:center;
-
-    color:var(--navy);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:24px;
-
-    font-weight:700;
 
     margin-bottom:17px;
 }
 
-.select-wrapper{
-    position:relative;
+
+.title-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    top:-70px;
+    right:-35px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.55);
+
+    filter:blur(3px);
 }
 
-select{
-    appearance:none;
-    -webkit-appearance:none;
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+    position:relative;
+    z-index:1;
+
+    font-size:clamp(23px,4vw,32px);
+
+    line-height:1.3;
+
+    font-weight:800;
+
+    letter-spacing:-.25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3157d5,
+            #168bb8,
+            #7657d9
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle{
+    max-width:560px;
+
+    margin:0 auto 40px;
+
+    color:#7b8799;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    letter-spacing:.1px;
+}
+
+
+/* =========================
+   SELECTION PANEL
+========================= */
+
+.panel{
+    padding:30px;
+
+    text-align:left;
+
+    background:rgba(255,255,255,.93);
+
+    border:1px solid #e2e8f0;
+
+    border-radius:24px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(30,55,100,.07);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+label{
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#334155;
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   SELECT WRAPPER
+========================= */
+
+.select-wrapper{
+    position:relative;
 
     width:100%;
 
-    padding:16px 50px 16px 18px;
+    margin-bottom:27px;
+}
 
-    background:#fff;
 
-    color:var(--text);
+/* =========================
+   SELECT
+========================= */
 
-    border:1px solid #cbd3dc;
+select{
+    width:100%;
 
-    border-radius:13px;
+    height:60px;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    padding:
+        0 65px
+        0 20px;
 
-    font-style:italic;
+    appearance:none;
+    -webkit-appearance:none;
 
-    font-size:18px;
+    outline:none;
+
+    border:1px solid #d8e1ec;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8faff
+        );
+
+    color:#46556d;
+
+    font-size:15px;
+
+    font-weight:600;
 
     cursor:pointer;
 
-    outline:none;
+    transition:.25s ease;
 }
 
-select:focus{
-    border-color:var(--navy);
+
+select:hover{
+    border-color:#9fb4d2;
 
     box-shadow:
-        0 0 0 3px
-        rgba(20,43,74,.08);
+        0 7px 22px
+        rgba(49,87,213,.06);
 }
+
+
+select:focus{
+    border-color:#6688cf;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(49,87,213,.09);
+}
+
+
+/* =========================
+   ROUND ARROW
+========================= */
 
 .select-arrow{
     position:absolute;
 
-    right:18px;
-    top:50%;
+    right:10px;
+    top:9px;
 
-    transform:translateY(-50%);
+    width:42px;
+    height:42px;
 
-    color:var(--gold);
+    border-radius:50%;
 
-    font-size:19px;
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
 
     pointer-events:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf4ff,
+            #f1edff
+        );
+
+    border:1px solid #dbe5f1;
+
+    color:#496795;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 4px 12px
+        rgba(40,70,120,.06);
 }
 
-.helper{
-    text-align:center;
 
-    color:var(--muted);
+/* =========================
+   BOARD SECTION
+========================= */
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:13px;
-
-    margin-top:10px;
-}
-
-
-/* =====================================================
-   SOLUTION
-===================================================== */
-
-.solution{
+.board-section{
     display:none;
 
-    background:var(--paper);
+    margin-top:5px;
 
-    border:1px solid var(--border);
+    padding-top:28px;
 
-    border-radius:22px;
-
-    padding:28px;
-
-    box-shadow:var(--shadow);
+    border-top:1px solid #e5eaf1;
 }
 
-.solution.show{
+
+.board-section.active{
     display:block;
 
-    animation:appear .3s ease;
+    animation:
+        reveal .4s ease;
 }
 
-@keyframes appear{
 
+@keyframes reveal{
     from{
         opacity:0;
-        transform:translateY(10px);
+        transform:translateY(14px);
     }
 
     to{
@@ -391,393 +343,268 @@ select:focus{
 }
 
 
-/* =====================================================
-   QUESTION
-===================================================== */
+/* =========================
+   OPEN BUTTON
+========================= */
 
-.question-box{
+.open-button{
+    width:100%;
 
-    background:
-        linear-gradient(
-            145deg,
-            #f5f7fa,
-            #ffffff
-        );
+    height:58px;
 
-    border:1px solid var(--border);
+    border:none;
 
-    border-radius:17px;
+    border-radius:16px;
 
-    padding:28px 18px;
+    cursor:pointer;
 
-    text-align:center;
-}
+    color:white;
 
-.question-expression{
-
-    direction:ltr;
-
-    color:var(--navy);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:clamp(30px,5vw,39px);
-
-    line-height:2.15;
-
-    font-weight:600;
-
-    overflow-x:auto;
-
-    white-space:nowrap;
-}
-
-
-/* =====================================================
-   SOLUTION HEADING
-===================================================== */
-
-.solution-heading{
-
-    color:var(--navy);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:23px;
+    font-size:15px;
 
     font-weight:700;
 
-    margin:27px 0 13px;
+    background:
+        linear-gradient(
+            100deg,
+            #263b83,
+            #3157d5,
+            #168bb8
+        );
 
-    padding-bottom:9px;
+    box-shadow:
+        0 12px 28px
+        rgba(49,87,213,.18);
 
-    border-bottom:1px solid var(--border);
-
-    text-align:left;
+    transition:.25s ease;
 }
 
 
-/* =====================================================
-   FIRST EXPRESSION
-===================================================== */
+.open-button:hover{
+    transform:translateY(-2px);
 
-.start-expression{
-
-    direction:ltr;
-
-    background:var(--step-bg);
-
-    border-left:3px solid var(--gold);
-
-    border-radius:9px;
-
-    padding:13px 17px;
-
-    margin-bottom:9px;
-
-    color:var(--navy);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:23px;
-
-    font-weight:600;
-
-    line-height:2.45;
-
-    text-align:left;
-
-    overflow-x:auto;
-
-    white-space:nowrap;
+    box-shadow:
+        0 16px 34px
+        rgba(49,87,213,.23);
 }
 
 
-/* =====================================================
-   STEPS
-===================================================== */
+/* =========================
+   MESSAGE
+========================= */
 
-.steps{
-    direction:ltr;
+.message{
+    display:none;
 
-    text-align:left;
-}
+    margin-top:12px;
 
-.step,
-.final-step{
+    padding:12px;
 
-    display:block;
-
-    width:100%;
-
-    background:var(--step-bg);
-
-    border-left:3px solid #c7d0da;
-
-    border-radius:9px;
-
-    padding:11px 17px;
-
-    margin:8px 0;
-
-    color:#293441;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:22px;
-
-    font-weight:400;
-
-    line-height:2.6;
-
-    overflow-x:auto;
-
-    white-space:nowrap;
-}
-
-
-/* FINAL ANSWER */
-
-.final-step{
-
-    color:var(--answer);
-
-    font-weight:500;
-}
-
-
-/* =====================================================
-   PROFESSIONAL FRACTION
-===================================================== */
-
-.fraction{
-
-    display:inline-flex;
-
-    flex-direction:column;
-
-    align-items:stretch;
-
-    justify-content:center;
-
-    vertical-align:middle;
-
-    width:max-content;
-
-    min-width:1.7em;
-
-    margin:0 .22em;
-
-    color:inherit;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
-
-    font-size:1em;
-
-    line-height:1;
-
-    position:relative;
-
-    top:.03em;
-}
-
-.fraction .numerator,
-.fraction .denominator{
-
-    display:block;
-
-    width:max-content;
-
-    min-width:100%;
-
-    white-space:nowrap;
+    border-radius:12px;
 
     text-align:center;
 
-    padding-left:.24em;
+    background:#f5f8fc;
 
-    padding-right:.24em;
-}
+    color:#65758c;
 
-.fraction .numerator{
-
-    border-bottom:
-        1.8px solid currentColor;
-
-    padding-bottom:.13em;
-}
-
-.fraction .denominator{
-
-    padding-top:.13em;
+    font-size:13px;
 }
 
 
-/* =====================================================
-   BRACKETS
-===================================================== */
-
-.big-bracket{
-
-    display:inline-block;
-
-    font-size:1.7em;
-
-    line-height:.72;
-
-    vertical-align:middle;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-style:italic;
+.message.show{
+    display:block;
 }
 
 
-/* =====================================================
-   POWERS
-===================================================== */
+/* =========================
+   FOOTER
+========================= */
 
-sup{
+footer{
+    width:min(
+        690px,
+        calc(100% - 30px)
+    );
 
-    font-size:.62em;
+    margin:
+        75px auto 28px;
 
-    line-height:0;
+    padding-top:23px;
 
-    vertical-align:super;
+    border-top:
+        1px solid #e1e7ef;
 
-    margin-left:1px;
+    text-align:center;
+
+    line-height:1.8;
+
+    color:#8b96a6;
+
+    font-size:13px;
 }
 
 
-/* =====================================================
+.designed{
+    display:block;
+}
+
+
+.designed strong{
+    background:
+        linear-gradient(
+            90deg,
+            #3157d5,
+            #168bb8,
+            #7657d9
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   PHONE NUMBER
+========================= */
+
+.phone{
+    display:block;
+
+    margin-top:2px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+}
+
+
+/* =========================
+   ACADEMY NAME
+========================= */
+
+.footer-brand{
+    display:block;
+
+    margin-top:3px;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    letter-spacing:.6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #263b83,
+            #3157d5,
+            #168bb8,
+            #7657d9
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+}
+
+
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media(max-width:650px){
+@media(max-width:600px){
 
-    .container{
-        width:94%;
-        padding-top:14px;
+    main{
+        width:
+            calc(100% - 20px);
+
+        margin-top:52px;
     }
 
-    .title-page{
-        min-height:310px;
-        padding:35px 14px 75px;
-        border-radius:19px;
+
+    .title-box{
+        padding:
+            13px 18px;
+
+        border-radius:16px;
+
+        margin-bottom:15px;
     }
 
-    .platform-title{
-        font-size:10px;
-        letter-spacing:.8px;
+
+    h1{
+        font-size:25px;
+
+        line-height:1.3;
     }
 
-    .academy-title{
-        font-size:32px;
+
+    .subtitle{
+        max-width:340px;
+
+        font-size:13px;
+
+        line-height:1.75;
+
+        margin-bottom:30px;
     }
 
-    .class-title{
+
+    .panel{
+        padding:20px;
+
+        border-radius:21px;
+    }
+
+
+    select{
+        height:57px;
+
+        padding-left:17px;
+
+        padding-right:60px;
+
+        font-size:14px;
+    }
+
+
+    .select-arrow{
+        width:39px;
+        height:39px;
+
+        right:9px;
+        top:9px;
+
         font-size:18px;
     }
 
-    .designed-by{
-        bottom:29px;
-        font-size:13px;
+
+    .open-button{
+        height:55px;
+
+        font-size:14px;
     }
 
-    .selector{
-        padding:17px;
-        border-radius:17px;
+
+    footer{
+        width:
+            calc(100% - 20px);
+
+        margin-top:55px;
     }
 
-    select{
-        font-size:17px;
-        padding:14px 45px 14px 15px;
-    }
-
-    .solution{
-        padding:17px;
-        border-radius:18px;
-    }
-
-    .question-box{
-        padding:21px 10px;
-    }
-
-    .question-expression{
-        font-size:27px;
-        line-height:2.25;
-    }
-
-    .start-expression{
-        font-size:21px;
-        padding:11px 13px;
-        line-height:2.5;
-    }
-
-    .step,
-    .final-step{
-        font-size:19px;
-        padding:10px 12px;
-        line-height:2.7;
-    }
-
-    .fraction{
-        font-size:1em;
-        margin-left:.15em;
-        margin-right:.15em;
-    }
-}
-
-@media(max-width:390px){
-
-    .academy-title{
-        font-size:29px;
-    }
-
-    .platform-title{
-        font-size:9px;
-    }
-
-    .question-expression{
-        font-size:24px;
-    }
-
-    .start-expression{
-        font-size:19px;
-    }
-
-    .step,
-    .final-step{
-        font-size:17.5px;
-    }
 }
 
 </style>
@@ -786,34 +613,149 @@ sup{
 
 <body>
 
-<div class="container">
+
+<main>
 
 
-<!-- =====================================================
-     FRONT PAGE
-===================================================== -->
+    <!-- TITLE -->
 
-<section class="title-page">
+    <div class="title-box">
 
-    <div class="platform-title">
-        Best Online Math Learning Platform
+        <h1>
+            Easy Access to All Pakistan Boards Websites
+        </h1>
+
     </div>
 
-    <div class="academy-title">
-        Online Math Academy
+
+    <!-- DESCRIPTION -->
+
+    <p class="subtitle">
+
+        Select your province, choose your education board,
+        and access its official website directly.
+
+    </p>
+
+
+    <!-- SELECTION PANEL -->
+
+    <div class="panel">
+
+
+        <!-- PROVINCE -->
+
+        <label for="province">
+            Select Province / Region
+        </label>
+
+
+        <div class="select-wrapper">
+
+            <select
+                id="province"
+                onchange="loadBoards()">
+
+                <option value="">
+                    Select Province / Region
+                </option>
+
+                <option value="punjab">
+                    Punjab
+                </option>
+
+                <option value="sindh">
+                    Sindh
+                </option>
+
+                <option value="kpk">
+                    Khyber Pakhtunkhwa
+                </option>
+
+                <option value="balochistan">
+                    Balochistan
+                </option>
+
+                <option value="federal">
+                    Federal / Islamabad
+                </option>
+
+                <option value="ajk">
+                    Azad Jammu & Kashmir
+                </option>
+
+                <option value="gb">
+                    Gilgit-Baltistan
+                </option>
+
+            </select>
+
+
+            <div class="select-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <!-- BOARD -->
+
+        <div
+            id="boardSection"
+            class="board-section">
+
+
+            <label for="board">
+                Select Education Board
+            </label>
+
+
+            <div class="select-wrapper">
+
+                <select id="board">
+
+                    <option value="">
+                        Select Education Board
+                    </option>
+
+                </select>
+
+
+                <div class="select-arrow">
+                    ↓
+                </div>
+
+            </div>
+
+
+            <button
+                class="open-button"
+                onclick="openBoard()">
+
+                Open Official Board Website
+                &nbsp; ↗
+
+            </button>
+
+
+            <div
+                id="message"
+                class="message">
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="title-divider"></div>
+</main>
 
-    <div class="class-title">
-        Class 10 Mathematics
-    </div>
 
-    <div class="unit-title">
-        Unit 1 · Complex Numbers · Exercise 1.1
-    </div>
 
-    <div class="designed-by">
+<!-- FOOTER -->
+
+<footer>
+
+    <span class="designed">
 
         Designed by
 
@@ -821,708 +763,382 @@ sup{
             Bashir Ahmad Mubashar
         </strong>
 
-    </div>
-
-</section>
+    </span>
 
 
-<!-- =====================================================
-     QUESTION SELECTOR
-===================================================== -->
-
-<section class="selector">
-
-    <div class="selector-title">
-        Select a Question
-    </div>
-
-    <div class="select-wrapper">
-
-        <select
-            id="questionSelect"
-            onchange="showQuestion()">
-
-            <option value="">
-                — Select Question —
-            </option>
-
-        </select>
-
-        <div class="select-arrow">
-            ▾
-        </div>
-
-    </div>
-
-    <div class="helper">
-        Choose a question to view its complete
-        step-by-step solution.
-    </div>
-
-</section>
+    <span class="phone">
+        03366808087
+    </span>
 
 
-<section
-    id="solution"
-    class="solution">
-</section>
+    <span class="footer-brand">
+        Online Math Academy
+    </span>
 
+</footer>
 
-</div>
 
 
 <script>
 
 
-/* =====================================================
-   FRACTION
-===================================================== */
+/* =========================
+   BOARD DATA
+========================= */
 
-function F(numerator, denominator){
+const boards = {
 
-    return `
-        <span class="fraction">
-            <span class="numerator">
-                ${numerator}
-            </span>
+    punjab:[
 
-            <span class="denominator">
-                ${denominator}
-            </span>
-        </span>
-    `;
-}
+        [
+            "BISE Bahawalpur",
+            "https://bisebwp.edu.pk/"
+        ],
+
+        [
+            "BISE Dera Ghazi Khan",
+            "https://bisedgkhan.edu.pk/"
+        ],
+
+        [
+            "BISE Faisalabad",
+            "https://www.bisefsd.edu.pk/"
+        ],
+
+        [
+            "BISE Gujranwala",
+            "https://www.bisegrw.edu.pk/"
+        ],
+
+        [
+            "BISE Lahore",
+            "https://www.biselahore.com/"
+        ],
+
+        [
+            "BISE Multan",
+            "https://web.bisemultan.edu.pk/"
+        ],
+
+        [
+            "BISE Rawalpindi",
+            "https://www.biserwp.edu.pk/"
+        ],
+
+        [
+            "BISE Sahiwal",
+            "https://bisesahiwal.edu.pk/"
+        ],
+
+        [
+            "BISE Sargodha",
+            "https://www.bisesargodha.edu.pk/"
+        ]
+
+    ],
 
 
-/* =====================================================
-   QUESTIONS
-===================================================== */
+    sindh:[
 
-const questions = [
+        [
+            "BISE Hyderabad",
+            "https://www.biseh.edu.pk/"
+        ],
 
-{
-    statement:`i<sup>5</sup>`,
-    selectText:`i⁵`,
+        [
+            "BISE Karachi — Secondary",
+            "https://bsek.edu.pk/"
+        ],
 
-    steps:[
+        [
+            "BISE Karachi — Intermediate",
+            "https://www.biek.edu.pk/"
+        ],
 
-        `= i<sup>4</sup> × i`,
+        [
+            "BISE Larkana",
+            "https://www.biselrk.edu.pk/"
+        ],
 
-        `= (i<sup>2</sup>)<sup>2</sup> × i`,
+        [
+            "BISE Mirpur Khas",
+            "https://www.bisempk.edu.pk/"
+        ],
 
-        `= (−1)<sup>2</sup> × i`,
+        [
+            "BISE Sukkur",
+            "https://www.bisesuksindh.edu.pk/"
+        ]
 
-        `= 1 × i`,
+    ],
 
-        `= i`
+
+    kpk:[
+
+        [
+            "BISE Abbottabad",
+            "https://www.biseatd.edu.pk/"
+        ],
+
+        [
+            "BISE Bannu",
+            "https://www.biseb.edu.pk/"
+        ],
+
+        [
+            "BISE D.I. Khan",
+            "https://www.bisedik.edu.pk/"
+        ],
+
+        [
+            "BISE Kohat",
+            "https://www.bisekt.edu.pk/"
+        ],
+
+        [
+            "BISE Malakand",
+            "https://www.bisemalakand.edu.pk/"
+        ],
+
+        [
+            "BISE Mardan",
+            "https://www.bisemdn.edu.pk/"
+        ],
+
+        [
+            "BISE Peshawar",
+            "https://www.bisep.edu.pk/"
+        ],
+
+        [
+            "BISE Swat",
+            "https://www.bisess.edu.pk/"
+        ]
+
+    ],
+
+
+    balochistan:[
+
+        [
+            "BBISE Quetta",
+            "https://bbise.edu.pk/"
+        ]
+
+    ],
+
+
+    federal:[
+
+        [
+            "Federal Board — FBISE",
+            "https://www.fbise.edu.pk/"
+        ]
+
+    ],
+
+
+    ajk:[
+
+        [
+            "AJK BISE Mirpur",
+            "https://ajkbise.net/"
+        ]
+
+    ],
+
+
+    gb:[
+
+        [
+            "BISE Gilgit-Baltistan",
+            "https://www.fbise.edu.pk/"
+        ]
 
     ]
-},
 
+};
 
-{
-    statement:`i<sup>7</sup>`,
-    selectText:`i⁷`,
 
-    steps:[
 
-        `= i<sup>6</sup> × i`,
+/* =========================
+   LOAD BOARDS
+========================= */
 
-        `= (i<sup>2</sup>)<sup>3</sup> × i`,
+function loadBoards(){
 
-        `= (−1)<sup>3</sup> × i`,
+    const province =
+        document.getElementById(
+            "province"
+        ).value;
 
-        `= −1 × i`,
 
-        `= −i`
-
-    ]
-},
-
-
-{
-    statement:`i<sup>8</sup>`,
-    selectText:`i⁸`,
-
-    steps:[
-
-        `= (i<sup>2</sup>)<sup>4</sup>`,
-
-        `= (−1)<sup>4</sup>`,
-
-        `= 1`
-
-    ]
-},
-
-
-{
-    statement:`i<sup>16</sup>`,
-    selectText:`i¹⁶`,
-
-    steps:[
-
-        `= (i<sup>2</sup>)<sup>8</sup>`,
-
-        `= (−1)<sup>8</sup>`,
-
-        `= 1`
-
-    ]
-},
-
-
-{
-    statement:`i<sup>17</sup>`,
-    selectText:`i¹⁷`,
-
-    steps:[
-
-        `= i<sup>16</sup> × i`,
-
-        `= (i<sup>2</sup>)<sup>8</sup> × i`,
-
-        `= (−1)<sup>8</sup> × i`,
-
-        `= 1 × i`,
-
-        `= i`
-
-    ]
-},
-
-
-{
-    statement:`i<sup>25</sup>`,
-    selectText:`i²⁵`,
-
-    steps:[
-
-        `= i<sup>24</sup> × i`,
-
-        `= (i<sup>2</sup>)<sup>12</sup> × i`,
-
-        `= (−1)<sup>12</sup> × i`,
-
-        `= 1 × i`,
-
-        `= i`
-
-    ]
-},
-
-
-{
-    statement:`i<sup>37</sup>`,
-    selectText:`i³⁷`,
-
-    steps:[
-
-        `= i<sup>36</sup> × i`,
-
-        `= (i<sup>2</sup>)<sup>18</sup> × i`,
-
-        `= (−1)<sup>18</sup> × i`,
-
-        `= 1 × i`,
-
-        `= i`
-
-    ]
-},
-
-
-{
-    statement:`(−i)<sup>−9</sup>`,
-    selectText:`(−i)⁻⁹`,
-
-    steps:[
-
-        `= ${F(
-            "1",
-            "(−i)<sup>9</sup>"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−i<sup>9</sup>"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−i<sup>8</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−(i<sup>2</sup>)<sup>4</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−(−1)<sup>4</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−1 × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−i"
-        )}`,
-
-        `= ${F("1","−i")} × ${F("i","i")}`,
-
-        `= ${F(
-            "i",
-            "−i<sup>2</sup>"
-        )}`,
-
-        `= ${F(
-            "i",
-            "−(−1)"
-        )}`,
-
-        `= ${F(
-            "i",
-            "1"
-        )}`,
-
-        `= i`
-
-    ]
-},
-
-
-{
-    statement:`(−i)<sup>−19</sup>`,
-    selectText:`(−i)⁻¹⁹`,
-
-    steps:[
-
-        `= ${F(
-            "1",
-            "(−i)<sup>19</sup>"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−i<sup>19</sup>"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−i<sup>18</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−(i<sup>2</sup>)<sup>9</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−(−1)<sup>9</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−(−1) × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "i"
-        )}`,
-
-        `= ${F("1","i")} × ${F("i","i")}`,
-
-        `= ${F(
-            "i",
-            "i<sup>2</sup>"
-        )}`,
-
-        `= ${F(
-            "i",
-            "−1"
-        )}`,
-
-        `= −i`
-
-    ]
-},
-
-
-{
-    statement:`27i<sup>−26</sup>`,
-    selectText:`27i⁻²⁶`,
-
-    steps:[
-
-        `= ${F(
-            "27",
-            "i<sup>26</sup>"
-        )}`,
-
-        `= ${F(
-            "27",
-            "(i<sup>2</sup>)<sup>13</sup>"
-        )}`,
-
-        `= ${F(
-            "27",
-            "(−1)<sup>13</sup>"
-        )}`,
-
-        `= ${F(
-            "27",
-            "−1"
-        )}`,
-
-        `= −27`
-
-    ]
-},
-
-
-{
-    statement:
-        `i<sup>11</sup> + i<sup>15</sup>`,
-
-    selectText:
-        `i¹¹ + i¹⁵`,
-
-    steps:[
-
-        `= i<sup>10</sup> × i + i<sup>14</sup> × i`,
-
-        `= (i<sup>2</sup>)<sup>5</sup> × i
-        + (i<sup>2</sup>)<sup>7</sup> × i`,
-
-        `= (−1)<sup>5</sup> × i
-        + (−1)<sup>7</sup> × i`,
-
-        `= −1 × i + −1 × i`,
-
-        `= −i − i`,
-
-        `= −2i`
-
-    ]
-},
-
-
-{
-    statement:
-        `i<sup>13</sup> × i<sup>11</sup>`,
-
-    selectText:
-        `i¹³ × i¹¹`,
-
-    steps:[
-
-        `= i<sup>13+11</sup>`,
-
-        `= i<sup>24</sup>`,
-
-        `= (i<sup>2</sup>)<sup>12</sup>`,
-
-        `= (−1)<sup>12</sup>`,
-
-        `= 1`
-
-    ]
-},
-
-
-{
-    statement:
-        `i<sup>13</sup> × i<sup>29</sup>`,
-
-    selectText:
-        `i¹³ × i²⁹`,
-
-    steps:[
-
-        `= i<sup>13+29</sup>`,
-
-        `= i<sup>42</sup>`,
-
-        `= (i<sup>2</sup>)<sup>21</sup>`,
-
-        `= (−1)<sup>21</sup>`,
-
-        `= −1`
-
-    ]
-},
-
-
-{
-    statement:
-
-        `(${F(
-            "i<sup>8</sup>",
-            "i<sup>5</sup>"
-        )})<sup>−5</sup>`,
-
-    selectText:
-        `(i⁸ / i⁵)⁻⁵`,
-
-    steps:[
-
-        `= (${F(
-            "i<sup>8</sup>",
-            "i<sup>5</sup>"
-        )})<sup>−5</sup>`,
-
-        `= (i<sup>8−5</sup>)<sup>−5</sup>`,
-
-        `= (i<sup>3</sup>)<sup>−5</sup>`,
-
-        `= i<sup>−15</sup>`,
-
-        `= ${F(
-            "1",
-            "i<sup>15</sup>"
-        )}`,
-
-        `= ${F(
-            "1",
-            "i<sup>14</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "(i<sup>2</sup>)<sup>7</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "(−1)<sup>7</sup> × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−1 × i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−i"
-        )}`,
-
-        `= ${F(
-            "1",
-            "−i"
-        )} × ${F(
-            "i",
-            "i"
-        )}`,
-
-        `= ${F(
-            "i",
-            "−i<sup>2</sup>"
-        )}`,
-
-        `= ${F(
-            "i",
-            "−(−1)"
-        )}`,
-
-        `= ${F(
-            "i",
-            "1"
-        )}`,
-
-        `= i`
-
-    ]
-},
-
-
-{
-    statement:
-
-        `(i<sup>4</sup> + i<sup>3</sup> + i<sup>2</sup> + i)<sup>2</sup>`,
-
-    selectText:
-        `(i⁴ + i³ + i² + i)²`,
-
-    steps:[
-
-        `= ((i<sup>2</sup>)<sup>2</sup>
-        + i<sup>2</sup> × i
-        + i<sup>2</sup>
-        + i)<sup>2</sup>`,
-
-        `= ((−1)<sup>2</sup>
-        + (−1) × i
-        + (−1)
-        + i)<sup>2</sup>`,
-
-        `= (1 − i − 1 + i)<sup>2</sup>`,
-
-        `= (0)<sup>2</sup>`,
-
-        `= 0`
-
-    ]
-}
-
-];
-
-
-/* =====================================================
-   CREATE SELECT OPTIONS
-===================================================== */
-
-const questionSelect =
-    document.getElementById(
-        "questionSelect"
-    );
-
-const solution =
-    document.getElementById(
-        "solution"
-    );
-
-
-questions.forEach(
-    (question,index)=>{
-
-        const option =
-            document.createElement(
-                "option"
-            );
-
-        option.value=index;
-
-        option.textContent =
-            question.selectText;
-
-        questionSelect.appendChild(
-            option
+    const board =
+        document.getElementById(
+            "board"
         );
 
-    }
-);
 
-
-/* =====================================================
-   DISPLAY SOLUTION
-===================================================== */
-
-function showQuestion(){
-
-    const value =
-        questionSelect.value;
-
-    if(value===""){
-
-        solution.classList.remove(
-            "show"
+    const section =
+        document.getElementById(
+            "boardSection"
         );
 
-        solution.innerHTML="";
 
-        return;
-    }
-
-
-    const question =
-        questions[
-            Number(value)
-        ];
+    const message =
+        document.getElementById(
+            "message"
+        );
 
 
-    const stepsHTML =
-
-        question.steps
-
-        .map(
-            (step,index)=>{
-
-                const isLast =
-                    index ===
-                    question.steps.length - 1;
-
-                return `
-
-                    <div class="${
-                        isLast
-                        ? "final-step"
-                        : "step"
-                    }">
-
-                        ${step}
-
-                    </div>
-
-                `;
-
-            }
-        )
-
-        .join("");
+    board.innerHTML =
+        '<option value="">Select Education Board</option>';
 
 
-    solution.innerHTML = `
-
-        <div class="question-box">
-
-            <div class="question-expression">
-
-                ${question.statement}
-
-            </div>
-
-        </div>
-
-
-        <div class="solution-heading">
-            Solution
-        </div>
-
-
-        <div class="start-expression">
-
-            ${question.statement}
-
-        </div>
-
-
-        <div class="steps">
-
-            ${stepsHTML}
-
-        </div>
-
-    `;
-
-
-    solution.classList.add(
+    message.classList.remove(
         "show"
     );
 
 
-    setTimeout(()=>{
+    if(!province){
 
-        solution.scrollIntoView({
+        section.classList.remove(
+            "active"
+        );
 
-            behavior:"smooth",
+        return;
 
-            block:"start"
+    }
 
-        });
 
-    },70);
+    boards[province].forEach(
+
+        function(item,index){
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                index;
+
+
+            option.textContent =
+                item[0];
+
+
+            board.appendChild(
+                option
+            );
+
+        }
+
+    );
+
+
+    section.classList.add(
+        "active"
+    );
+
+
+    setTimeout(
+
+        function(){
+
+            section.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+        },
+
+        200
+
+    );
+
+}
+
+
+
+/* =========================
+   OPEN BOARD
+========================= */
+
+function openBoard(){
+
+    const province =
+        document.getElementById(
+            "province"
+        ).value;
+
+
+    const board =
+        document.getElementById(
+            "board"
+        );
+
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+
+    if(
+        !province ||
+        board.value === ""
+    ){
+
+        message.textContent =
+            "Please select an education board first.";
+
+
+        message.classList.add(
+            "show"
+        );
+
+
+        return;
+
+    }
+
+
+    const selected =
+        boards[province][
+            board.value
+        ];
+
+
+    message.innerHTML =
+        "Opening <strong>"
+        + selected[0]
+        + "</strong>...";
+
+
+    message.classList.add(
+        "show"
+    );
+
+
+    window.open(
+
+        selected[1],
+
+        "_blank",
+
+        "noopener,noreferrer"
+
+    );
 
 }
 
 </script>
+
 
 </body>
 </html>
