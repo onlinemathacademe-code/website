@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ONLINE MATH ACADEMY</title>
+<meta name="theme-color" content="#0b5ed7">
+
+<title>ONLINE MATH ACADEMY | Study Notes & Resources</title>
 
 <style>
 *{
@@ -13,16 +15,16 @@
 }
 
 :root{
-    --black:#05070b;
-    --navy:#071321;
-    --blue:#4b9cff;
-    --cyan:#67dcff;
-    --violet:#8b7cff;
-    --white:#f7f9fc;
-    --gray:#9aa6b5;
-    --line:rgba(255,255,255,.13);
-    --light:#f3f5f8;
-    --darktext:#101722;
+    --blue:#0b5ed7;
+    --blue-dark:#084298;
+    --blue-light:#eef5ff;
+    --blue-border:#cfe0f8;
+    --dark:#152238;
+    --text:#344054;
+    --muted:#667085;
+    --bg:#f6f8fb;
+    --border:#e3e8ef;
+    --shadow:0 12px 35px rgba(16,24,40,.08);
 }
 
 html{
@@ -30,1071 +32,808 @@ html{
 }
 
 body{
-    font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;
-    background:var(--black);
-    color:var(--white);
-    overflow-x:hidden;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
 }
 
 /* ================= HEADER ================= */
 
 header{
-    height:76px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 6%;
-    border-bottom:1px solid var(--line);
+    background:#fff;
+    border-bottom:1px solid var(--border);
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(5,7,11,.94);
-    backdrop-filter:blur(18px);
+}
+
+.header-inner{
+    max-width:1180px;
+    margin:auto;
+    min-height:76px;
+    padding:0 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .logo{
-    font-size:20px;
-    font-weight:800;
-    letter-spacing:1.8px;
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0b5ed7,#4c9aff);
     color:#fff;
-    white-space:nowrap;
-}
-
-nav{
     display:flex;
     align-items:center;
-    gap:34px;
+    justify-content:center;
+    font-size:22px;
+    font-weight:800;
+    box-shadow:0 7px 18px rgba(11,94,215,.20);
 }
 
-nav a{
-    color:#b9c2ce;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:600;
-    transition:.3s;
+.brand-title{
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:.4px;
+    color:var(--dark);
 }
 
-nav a:hover{
-    color:#fff;
+.brand-sub{
+    font-size:11px;
+    color:var(--muted);
+    margin-top:4px;
 }
 
-.header-btn{
-    padding:11px 20px;
-    border:1px solid rgba(103,220,255,.5);
-    color:#fff;
-    text-decoration:none;
+.header-badge{
+    padding:9px 14px;
+    background:var(--blue-light);
+    border:1px solid var(--blue-border);
+    color:var(--blue-dark);
+    border-radius:30px;
     font-size:12px;
     font-weight:700;
-    letter-spacing:.5px;
-    transition:.3s;
-}
-
-.header-btn:hover{
-    background:#fff;
-    color:#07101a;
-}
-
-.menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:650px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-
     background:
-        radial-gradient(
-            circle at 76% 30%,
-            rgba(75,156,255,.24),
-            transparent 31%
-        ),
-        radial-gradient(
-            circle at 90% 78%,
-            rgba(103,220,255,.16),
-            transparent 29%
-        ),
-        radial-gradient(
-            circle at 20% 100%,
-            rgba(139,124,255,.10),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #05070b 0%,
-            #081523 55%,
-            #07101c 100%
-        );
+        radial-gradient(circle at 10% 20%,rgba(11,94,215,.12),transparent 28%),
+        radial-gradient(circle at 90% 20%,rgba(11,94,215,.08),transparent 25%),
+        linear-gradient(135deg,#f8fbff,#eef5fc);
+    border-bottom:1px solid var(--border);
 }
 
-.hero::before{
-    content:"";
-    position:absolute;
-    width:480px;
-    height:480px;
-    right:-180px;
-    top:80px;
-    border-radius:50%;
-    background:rgba(75,156,255,.08);
-    filter:blur(80px);
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    width:330px;
-    height:330px;
-    left:-150px;
-    bottom:-120px;
-    border-radius:50%;
-    background:rgba(103,220,255,.06);
-    filter:blur(80px);
-}
-
-.hero-content{
-    width:88%;
-    max-width:1250px;
+.hero-inner{
+    max-width:1180px;
     margin:auto;
-    position:relative;
-    z-index:2;
-    padding:80px 0;
+    padding:50px 22px 45px;
+    text-align:center;
 }
 
-.eyebrow{
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#fff;
+    border:1px solid #dce7f5;
+    color:var(--blue);
+    border-radius:30px;
+    padding:8px 15px;
     font-size:12px;
     font-weight:700;
-    letter-spacing:3px;
-    color:var(--cyan);
-    margin-bottom:22px;
+    box-shadow:0 5px 18px rgba(16,24,40,.05);
 }
 
 .hero h1{
-    font-size:clamp(46px,7vw,90px);
-    line-height:.98;
-    letter-spacing:-4px;
-    font-weight:700;
-    max-width:1050px;
-    color:#fff;
-}
-
-.hero-text{
-    max-width:600px;
-    color:var(--gray);
-    font-size:16px;
-    line-height:1.8;
-    margin-top:30px;
-}
-
-.hero-actions{
-    display:flex;
-    gap:14px;
-    margin-top:38px;
-}
-
-.primary-btn,
-.secondary-btn{
-    text-decoration:none;
-    padding:15px 24px;
-    font-size:12px;
+    margin-top:18px;
+    color:var(--dark);
+    font-size:clamp(30px,5vw,52px);
+    line-height:1.1;
     font-weight:800;
-    letter-spacing:.6px;
-    transition:.3s;
-}
-
-.primary-btn{
-    background:#fff;
-    color:#08111d;
-}
-
-.primary-btn:hover{
-    background:var(--cyan);
-}
-
-.secondary-btn{
-    border:1px solid var(--line);
-    color:#fff;
-}
-
-.secondary-btn:hover{
-    border-color:#fff;
-}
-
-/* ================= COMMON ================= */
-
-.section{
-    padding:100px 6%;
-}
-
-.section-label{
-    color:var(--blue);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:3px;
-    margin-bottom:18px;
-}
-
-.section-title{
-    font-size:clamp(38px,5vw,66px);
-    line-height:1;
-    letter-spacing:-2.5px;
-    font-weight:700;
-}
-
-.section-intro{
-    color:var(--gray);
-    max-width:580px;
-    line-height:1.8;
-    margin-top:22px;
-}
-
-/* ================= CLASS SELECTOR ================= */
-
-.programs{
-    background:#07101a;
-}
-
-.class-selector-wrap{
-    margin-top:55px;
-    border:1px solid rgba(255,255,255,.14);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(75,156,255,.08),
-            rgba(103,220,255,.025)
-        );
-
-    border-radius:18px;
-    overflow:hidden;
-}
-
-.class-selector{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-}
-
-.class-option{
-    padding:34px 38px;
-    cursor:pointer;
-    position:relative;
-    transition:.35s;
-    border-right:1px solid var(--line);
-}
-
-.class-option:last-child{
-    border-right:none;
-}
-
-.class-option:hover{
-    background:rgba(103,220,255,.045);
-}
-
-.class-option.active{
-    background:
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(75,156,255,.14),
-            transparent 50%
-        );
-}
-
-.class-option.active::after{
-    content:"";
-    position:absolute;
-    left:30px;
-    right:30px;
-    bottom:0;
-    height:3px;
-    background:
-        linear-gradient(
-            90deg,
-            var(--blue),
-            var(--cyan)
-        );
-}
-
-.class-small{
-    color:#8ea2b8;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:2px;
-    margin-bottom:12px;
-}
-
-.class-name{
-    font-size:34px;
-    font-weight:700;
     letter-spacing:-1px;
 }
 
-/* ================= SUBJECT SECTION ================= */
-
-.subjects{
-
-    background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(75,156,255,.07),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 75%,
-            rgba(103,220,255,.06),
-            transparent 27%
-        ),
-        #05070b;
+.hero h1 span{
+    color:var(--blue);
 }
 
-.subject-list{
-    margin-top:55px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
+.hero p{
+    max-width:720px;
+    margin:16px auto 0;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.7;
 }
 
-/* ================= SUBJECT CARD ================= */
+/* ================= MAIN ================= */
 
-.subject-card{
-
-    position:relative;
-
-    display:grid;
-
-    grid-template-columns:
-        minmax(0,1fr)
-        auto;
-
-    align-items:center;
-
-    min-height:150px;
-
-    padding:27px 28px;
-
-    border-radius:0;
-
-    border:1px solid rgba(103,220,255,.16);
-
-    background:
-
-        radial-gradient(
-            circle at 90% 50%,
-            rgba(75,156,255,.07),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 15% 100%,
-            rgba(103,220,255,.035),
-            transparent 25%
-        ),
-
-        linear-gradient(
-            135deg,
-            #020304 0%,
-            #05070b 62%,
-            #07101a 100%
-        );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.025),
-        0 10px 28px rgba(0,0,0,.32);
-
-    text-decoration:none;
-    color:#fff;
-    overflow:hidden;
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+.container{
+    width:min(1100px,calc(100% - 32px));
+    margin:32px auto 65px;
 }
 
-.subject-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    top:0;
-    bottom:0;
-
-    width:2px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(103,220,255,.65),
-            rgba(75,156,255,.30),
-            rgba(139,124,255,.20)
-        );
-
-    opacity:.55;
-}
-
-.subject-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-    height:150px;
-
-    right:-85px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    border-radius:50%;
-
-    background:rgba(75,156,255,.045);
-
-    filter:blur(35px);
-
-    pointer-events:none;
-}
-
-.subject-card:hover{
-
-    transform:translateY(-4px);
-
-    border-color:
-        rgba(103,220,255,.38);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.40),
-        0 0 20px rgba(75,156,255,.06);
-}
-
-/* ================= SUBJECT TITLE ================= */
-
-.subject-info{
-    min-width:0;
-}
-
-.subject-title-row{
-
-    display:flex;
-
-    align-items:center;
-
-    flex-wrap:nowrap;
-
-    gap:12px;
-
-    line-height:1.1;
-
-    min-width:0;
-}
-
-.subject-name{
-
-    font-size:24px;
-
-    font-weight:750;
-
-    letter-spacing:-.5px;
-
-    color:#fff;
-
-    white-space:nowrap;
-
-    flex-shrink:1;
-}
-
-.subject-class{
-
-    font-size:24px;
-
-    font-weight:750;
-
-    letter-spacing:-.5px;
-
-    color:var(--cyan);
-
-    white-space:nowrap;
-
-    flex-shrink:0;
-}
-
-
-/* =========================================================
-   COMMUNICATION SKILLS SPECIAL TWO-LINE TITLE
-========================================================= */
-
-.communication-title{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:3px;
-
-    font-size:22px;
-
-    line-height:1.05;
-
-    font-weight:750;
-
-    letter-spacing:-.4px;
-
-    color:#fff;
-
-    min-width:0;
-}
-
-.communication-title span{
-
-    white-space:nowrap;
-}
-
-
-/* ================= DETAILS ================= */
-
-.subject-details{
-
-    margin-top:9px;
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:7px 17px;
-
-    color:#9fdcff;
-
-    font-size:12px;
-
-    font-weight:600;
-
-    line-height:1.4;
-}
-
-.subject-details span{
-    position:relative;
-}
-
-.subject-details span:not(:last-child)::after{
-
-    content:"";
-
-    width:3px;
-    height:3px;
-
-    border-radius:50%;
-
-    background:#67dcff;
-
-    position:absolute;
-
-    right:-10px;
-    top:50%;
-
-    transform:translateY(-50%);
-}
-
-.subject-description{
-
-    margin-top:8px;
-
-    color:#a1afbf;
-
-    font-size:12px;
-
-    line-height:1.5;
-
-    max-width:500px;
-}
-
-/* ================= ARROW ================= */
-
-.subject-arrow{
-
-    width:43px;
-    height:43px;
-
-    border:1px solid rgba(103,220,255,.28);
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:18px;
-
-    color:#fff;
-
-    background:rgba(103,220,255,.025);
-
-    transition:.3s;
-
-    flex-shrink:0;
-
-    margin-left:18px;
-}
-
-.subject-card:hover .subject-arrow{
-
-    transform:translateX(5px);
-
-    border-color:var(--cyan);
-
-    color:var(--cyan);
-
-    background:rgba(103,220,255,.05);
-}
-
-/* ================= APPROACH ================= */
-
-.approach{
-    background:#07101a;
-}
-
-.approach-grid{
-
-    margin-top:55px;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:18px;
-}
-
-.approach-card{
-
-    padding:34px;
-
-    border:1px solid var(--line);
-
-    border-radius:14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(75,156,255,.06),
-            rgba(255,255,255,.018)
-        );
-}
-
-.approach-card h3{
-
-    font-size:21px;
-
-    margin-bottom:13px;
-}
-
-.approach-card p{
-
-    color:var(--gray);
-
-    font-size:14px;
-
-    line-height:1.8;
-}
-
-/* ================= RESOURCES ================= */
-
-.resources{
-
-    background:var(--light);
-
-    color:var(--darktext);
-}
-
-.resources .section-label{
-    color:#2476dc;
-}
-
-.resource-grid{
-
-    margin-top:55px;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    border-top:1px solid #d9dee6;
-
-    border-left:1px solid #d9dee6;
-}
-
-.resource-item{
-
-    min-height:145px;
-
-    padding:28px;
-
-    border-right:1px solid #d9dee6;
-
-    border-bottom:1px solid #d9dee6;
-
-    transition:.3s;
-}
-
-.resource-item:hover{
-    background:#fff;
-}
-
-.resource-item h3{
-
-    font-size:18px;
-
+.step-guide{
+    text-align:center;
     margin-bottom:10px;
 }
 
-.resource-item p{
+.step-guide-title{
+    font-size:15px;
+    font-weight:800;
+    color:var(--dark);
+}
 
+.step-guide-title span{
+    color:var(--blue);
+}
+
+.step-guide-sub{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* ================= STEPPER ================= */
+
+.progress-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    padding:20px 22px;
+    margin-bottom:24px;
+}
+
+.step-box{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.step{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    min-width:145px;
+    justify-content:center;
+}
+
+.step-circle{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:800;
+    border:2px solid var(--blue);
+    box-shadow:0 5px 16px rgba(11,94,215,.20);
+}
+
+.step-label{
+    font-size:12px;
+    font-weight:700;
+    color:var(--blue);
+    white-space:nowrap;
+}
+
+.step-arrow{
+    flex:1;
+    max-width:100px;
+    min-width:35px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    margin:0 8px;
+}
+
+.step-arrow span{
+    width:100%;
+    height:3px;
+    background:var(--blue);
+    border-radius:5px;
+}
+
+.step-arrow b{
+    position:absolute;
+    right:-2px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:25px;
+    line-height:1;
+    color:var(--blue);
+    font-weight:500;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes classPulse{
+    0%,100%{
+        box-shadow:0 5px 18px rgba(11,94,215,.08);
+        border-color:var(--border);
+    }
+
+    50%{
+        box-shadow:
+            0 0 0 5px rgba(11,94,215,.12),
+            0 9px 25px rgba(11,94,215,.14);
+        border-color:#7fb0ef;
+    }
+}
+
+@keyframes subjectPulse{
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(11,94,215,0);
+        border-color:#d7dee8;
+    }
+
+    50%{
+        box-shadow:0 0 0 4px rgba(11,94,215,.13);
+        border-color:var(--blue);
+    }
+}
+
+@keyframes openPulse{
+    0%,100%{
+        box-shadow:0 7px 18px rgba(11,94,215,.18);
+        transform:translateY(0);
+    }
+
+    50%{
+        box-shadow:
+            0 0 0 6px rgba(11,94,215,.14),
+            0 10px 25px rgba(11,94,215,.25);
+        transform:translateY(-2px);
+    }
+}
+
+.class-selection.attention .class-btn{
+    animation:classPulse 1.5s ease-in-out infinite;
+}
+
+.subject-select-wrap.attention{
+    animation:subjectPulse 1.35s ease-in-out infinite;
+    border-radius:14px;
+}
+
+.open-btn.attention{
+    animation:openPulse 1.3s ease-in-out infinite;
+}
+
+/* ================= SELECTION CARD ================= */
+
+.selection-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    padding:30px;
+}
+
+.section-heading{
+    margin-bottom:22px;
+}
+
+.section-heading .small{
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.section-heading h2{
+    color:var(--dark);
+    font-size:25px;
+    margin-top:6px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    margin-top:7px;
+    font-size:14px;
+}
+
+/* ================= CLASS BUTTONS ================= */
+
+.class-selection{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.class-btn{
+    background:#fff;
+    border:2px solid var(--border);
+    border-radius:16px;
+    padding:22px;
+    cursor:pointer;
+    transition:.25s ease;
+    text-align:left;
+    position:relative;
+}
+
+.class-btn:hover{
+    transform:translateY(-3px);
+    border-color:#a9c9f2;
+    box-shadow:0 9px 25px rgba(11,94,215,.09);
+}
+
+.class-btn.selected{
+    border-color:var(--blue);
+    background:#f3f8ff;
+    animation:none !important;
+}
+
+.class-number{
+    color:var(--blue);
+    font-size:27px;
+    font-weight:800;
+}
+
+.class-description{
+    margin-top:8px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
+}
+
+.checkmark{
+    position:absolute;
+    right:17px;
+    top:17px;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    display:none;
+    align-items:center;
+    justify-content:center;
     font-size:13px;
+}
 
-    line-height:1.7;
+.class-btn.selected .checkmark{
+    display:flex;
+}
 
-    color:#6d7785;
+/* ================= SUBJECT AREA ================= */
+
+.subject-area{
+    margin-top:28px;
+    padding-top:28px;
+    border-top:1px solid var(--border);
+    display:none;
+}
+
+.subject-area.show{
+    display:block;
+}
+
+.subject-row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:16px;
+    align-items:end;
+}
+
+/* No extra "Subject" label here */
+
+.subject-select-wrap{
+    border-radius:14px;
+    transition:.2s ease;
+}
+
+select{
+    width:100%;
+    height:50px;
+    padding:0 15px;
+    border:1px solid #d7dee8;
+    border-radius:12px;
+    background:#fff;
+    color:var(--dark);
+    font-size:14px;
+    outline:none;
+    cursor:pointer;
+    transition:.2s;
+}
+
+select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(11,94,215,.08);
+}
+
+.class-status{
+    height:50px;
+    display:flex;
+    align-items:center;
+    padding:0 17px;
+    background:#f4f8fd;
+    border:1px solid #e0e8f3;
+    border-radius:12px;
+    color:var(--blue-dark);
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+/* ================= DETAILS ================= */
+
+.details{
+    display:none;
+    margin-top:24px;
+}
+
+.details.show{
+    display:block;
+}
+
+.subject-header{
+    background:linear-gradient(135deg,#0b5ed7,#176edc);
+    color:#fff;
+    border-radius:20px;
+    padding:29px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(11,94,215,.18);
+}
+
+.subject-header:after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:35px solid rgba(255,255,255,.07);
+    border-radius:50%;
+    right:-70px;
+    top:-90px;
+}
+
+.subject-kicker{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    font-weight:800;
+    opacity:.85;
+}
+
+.subject-header h2{
+    margin-top:8px;
+    font-size:30px;
+    position:relative;
+    z-index:2;
+}
+
+.class-code{
+    font-size:30px;
+    font-weight:800;
+}
+
+.subject-name{
+    display:inline-block;
+    margin-left:4px;
+}
+
+.subject-header p{
+    margin-top:8px;
+    opacity:.9;
+    font-size:14px;
+    max-width:700px;
+    line-height:1.6;
+    position:relative;
+    z-index:2;
+}
+
+/* ================= WHAT'S INSIDE ================= */
+
+.content-grid{
+    display:block;
+    margin-top:22px;
+}
+
+.content-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(16,24,40,.055);
+}
+
+.content-card h3{
+    color:var(--dark);
+    font-size:19px;
+    margin-bottom:16px;
+}
+
+.resource-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px 20px;
+}
+
+.resource-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:13px 0;
+    border-bottom:1px solid #eef1f5;
+}
+
+.resource-icon{
+    width:32px;
+    height:32px;
+    border-radius:9px;
+    background:var(--blue-light);
+    color:var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    flex:none;
+}
+
+.resource-item strong{
+    display:block;
+    color:var(--dark);
+    font-size:13px;
+}
+
+.resource-item span{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:3px;
+    line-height:1.5;
 }
 
 /* ================= CTA ================= */
 
 .cta{
-
-    padding:110px 6%;
-
-    background:
-
-        radial-gradient(
-            circle at 75% 50%,
-            rgba(75,156,255,.18),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 20% 90%,
-            rgba(103,220,255,.08),
-            transparent 25%
-        ),
-
-        #05070b;
+    margin-top:23px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    box-shadow:var(--shadow);
 }
 
-.cta-inner{
-    max-width:1200px;
-    margin:auto;
+.cta-text h3{
+    color:var(--dark);
+    font-size:20px;
 }
 
-.cta h2{
-
-    max-width:850px;
-
-    font-size:
-        clamp(42px,6vw,78px);
-
-    line-height:1;
-
-    letter-spacing:-3px;
+.cta-text p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:5px;
 }
 
-.cta p{
+.open-btn{
+    border:0;
+    background:var(--blue);
+    color:#fff;
+    padding:14px 23px;
+    border-radius:12px;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s ease;
+    white-space:nowrap;
+    box-shadow:0 7px 18px rgba(11,94,215,.18);
+}
 
-    color:var(--gray);
-
-    margin-top:24px;
-
-    font-size:16px;
+.open-btn:hover{
+    background:var(--blue-dark);
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-
-    border-top:1px solid var(--line);
-
-    padding:60px 6% 30px;
-
-    background:#05070b;
-}
-
-.footer-top{
-
-    display:grid;
-
-    grid-template-columns:
-        2fr 1fr 1fr 1fr;
-
-    gap:40px;
-
-    padding-bottom:50px;
-}
-
-.footer-brand p{
-
-    color:var(--gray);
-
-    max-width:330px;
-
-    line-height:1.7;
-
-    margin-top:17px;
-
-    font-size:13px;
-}
-
-.footer-col h4{
-
-    font-size:11px;
-
-    letter-spacing:2px;
-
+    background:var(--dark);
     color:#fff;
-
-    margin-bottom:18px;
+    padding:28px 20px;
 }
 
-.footer-col a{
-
-    display:block;
-
-    color:#818d9d;
-
-    text-decoration:none;
-
-    font-size:13px;
-
-    margin-bottom:11px;
-
-    transition:.3s;
+.footer-inner{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
 }
 
-.footer-col a:hover{
-    color:#fff;
+.footer-brand{
+    font-size:16px;
+    font-weight:800;
 }
 
-.copyright{
+.footer-line{
+    width:55px;
+    height:2px;
+    background:#4c9aff;
+    margin:15px auto;
+}
 
-    border-top:1px solid var(--line);
-
-    padding-top:22px;
-
-    color:#657180;
-
-    font-size:11px;
+.footer-text{
+    color:#aeb8c7;
+    font-size:12px;
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:850px){
+@media(max-width:760px){
 
-    header{
-        height:68px;
-        padding:0 5%;
+    .header-inner{
+        min-height:68px;
+        padding:0 15px;
     }
 
     .logo{
-        font-size:15px;
-        letter-spacing:1.2px;
+        width:38px;
+        height:38px;
+        font-size:19px;
     }
 
-    nav,
-    .header-btn{
+    .brand-title{
+        font-size:15px;
+    }
+
+    .brand-sub{
+        font-size:9px;
+    }
+
+    .header-badge{
         display:none;
     }
 
-    .menu{
-        display:block;
-    }
-
-    .hero{
-        min-height:590px;
-    }
-
-    .hero-content{
-        width:90%;
-        padding:70px 0;
+    .hero-inner{
+        padding:38px 18px 34px;
     }
 
     .hero h1{
-        font-size:
-            clamp(42px,11vw,65px);
-
-        letter-spacing:-2.5px;
+        font-size:32px;
     }
 
-    .hero-text{
-        font-size:14px;
+    .hero p{
+        font-size:13px;
     }
 
-    .hero-actions{
+    .container{
+        width:min(100% - 20px,1100px);
+        margin-top:20px;
+    }
+
+    .progress-card{
+        padding:15px 8px;
+        border-radius:16px;
+    }
+
+    .step-box{
+        justify-content:space-between;
+    }
+
+    .step{
+        min-width:auto;
         flex-direction:column;
-        align-items:flex-start;
+        gap:5px;
     }
 
-    .section{
-        padding:75px 5%;
+    .step-circle{
+        width:32px;
+        height:32px;
+        font-size:12px;
     }
 
-    .class-selector{
-        grid-template-columns:1fr;
+    .step-label{
+        font-size:9px;
     }
 
-    .class-option{
-
-        border-right:none;
-
-        border-bottom:
-            1px solid var(--line);
+    .step-arrow{
+        margin:0 3px;
+        min-width:20px;
+        max-width:55px;
+        height:32px;
     }
 
-    .class-option:last-child{
-        border-bottom:none;
+    .step-arrow span{
+        height:2px;
     }
 
-    .class-option.active::after{
-        left:22px;
-        right:22px;
+    .step-arrow b{
+        font-size:19px;
     }
 
-    .subject-list{
-
-        grid-template-columns:1fr;
-
-        gap:14px;
+    .selection-card{
+        padding:20px 17px;
     }
 
-    .subject-card{
-
-        min-height:135px;
-
-        padding:23px 20px;
-
-        border-radius:0;
-    }
-
-    .subject-title-row{
-
-        flex-wrap:nowrap;
-
-        gap:9px;
-    }
-
-    .subject-name{
+    .section-heading h2{
         font-size:21px;
     }
 
-    .subject-class{
-        font-size:21px;
+    .class-selection{
+        grid-template-columns:1fr;
+        gap:11px;
     }
 
-    .communication-title{
-        font-size:20px;
+    .class-btn{
+        padding:17px;
     }
 
-    .subject-details{
-
-        margin-top:8px;
-
-        gap:7px 14px;
-
-        font-size:11px;
-    }
-
-    .subject-description{
-
-        margin-top:7px;
-
-        font-size:11px;
-    }
-
-    .subject-arrow{
-
-        width:38px;
-        height:38px;
-
-        margin-left:12px;
-    }
-
-    .approach-grid{
+    .subject-row{
         grid-template-columns:1fr;
     }
 
-    .resource-grid{
-        grid-template-columns:1fr 1fr;
+    .class-status{
+        width:100%;
     }
 
-    .resource-item{
-
-        min-height:130px;
-
-        padding:22px;
+    .subject-header{
+        padding:23px;
     }
 
-    .footer-top{
-        grid-template-columns:
-            1fr 1fr;
+    .subject-header h2{
+        font-size:24px;
+    }
+
+    .class-code{
+        font-size:24px;
+    }
+
+    .resource-list{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .content-card{
+        padding:19px;
+    }
+
+    .cta{
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px;
+    }
+
+    .open-btn{
+        width:100%;
     }
 }
 
-/* ================= SMALL MOBILE ================= */
+@media(max-width:380px){
 
-@media(max-width:500px){
-
-    .hero h1{
-        font-size:45px;
+    .step-label{
+        font-size:8px;
     }
 
-    .class-name{
-        font-size:29px;
+    .step-arrow{
+        min-width:14px;
     }
 
-    .subject-card{
-
-        padding:21px 17px;
-
-        border-radius:0;
-    }
-
-    .subject-title-row{
-        gap:7px;
-    }
-
-    .subject-name{
-        font-size:17px;
-    }
-
-    .subject-class{
-        font-size:17px;
-    }
-
-    .communication-title{
+    .step-arrow b{
         font-size:16px;
-        gap:2px;
     }
 
-    .subject-details{
-        max-width:245px;
-    }
-
-    .subject-description{
-        max-width:245px;
-    }
-
-    .resource-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-top{
-        grid-template-columns:1fr;
+    .step-guide-title{
+        font-size:13px;
     }
 }
-
 </style>
 </head>
 
@@ -1104,26 +843,32 @@ footer{
 
 <header>
 
-    <div class="logo">
-        ONLINE MATH ACADEMY
-    </div>
+    <div class="header-inner">
 
-    <nav>
-        <a href="#classes">Classes</a>
-        <a href="#subjects">Subjects</a>
-        <a href="#approach">Our Approach</a>
-        <a href="#resources">Resources</a>
-    </nav>
+        <div class="brand">
 
-    <a
-        class="header-btn"
-        href="#subjects"
-    >
-        EXPLORE NOTES →
-    </a>
+            <div class="logo">
+                ∑
+            </div>
 
-    <div class="menu">
-        ☰
+            <div>
+
+                <div class="brand-title">
+                    ONLINE MATH ACADEMY
+                </div>
+
+                <div class="brand-sub">
+                    Study Notes & Educational Resources
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="header-badge">
+            Academic Resources
+        </div>
+
     </div>
 
 </header>
@@ -1133,389 +878,451 @@ footer{
 
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-inner">
 
-        <div class="eyebrow">
-            ONLINE ACADEMIC PLATFORM
+        <div class="hero-tag">
+            ● STUDY • LEARN • ACHIEVE
         </div>
 
         <h1>
-            Best Collection of<br>
-            All Subject Notes.
+            Your Learning Resources,
+            <br>
+            <span>All in One Place</span>
         </h1>
 
-        <p class="hero-text">
-
-            Access organised academic resources,
-            subject notes, exercises, questions and
-            examination material — all in one focused
-            learning platform.
-
-        </p>
-
-        <div class="hero-actions">
-
-            <a
-                href="#classes"
-                class="primary-btn"
-            >
-                EXPLORE CLASSES →
-            </a>
-
-            <a
-                href="#subjects"
-                class="secondary-btn"
-            >
-                VIEW SUBJECTS
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CLASS SELECTOR ================= -->
-
-<section
-    class="section programs"
-    id="classes"
->
-
-    <div class="section-label">
-        ACADEMIC PROGRAMS
-    </div>
-
-    <h2 class="section-title">
-        Choose your class.
-    </h2>
-
-    <p class="section-intro">
-
-        Select your class to explore the complete
-        collection of subject-wise learning resources.
-
-    </p>
-
-    <div class="class-selector-wrap">
-
-        <div class="class-selector">
-
-            <div
-                class="class-option active"
-                onclick="changeClass(9,this)"
-            >
-
-                <div class="class-small">
-                    PAKISTAN CURRICULUM
-                </div>
-
-                <div class="class-name">
-                    Class 9
-                </div>
-
-            </div>
-
-            <div
-                class="class-option"
-                onclick="changeClass(10,this)"
-            >
-
-                <div class="class-small">
-                    PAKISTAN CURRICULUM
-                </div>
-
-                <div class="class-name">
-                    Class 10
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SUBJECTS ================= -->
-
-<section
-    class="section subjects"
-    id="subjects"
->
-
-    <div class="section-label">
-        SUBJECT RESOURCES
-    </div>
-
-    <h2 class="section-title">
-        Explore your subjects.
-    </h2>
-
-    <p class="section-intro">
-
-        Select a subject to open its complete collection
-        of notes, exercises, questions and examination resources.
-
-    </p>
-
-    <div
-        class="subject-list"
-        id="subjectList"
-    ></div>
-
-</section>
-
-
-<!-- ================= APPROACH ================= -->
-
-<section
-    class="section approach"
-    id="approach"
->
-
-    <div class="section-label">
-        OUR APPROACH
-    </div>
-
-    <h2 class="section-title">
-        Simple access.<br>
-        Focused learning.
-    </h2>
-
-    <div class="approach-grid">
-
-        <div class="approach-card">
-
-            <h3>
-                Organised Resources
-            </h3>
-
-            <p>
-                Subject-wise and class-wise material
-                arranged clearly so students can find
-                what they need quickly.
-            </p>
-
-        </div>
-
-        <div class="approach-card">
-
-            <h3>
-                Exam Preparation
-            </h3>
-
-            <p>
-                Exercises, questions and academic resources
-                designed to support effective examination
-                preparation.
-            </p>
-
-        </div>
-
-        <div class="approach-card">
-
-            <h3>
-                Learn Anywhere
-            </h3>
-
-            <p>
-                Access your learning resources from mobile,
-                tablet or desktop whenever you need them.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= RESOURCES ================= -->
-
-<section
-    class="section resources"
-    id="resources"
->
-
-    <div class="section-label">
-        ADDITIONAL RESOURCES
-    </div>
-
-    <h2 class="section-title">
-        More to explore.
-    </h2>
-
-    <div class="resource-grid">
-
-        <div class="resource-item">
-
-            <h3>
-                Science & Technology
-            </h3>
-
-            <p>
-                Biology, Chemistry, Physics,
-                Computer and ICT resources.
-            </p>
-
-        </div>
-
-        <div class="resource-item">
-
-            <h3>
-                Languages
-            </h3>
-
-            <p>
-                English, Urdu and communication-focused
-                academic material.
-            </p>
-
-        </div>
-
-        <div class="resource-item">
-
-            <h3>
-                Social Studies
-            </h3>
-
-            <p>
-                Civics, Economics, Education and
-                Pakistan Studies resources.
-            </p>
-
-        </div>
-
-        <div class="resource-item">
-
-            <h3>
-                Additional Subjects
-            </h3>
-
-            <p>
-                Health, Home Economics, Fashion Design
-                and other subjects.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-    <div class="cta-inner">
-
-        <div class="section-label">
-            BEGIN YOUR LEARNING JOURNEY
-        </div>
-
-        <h2>
-            Find what you need to learn.
-        </h2>
-
         <p>
-            Choose your class, select your subject
-            and start learning.
+            Select your class and subject to explore organized
+            study notes, learning resources and subject material.
         </p>
 
     </div>
 
 </section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+    <div class="step-guide">
+
+        <div class="step-guide-title">
+            Access Your Study Resources
+            <span>in 4 Simple Steps →</span>
+        </div>
+
+        <div class="step-guide-sub">
+            Follow the steps below to access your study resources.
+        </div>
+
+    </div>
+
+
+    <!-- ================= STEPPER ================= -->
+
+    <div class="progress-card">
+
+        <div class="step-box">
+
+            <div class="step">
+
+                <div class="step-circle">
+                    1
+                </div>
+
+                <div class="step-label">
+                    Select Class
+                </div>
+
+            </div>
+
+
+            <div class="step-arrow">
+                <span></span>
+                <b>→</b>
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-circle">
+                    2
+                </div>
+
+                <div class="step-label">
+                    Select Subject
+                </div>
+
+            </div>
+
+
+            <div class="step-arrow">
+                <span></span>
+                <b>→</b>
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-circle">
+                    3
+                </div>
+
+                <div class="step-label">
+                    View Details
+                </div>
+
+            </div>
+
+
+            <div class="step-arrow">
+                <span></span>
+                <b>→</b>
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-circle">
+                    4
+                </div>
+
+                <div class="step-label">
+                    Open Notes
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CLASS SELECTION ================= -->
+
+    <section class="selection-card">
+
+        <div class="section-heading">
+
+            <div class="small">
+                Step 01
+            </div>
+
+            <h2>
+                Choose Your Class
+            </h2>
+
+            <p>
+                Start by selecting the class for which you want
+                to access study resources.
+            </p>
+
+        </div>
+
+
+        <div
+            class="class-selection attention"
+            id="classSelection"
+        >
+
+            <!-- CLASS 9 -->
+
+            <button
+                type="button"
+                class="class-btn"
+                id="class9"
+                onclick="selectClass(9)"
+            >
+
+                <div class="checkmark">
+                    ✓
+                </div>
+
+                <div class="class-number">
+                    Class 9th
+                </div>
+
+                <div class="class-description">
+                    Explore Class 9th subjects and study resources.
+                </div>
+
+            </button>
+
+
+            <!-- CLASS 10 -->
+
+            <button
+                type="button"
+                class="class-btn"
+                id="class10"
+                onclick="selectClass(10)"
+            >
+
+                <div class="checkmark">
+                    ✓
+                </div>
+
+                <div class="class-number">
+                    Class 10th
+                </div>
+
+                <div class="class-description">
+                    Explore Class 10th subjects and study resources.
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= SUBJECT SELECTION ================= -->
+
+        <div
+            class="subject-area"
+            id="subjectArea"
+        >
+
+            <div class="section-heading">
+
+                <div class="small">
+                    Step 02
+                </div>
+
+                <h2>
+                    Select a Subject
+                </h2>
+
+                <p>
+                    Choose a subject of your choice to access
+                    its available learning resources.
+                </p>
+
+            </div>
+
+
+            <div class="subject-row">
+
+                <!--
+                    IMPORTANT:
+                    The extra "Subject" label has been removed.
+                -->
+
+                <div
+                    class="subject-select-wrap attention"
+                    id="subjectSelectWrap"
+                >
+
+                    <select
+                        id="subjectSelect"
+                        onchange="selectSubject()"
+                    >
+
+                        <option value="">
+                            — Select Subject —
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    class="class-status"
+                    id="classStatus"
+                >
+                    No class selected
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DETAILS ================= -->
+
+    <section
+        class="details"
+        id="details"
+    >
+
+        <div class="subject-header">
+
+            <div class="subject-kicker">
+                Selected Learning Area
+            </div>
+
+            <h2 id="subjectTitle">
+                Class 9th
+                <span class="subject-name">
+                    — Mathematics
+                </span>
+            </h2>
+
+            <p id="subjectDescription">
+                Explore study notes, learning resources and
+                revision material.
+            </p>
+
+        </div>
+
+
+        <!-- ================= WHAT'S INSIDE ================= -->
+
+        <div class="content-grid">
+
+            <div class="content-card">
+
+                <h3>
+                    What's Inside?
+                </h3>
+
+                <div class="resource-list">
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Study Notes
+                            </strong>
+
+                            <span>
+                                Organized notes and subject material
+                                for effective learning.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Learning Resources
+                            </strong>
+
+                            <span>
+                                Useful educational material arranged
+                                according to the selected subject.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Revision Material
+                            </strong>
+
+                            <span>
+                                Resources designed to support revision
+                                and exam preparation.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Subject-Wise Organization
+                            </strong>
+
+                            <span>
+                                All resources are maintained in a
+                                dedicated subject folder.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CTA ================= -->
+
+        <div class="cta">
+
+            <div class="cta-text">
+
+                <h3>
+                    Ready to Study?
+                </h3>
+
+                <p>
+                    Open the selected subject's study notes
+                    and start learning.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="open-btn attention"
+                id="openNotesButton"
+                onclick="openNotes()"
+            >
+                Open Study Notes →
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="footer-top">
+    <div class="footer-inner">
 
         <div class="footer-brand">
-
-            <div class="logo">
-                ONLINE MATH ACADEMY
-            </div>
-
-            <p>
-                A modern online academic platform
-                designed to make learning resources
-                easier to access, understand and use.
-            </p>
-
+            ONLINE MATH ACADEMY
         </div>
 
-        <div class="footer-col">
+        <div class="footer-line"></div>
 
-            <h4>
-                ACADEMIC
-            </h4>
-
-            <a href="#classes">
-                Class 9
-            </a>
-
-            <a href="#classes">
-                Class 10
-            </a>
-
-            <a href="#subjects">
-                Subjects
-            </a>
-
+        <div class="footer-text">
+            Study Notes & Educational Resources
         </div>
 
-        <div class="footer-col">
-
-            <h4>
-                RESOURCES
-            </h4>
-
-            <a href="#subjects">
-                Notes
-            </a>
-
-            <a href="#resources">
-                Study Material
-            </a>
-
-            <a href="#approach">
-                Our Approach
-            </a>
-
-        </div>
-
-        <div class="footer-col">
-
-            <h4>
-                PLATFORM
-            </h4>
-
-            <a href="#classes">
-                Explore Classes
-            </a>
-
-            <a href="#subjects">
-                Explore Subjects
-            </a>
-
-            <a href="#resources">
-                Resources
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 ONLINE MATH ACADEMY.
-        All Rights Reserved.
     </div>
 
 </footer>
@@ -1523,444 +1330,471 @@ footer{
 
 <script>
 
-/* =========================================================
-   CLASS 9 DATA
-========================================================= */
+/* =====================================================
+   CLASS 9th SUBJECTS
+===================================================== */
 
-const class9 = [
+const class9Subjects = [
 
-{
-    name:"Biology",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Complete Biology learning resources.",
-    link:"https://drive.google.com/drive/folders/1_FCrgpeJDqqY5-u8sM-FmpRO87VRGyNS"
-},
+    {
+        name:"Biology",
+        url:"https://drive.google.com/drive/folders/1_FCrgpeJDqqY5-u8sM-FmpRO87VRGyNS"
+    },
 
-{
-    name:"Chemistry",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Complete Chemistry learning resources.",
-    link:"https://drive.google.com/drive/folders/1vMrI-EPqPmazDZmCfQyYpJsymygqBrsa"
-},
+    {
+        name:"Chemistry",
+        url:"https://drive.google.com/drive/folders/1vMrI-EPqPmazDZmCfQyYpJsymygqBrsa"
+    },
 
-{
-    name:"Civics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Civics notes and examination material.",
-    link:"https://drive.google.com/drive/folders/1KYYlYIG40NH6ebIAs0hqUVhL7F3IhGsO"
-},
+    {
+        name:"Civics",
+        url:"https://drive.google.com/drive/folders/1KYYlYIG40NH6ebIAs0hqUVhL7F3IhGsO"
+    },
 
-{
-    name:"Communication Skills & Personal Grooming",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Communication and personal development resources.",
-    link:"https://drive.google.com/drive/folders/1PsZMcB6st5-1KCs_C3_w0w-wivbD_e0l"
-},
+    {
+        name:"Communication Skills & Personal Grooming",
+        url:"https://drive.google.com/drive/folders/1PsZMcB6st5-1KCs_C3_w0w-wivbD_e0l"
+    },
 
-{
-    name:"Computer",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Computer science study resources.",
-    link:"https://drive.google.com/drive/folders/1q03ew-1xzEWXpQqxN3bvOIwEqnPaRCXr"
-},
+    {
+        name:"Computer",
+        url:"https://drive.google.com/drive/folders/1q03ew-1xzEWXpQqxN3bvOIwEqnPaRCXr"
+    },
 
-{
-    name:"Economics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Economics notes and academic resources.",
-    link:"https://drive.google.com/drive/folders/1mVsmpEp_ABnfnXjECjJUqmmNuGb1cbev"
-},
+    {
+        name:"Economics",
+        url:"https://drive.google.com/drive/folders/1mVsmpEp_ABnfnXjECjJUqmmNuGb1cbev"
+    },
 
-{
-    name:"Education",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Education subject resources.",
-    link:"https://drive.google.com/drive/folders/18xHdr2uUd0604SPTxnXWggN3GxawGU0P"
-},
+    {
+        name:"Education",
+        url:"https://drive.google.com/drive/folders/18xHdr2uUd0604SPTxnXWggN3GxawGU0P"
+    },
 
-{
-    name:"English",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"English notes, exercises and questions.",
-    link:"https://drive.google.com/drive/folders/1H_2WP6IMPJu5Xrb1pxtJ6pY_IbCQ2apw"
-},
+    {
+        name:"English",
+        url:"https://drive.google.com/drive/folders/1H_2WP6IMPJu5Xrb1pxtJ6pY_IbCQ2apw"
+    },
 
-{
-    name:"Fashion Design",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Fashion Design learning resources.",
-    link:"https://drive.google.com/drive/folders/13pIFAaDGYlbzh8bMVkXsztXtNr7TXqN8"
-},
+    {
+        name:"Fashion Design",
+        url:"https://drive.google.com/drive/folders/13pIFAaDGYlbzh8bMVkXsztXtNr7TXqN8"
+    },
 
-{
-    name:"General Science",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"General Science study material.",
-    link:"https://drive.google.com/drive/folders/1EK7nB-cDqx3Du0WshRjpVYCJIFGaL049"
-},
+    {
+        name:"General Science",
+        url:"https://drive.google.com/drive/folders/1EK7nB-cDqx3Du0WshRjpVYCJIFGaL049"
+    },
 
-{
-    name:"Health & Physical Education",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Health and physical education resources.",
-    link:"https://drive.google.com/drive/folders/1kQ7el-SymtJjy7HackIBQqrb_sxbwof-"
-},
+    {
+        name:"Health & Physical Education",
+        url:"https://drive.google.com/drive/folders/1kQ7el-SymtJjy7HackIBQqrb_sxbwof-"
+    },
 
-{
-    name:"Home Economics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Home Economics learning material.",
-    link:"https://drive.google.com/drive/folders/1HY5ky3UakCijNhgz6ZOmCaJR7alZ4p5u"
-},
+    {
+        name:"Home Economics",
+        url:"https://drive.google.com/drive/folders/1HY5ky3UakCijNhgz6ZOmCaJR7alZ4p5u"
+    },
 
-{
-    name:"ICT Tech Group",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"ICT and technology group resources.",
-    link:"https://drive.google.com/drive/folders/1kbpo3pvQCS75bwfCGp7nMyDzWLPGTiTW"
-},
+    {
+        name:"ICT Tech Group",
+        url:"https://drive.google.com/drive/folders/1kbpo3pvQCS75bwfCGp7nMyDzWLPGTiTW"
+    },
 
-{
-    name:"Islamiyat",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Islamiyat notes and examination material.",
-    link:"https://drive.google.com/drive/folders/1S9wkvWHvBGpctesGDy3XCohmWpXY2KDO"
-},
+    {
+        name:"Islamiyat",
+        url:"https://drive.google.com/drive/folders/1S9wkvWHvBGpctesGDy3XCohmWpXY2KDO"
+    },
 
-{
-    name:"Islamiyat Ikhtiyari",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Optional Islamiyat resources.",
-    link:"https://drive.google.com/drive/folders/1t2J7tK9bPwzENbNnf8A98zB-BE3FUGkN"
-},
+    {
+        name:"Islamiyat Ikhtiyari",
+        url:"https://drive.google.com/drive/folders/1t2J7tK9bPwzENbNnf8A98zB-BE3FUGkN"
+    },
 
-{
-    name:"Mathematics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Mathematics notes, exercises and exam preparation.",
-    link:"https://drive.google.com/drive/folders/1WW2Ncquzaz_Fp3-pePwHRw-3qhITDarD"
-},
+    {
+        name:"Mathematics",
+        url:"https://drive.google.com/drive/folders/1WW2Ncquzaz_Fp3-pePwHRw-3qhITDarD"
+    },
 
-{
-    name:"Physics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Physics learning resources.",
-    link:"https://drive.google.com/drive/folders/1O4vlMLEXd92fhOx6bPAAQcfrdtV6SOfs"
-},
+    {
+        name:"Physics",
+        url:"https://drive.google.com/drive/folders/1O4vlMLEXd92fhOx6bPAAQcfrdtV6SOfs"
+    },
 
-{
-    name:"Tarjuma-tul-Quran",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Tarjuma-tul-Quran academic resources.",
-    link:"https://drive.google.com/drive/folders/12-7dl4fE7Rqemlr9MbHysGhvjxyKANvB"
-},
+    {
+        name:"Tarjuma-tul-Quran",
+        url:"https://drive.google.com/drive/folders/12-7dl4fE7Rqemlr9MbHysGhvjxyKANvB"
+    },
 
-{
-    name:"Urdu",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Urdu notes and examination preparation.",
-    link:"https://drive.google.com/drive/folders/1lxB1DRTqzLEVgObYQWbgS4iJyN6UT1PY"
-}
+    {
+        name:"Urdu",
+        url:"https://drive.google.com/drive/folders/1lxB1DRTqzLEVgObYQWbgS4iJyN6UT1PY"
+    }
 
 ];
 
 
-/* =========================================================
-   CLASS 10 DATA
-========================================================= */
+/* =====================================================
+   CLASS 10th SUBJECTS
+===================================================== */
 
-const class10 = [
+const class10Subjects = [
 
-{
-    name:"Biology",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Complete Biology learning resources.",
-    link:"https://drive.google.com/drive/folders/1POwaFwMpUDmPZxmoIdgimyrmhFO3hr0R"
-},
+    {
+        name:"Biology",
+        url:"https://drive.google.com/drive/folders/1POwaFwMpUDmPZxmoIdgimyrmhFO3hr0R"
+    },
 
-{
-    name:"Chemistry",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Complete Chemistry learning resources.",
-    link:"https://drive.google.com/drive/folders/1ikirwxo-T8mFl748c8QtfJNXjU9ZkTRm"
-},
+    {
+        name:"Chemistry",
+        url:"https://drive.google.com/drive/folders/1ikirwxo-T8mFl748c8QtfJNXjU9ZkTRm"
+    },
 
-{
-    name:"Civics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Civics notes and examination material.",
-    link:"https://drive.google.com/drive/folders/18q1vGnFfSUVJQ4TVYH59phFYlbL-L3Sg"
-},
+    {
+        name:"Civics",
+        url:"https://drive.google.com/drive/folders/18q1vGnFfSUVJQ4TVYH59phFYlbL-L3Sg"
+    },
 
-{
-    name:"Computer",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Computer science study resources.",
-    link:"https://drive.google.com/drive/folders/1lnb27yInY_e7bgAR4bNjWhzE6yE43Xg3"
-},
+    {
+        name:"Computer",
+        url:"https://drive.google.com/drive/folders/1lnb27yInY_e7bgAR4bNjWhzE6yE43Xg3"
+    },
 
-{
-    name:"Computer (Tech)",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Technology group computer resources.",
-    link:"https://drive.google.com/drive/folders/1VSWlMyzpAZ8sqBU7Y3YmLR08RSxwKlP3"
-},
+    {
+        name:"Computer (Tech)",
+        url:"https://drive.google.com/drive/folders/1VSWlMyzpAZ8sqBU7Y3YmLR08RSxwKlP3"
+    },
 
-{
-    name:"English",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"English notes, exercises and questions.",
-    link:"https://drive.google.com/drive/folders/1b1jJcGjU2JAvyDI_rNnNAzcwwuVzJI7u"
-},
+    {
+        name:"English",
+        url:"https://drive.google.com/drive/folders/1b1jJcGjU2JAvyDI_rNnNAzcwwuVzJI7u"
+    },
 
-{
-    name:"General Science",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"General Science study material.",
-    link:"https://drive.google.com/drive/folders/1if_yMGB7vfLSGnuUPqRuNH5RcLk09Daq"
-},
+    {
+        name:"General Science",
+        url:"https://drive.google.com/drive/folders/1if_yMGB7vfLSGnuUPqRuNH5RcLk09Daq"
+    },
 
-{
-    name:"Health and Physical Education",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Health and physical education resources.",
-    link:"https://drive.google.com/drive/folders/1c42A9B8kIyZstOHbmg6-iNZ_l2-RbTtx"
-},
+    {
+        name:"Health and Physical Education",
+        url:"https://drive.google.com/drive/folders/1c42A9B8kIyZstOHbmg6-iNZ_l2-RbTtx"
+    },
 
-{
-    name:"Home Economics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Home Economics learning material.",
-    link:"https://drive.google.com/drive/folders/10O3QUcs4QHb8HNuPrLLbEqFcYR9FM0id"
-},
+    {
+        name:"Home Economics",
+        url:"https://drive.google.com/drive/folders/10O3QUcs4QHb8HNuPrLLbEqFcYR9FM0id"
+    },
 
-{
-    name:"Ikhlaqiyat (Ethics)",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Ethics and character education resources.",
-    link:"https://drive.google.com/drive/folders/1hBFgBIQif0rgV8WXDb4xyDU87rPsCinE"
-},
+    {
+        name:"Ikhlaqiyat (Ethics)",
+        url:"https://drive.google.com/drive/folders/1hBFgBIQif0rgV8WXDb4xyDU87rPsCinE"
+    },
 
-{
-    name:"Islamiyat Ikhtiyari",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Optional Islamiyat resources.",
-    link:"https://drive.google.com/drive/folders/186_k8MZsw6JQVCYBbNmfMHO8JNKuBZXx"
-},
+    {
+        name:"Islamiyat Ikhtiyari",
+        url:"https://drive.google.com/drive/folders/186_k8MZsw6JQVCYBbNmfMHO8JNKuBZXx"
+    },
 
-{
-    name:"Mathematics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Mathematics notes, exercises and exam preparation.",
-    link:"https://drive.google.com/drive/folders/12NO5lcA7_iFy2Xzh02uFrIuxk4SyvRyv"
-},
+    {
+        name:"Mathematics",
+        url:"https://drive.google.com/drive/folders/12NO5lcA7_iFy2Xzh02uFrIuxk4SyvRyv"
+    },
 
-{
-    name:"Pakistan Studies",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Pakistan Studies academic resources.",
-    link:"https://drive.google.com/drive/folders/1ADJ2ABoxqcxoGZwzx3000Oe97rdn3-Kt"
-},
+    {
+        name:"Pakistan Studies",
+        url:"https://drive.google.com/drive/folders/1ADJ2ABoxqcxoGZwzx3000Oe97rdn3-Kt"
+    },
 
-{
-    name:"Physics",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Physics learning resources.",
-    link:"https://drive.google.com/drive/folders/1Yhg84MBQdToCs3DzEbb4Xhx_lJHEaV3k"
-},
+    {
+        name:"Physics",
+        url:"https://drive.google.com/drive/folders/1Yhg84MBQdToCs3DzEbb4Xhx_lJHEaV3k"
+    },
 
-{
-    name:"Tarjuma-tul-Quran",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Tarjuma-tul-Quran academic resources.",
-    link:"https://drive.google.com/drive/folders/1wbvbhfhPo1h0NFRgsTSOVZAkaU-4vq3C"
-},
+    {
+        name:"Tarjuma-tul-Quran",
+        url:"https://drive.google.com/drive/folders/1wbvbhfhPo1h0NFRgsTSOVZAkaU-4vq3C"
+    },
 
-{
-    name:"Urdu",
-    details:["Concept","Exercise","Questions","Exam"],
-    description:"Urdu notes and examination preparation.",
-    link:"https://drive.google.com/drive/folders/10iYyk8CsSZWQN6Mrw2XFDZ7D8a1Q4MYY"
-}
+    {
+        name:"Urdu",
+        url:"https://drive.google.com/drive/folders/10iYyk8CsSZWQN6Mrw2XFDZ7D8a1Q4MYY"
+    }
 
 ];
 
 
-/* =========================================================
-   RENDER SUBJECTS
-========================================================= */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
-function renderSubjects(data,classNumber){
-
-    const list =
-        document.getElementById("subjectList");
-
-    list.innerHTML = "";
-
-    data.forEach(subject => {
-
-        const card =
-            document.createElement("a");
-
-        card.className =
-            "subject-card";
-
-        card.href =
-            subject.link;
-
-        card.target =
-            "_blank";
-
-        card.rel =
-            "noopener noreferrer";
+let selectedClass = "";
+let selectedSubject = null;
 
 
-        const classText =
-            classNumber === 9
-            ? "9th"
-            : "10th";
+/* =====================================================
+   SELECT CLASS
+===================================================== */
+
+function selectClass(classNumber){
+
+    selectedClass = classNumber;
+    selectedSubject = null;
+
+    /* Stop class blinking */
+
+    document
+        .getElementById("classSelection")
+        .classList.remove("attention");
 
 
-        let titleHTML;
+    /* Reset selected classes */
+
+    document
+        .getElementById("class9")
+        .classList.remove("selected");
+
+    document
+        .getElementById("class10")
+        .classList.remove("selected");
 
 
-        /*
-           Communication Skills:
-           Two-line title
-        */
+    /* Select current class */
 
-        if(
-            subject.name ===
-            "Communication Skills & Personal Grooming"
-        ){
-
-            titleHTML = `
-
-                <div class="communication-title">
-
-                    <span>
-                        Communication Skills
-                    </span>
-
-                    <span>
-                        And Personal Grooming
-                    </span>
-
-                </div>
-
-                <span class="subject-class">
-                    ${classText}
-                </span>
-
-            `;
-
-        }else{
-
-            titleHTML = `
-
-                <span class="subject-name">
-                    ${subject.name}
-                </span>
-
-                <span class="subject-class">
-                    ${classText}
-                </span>
-
-            `;
-
-        }
+    document
+        .getElementById("class" + classNumber)
+        .classList.add("selected");
 
 
-        card.innerHTML = `
+    /* Get correct subjects */
 
-            <div class="subject-info">
-
-                <div class="subject-title-row">
-
-                    ${titleHTML}
-
-                </div>
+    const subjects =
+        classNumber === 9
+        ? class9Subjects
+        : class10Subjects;
 
 
-                <div class="subject-details">
-
-                    ${subject.details
-                        .map(item =>
-                            `<span>${item}</span>`
-                        )
-                        .join("")
-                    }
-
-                </div>
+    const subjectSelect =
+        document.getElementById("subjectSelect");
 
 
-                <div class="subject-description">
+    /* Reset dropdown */
 
-                    ${subject.description}
-
-                </div>
-
-            </div>
+    subjectSelect.innerHTML =
+        '<option value="">— Select Subject —</option>';
 
 
-            <div class="subject-arrow">
-                →
-            </div>
+    /* Add subjects */
 
-        `;
+    subjects.forEach((subject,index)=>{
 
+        const option =
+            document.createElement("option");
 
-        list.appendChild(card);
+        option.value = index;
+
+        option.textContent =
+            subject.name +
+            " " +
+            classNumber +
+            "th";
+
+        subjectSelect.appendChild(option);
 
     });
 
+
+    /* Show subject area */
+
+    document
+        .getElementById("subjectArea")
+        .classList.add("show");
+
+
+    /* Hide old details */
+
+    document
+        .getElementById("details")
+        .classList.remove("show");
+
+
+    /* Update class status */
+
+    document
+        .getElementById("classStatus")
+        .textContent =
+        "Class " +
+        classNumber +
+        "th selected";
+
+
+    /* Blink only dropdown */
+
+    document
+        .getElementById("subjectSelectWrap")
+        .classList.add("attention");
+
+
+    /* Scroll */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("subjectArea")
+            .scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+    },120);
+
 }
 
 
-/* =========================================================
-   CHANGE CLASS
-========================================================= */
+/* =====================================================
+   SELECT SUBJECT
+===================================================== */
 
-function changeClass(classNumber,element){
+function selectSubject(){
 
-    document
-        .querySelectorAll(".class-option")
-        .forEach(item =>
-            item.classList.remove("active")
-        );
-
-    element.classList.add("active");
+    const value =
+        document
+            .getElementById("subjectSelect")
+            .value;
 
 
-    if(classNumber === 9){
+    if(value === ""){
 
-        renderSubjects(class9,9);
+        selectedSubject = null;
 
-    }else{
+        document
+            .getElementById("details")
+            .classList.remove("show");
 
-        renderSubjects(class10,10);
+        document
+            .getElementById("subjectSelectWrap")
+            .classList.add("attention");
 
+        return;
     }
 
 
+    /* Stop dropdown blinking */
+
     document
-        .getElementById("subjects")
-        .scrollIntoView({
+        .getElementById("subjectSelectWrap")
+        .classList.remove("attention");
 
-            behavior:"smooth",
 
-            block:"start"
+    /* Get correct subject list */
 
-        });
+    const subjects =
+        selectedClass == 9
+        ? class9Subjects
+        : class10Subjects;
+
+
+    selectedSubject =
+        subjects[parseInt(value)];
+
+
+    /* Class text */
+
+    const classText =
+        selectedClass == 9
+        ? "Class 9th"
+        : "Class 10th";
+
+
+    /* Subject title */
+
+    document
+        .getElementById("subjectTitle")
+        .innerHTML =
+
+        '<span class="class-code">' +
+        classText +
+        '</span>' +
+
+        '<span class="subject-name">' +
+        ' — ' +
+        selectedSubject.name +
+        '</span>';
+
+
+    /* Description */
+
+    document
+        .getElementById("subjectDescription")
+        .textContent =
+
+        "Explore study notes, learning resources and revision material for " +
+        classText +
+        " " +
+        selectedSubject.name +
+        ".";
+
+
+    /* Show details */
+
+    document
+        .getElementById("details")
+        .classList.add("show");
+
+
+    /* Blink Open Notes */
+
+    document
+        .getElementById("openNotesButton")
+        .classList.add("attention");
+
+
+    /* Scroll */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("details")
+            .scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+    },120);
 
 }
 
 
-/* =========================================================
-   INITIAL LOAD
-========================================================= */
+/* =====================================================
+   OPEN STUDY NOTES
+===================================================== */
 
-renderSubjects(class9,9);
+function openNotes(){
+
+    if(!selectedSubject){
+
+        alert(
+            "Please select a subject first."
+        );
+
+        return;
+    }
+
+
+    /* Stop button blinking */
+
+    document
+        .getElementById("openNotesButton")
+        .classList.remove("attention");
+
+
+    /* Open Google Drive folder */
+
+    window.open(
+        selectedSubject.url,
+        "_blank"
+    );
+
+}
 
 </script>
 
