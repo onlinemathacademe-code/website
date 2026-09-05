@@ -16,15 +16,35 @@
 
 :root{
     --blue:#0b5ed7;
-    --blue-dark:#084298;
-    --blue-light:#eef5ff;
-    --blue-border:#cfe0f8;
+    --blue-dark:#073f91;
+    --border:#e2e8f0;
     --dark:#152238;
     --text:#344054;
     --muted:#667085;
-    --bg:#f6f8fb;
-    --border:#e3e8ef;
-    --shadow:0 12px 35px rgba(16,24,40,.08);
+    --bg:#f5f8fc;
+    --white:#fff;
+
+    --gradient-blue:
+        linear-gradient(
+            135deg,
+            #064bb5 0%,
+            #0b5ed7 48%,
+            #4a91f7 100%
+        );
+
+    --gradient-soft:
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #eef5ff 50%,
+            #e7f0fc 100%
+        );
+
+    --shadow:
+        0 12px 35px rgba(16,24,40,.08);
+
+    --shadow-blue:
+        0 10px 28px rgba(11,94,215,.18);
 }
 
 html{
@@ -38,7 +58,7 @@ body{
     min-height:100vh;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
     background:#fff;
@@ -49,10 +69,9 @@ header{
 }
 
 .header-inner{
-    max-width:1180px;
-    margin:auto;
+    width:min(1180px,calc(100% - 32px));
     min-height:76px;
-    padding:0 22px;
+    margin:auto;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -67,54 +86,62 @@ header{
 .logo{
     width:44px;
     height:44px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#0b5ed7,#4c9aff);
+    border-radius:13px;
+    background:var(--gradient-blue);
     color:#fff;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:22px;
     font-weight:800;
-    box-shadow:0 7px 18px rgba(11,94,215,.20);
+    box-shadow:0 7px 20px rgba(11,94,215,.22);
 }
 
 .brand-title{
+    color:var(--dark);
     font-size:19px;
     font-weight:800;
-    letter-spacing:.4px;
-    color:var(--dark);
+    letter-spacing:.35px;
 }
 
 .brand-sub{
-    font-size:11px;
     color:var(--muted);
+    font-size:11px;
     margin-top:4px;
 }
 
 .header-badge{
-    padding:9px 14px;
-    background:var(--blue-light);
-    border:1px solid var(--blue-border);
-    color:var(--blue-dark);
+    color:#fff;
+    background:var(--gradient-blue);
+    padding:9px 16px;
     border-radius:30px;
     font-size:12px;
     font-weight:700;
+    box-shadow:0 5px 15px rgba(11,94,215,.16);
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     background:
-        radial-gradient(circle at 10% 20%,rgba(11,94,215,.12),transparent 28%),
-        radial-gradient(circle at 90% 20%,rgba(11,94,215,.08),transparent 25%),
-        linear-gradient(135deg,#f8fbff,#eef5fc);
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(11,94,215,.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(76,145,247,.13),
+            transparent 27%
+        ),
+        var(--gradient-soft);
     border-bottom:1px solid var(--border);
 }
 
 .hero-inner{
-    max-width:1180px;
+    width:min(1180px,calc(100% - 32px));
     margin:auto;
-    padding:50px 22px 45px;
+    padding:52px 20px 46px;
     text-align:center;
 }
 
@@ -122,13 +149,13 @@ header{
     display:inline-flex;
     align-items:center;
     gap:7px;
+    padding:8px 16px;
     background:#fff;
-    border:1px solid #dce7f5;
     color:var(--blue);
+    border:1px solid #d9e6f7;
     border-radius:30px;
-    padding:8px 15px;
     font-size:12px;
-    font-weight:700;
+    font-weight:800;
     box-shadow:0 5px 18px rgba(16,24,40,.05);
 }
 
@@ -142,7 +169,10 @@ header{
 }
 
 .hero h1 span{
-    color:var(--blue);
+    background:var(--gradient-blue);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 .hero p{
@@ -153,7 +183,7 @@ header{
     line-height:1.7;
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 
 .container{
     width:min(1100px,calc(100% - 32px));
@@ -162,13 +192,13 @@ header{
 
 .step-guide{
     text-align:center;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .step-guide-title{
+    color:var(--dark);
     font-size:15px;
     font-weight:800;
-    color:var(--dark);
 }
 
 .step-guide-title span{
@@ -181,15 +211,15 @@ header{
     margin-top:5px;
 }
 
-/* ================= STEPPER ================= */
+/* STEPPER */
 
 .progress-card{
     background:#fff;
     border:1px solid var(--border);
     border-radius:20px;
-    box-shadow:var(--shadow);
-    padding:20px 22px;
+    padding:20px 24px;
     margin-bottom:24px;
+    box-shadow:var(--shadow);
 }
 
 .step-box{
@@ -202,76 +232,67 @@ header{
 .step{
     display:flex;
     align-items:center;
-    gap:8px;
-    min-width:145px;
     justify-content:center;
+    gap:9px;
+    min-width:145px;
 }
 
 .step-circle{
-    width:38px;
-    height:38px;
+    width:42px;
+    height:42px;
+    flex:none;
     border-radius:50%;
-    background:var(--blue);
+    background:var(--gradient-blue);
     color:#fff;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:14px;
     font-weight:800;
-    border:2px solid var(--blue);
-    box-shadow:0 5px 16px rgba(11,94,215,.20);
+    box-shadow:0 7px 19px rgba(11,94,215,.22);
 }
 
 .step-label{
+    color:var(--blue-dark);
     font-size:12px;
-    font-weight:700;
-    color:var(--blue);
+    font-weight:800;
     white-space:nowrap;
 }
 
+/* LARGE BLUE ARROWS — NO LINES */
+
 .step-arrow{
-    flex:1;
-    max-width:100px;
-    min-width:35px;
-    height:38px;
+    flex:0 0 auto;
+    width:64px;
+    height:52px;
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
-    margin:0 8px;
-}
-
-.step-arrow span{
-    width:100%;
-    height:3px;
-    background:var(--blue);
-    border-radius:5px;
-}
-
-.step-arrow b{
-    position:absolute;
-    right:-2px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:25px;
-    line-height:1;
     color:var(--blue);
+    font-size:42px;
     font-weight:500;
+    line-height:1;
+    text-shadow:0 5px 15px rgba(11,94,215,.18);
+    transition:transform .25s ease;
 }
 
-/* ================= ANIMATIONS ================= */
+.step-arrow:hover{
+    transform:translateX(3px);
+}
+
+/* ANIMATIONS */
 
 @keyframes classPulse{
     0%,100%{
-        box-shadow:0 5px 18px rgba(11,94,215,.08);
+        box-shadow:0 5px 18px rgba(11,94,215,.07);
         border-color:var(--border);
     }
 
     50%{
         box-shadow:
-            0 0 0 5px rgba(11,94,215,.12),
-            0 9px 25px rgba(11,94,215,.14);
-        border-color:#7fb0ef;
+            0 0 0 5px rgba(11,94,215,.11),
+            0 12px 28px rgba(11,94,215,.14);
+        border-color:#80ace9;
     }
 }
 
@@ -282,21 +303,21 @@ header{
     }
 
     50%{
-        box-shadow:0 0 0 4px rgba(11,94,215,.13);
+        box-shadow:0 0 0 4px rgba(11,94,215,.12);
         border-color:var(--blue);
     }
 }
 
 @keyframes openPulse{
     0%,100%{
-        box-shadow:0 7px 18px rgba(11,94,215,.18);
+        box-shadow:0 8px 20px rgba(11,94,215,.18);
         transform:translateY(0);
     }
 
     50%{
         box-shadow:
-            0 0 0 6px rgba(11,94,215,.14),
-            0 10px 25px rgba(11,94,215,.25);
+            0 0 0 6px rgba(11,94,215,.12),
+            0 12px 28px rgba(11,94,215,.24);
         transform:translateY(-2px);
     }
 }
@@ -314,14 +335,14 @@ header{
     animation:openPulse 1.3s ease-in-out infinite;
 }
 
-/* ================= SELECTION CARD ================= */
+/* SELECTION CARD */
 
 .selection-card{
     background:#fff;
     border:1px solid var(--border);
     border-radius:20px;
-    box-shadow:var(--shadow);
     padding:30px;
+    box-shadow:var(--shadow);
 }
 
 .section-heading{
@@ -348,7 +369,7 @@ header{
     font-size:14px;
 }
 
-/* ================= CLASS BUTTONS ================= */
+/* CLASS BUTTONS */
 
 .class-selection{
     display:grid;
@@ -357,10 +378,11 @@ header{
 }
 
 .class-btn{
+    width:100%;
     background:#fff;
     border:2px solid var(--border);
-    border-radius:16px;
-    padding:22px;
+    border-radius:17px;
+    padding:23px;
     cursor:pointer;
     transition:.25s ease;
     text-align:left;
@@ -369,19 +391,27 @@ header{
 
 .class-btn:hover{
     transform:translateY(-3px);
-    border-color:#a9c9f2;
-    box-shadow:0 9px 25px rgba(11,94,215,.09);
+    border-color:#a5c6f1;
+    box-shadow:0 10px 28px rgba(11,94,215,.10);
 }
 
 .class-btn.selected{
     border-color:var(--blue);
-    background:#f3f8ff;
-    animation:none !important;
+    background:
+        linear-gradient(
+            135deg,
+            #f7fbff,
+            #edf5ff
+        );
+    animation:none!important;
 }
 
 .class-number{
-    color:var(--blue);
-    font-size:27px;
+    background:var(--gradient-blue);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    font-size:28px;
     font-weight:800;
 }
 
@@ -396,22 +426,23 @@ header{
     position:absolute;
     right:17px;
     top:17px;
-    width:26px;
-    height:26px;
+    width:27px;
+    height:27px;
     border-radius:50%;
-    background:var(--blue);
+    background:var(--gradient-blue);
     color:#fff;
     display:none;
     align-items:center;
     justify-content:center;
     font-size:13px;
+    box-shadow:0 4px 12px rgba(11,94,215,.20);
 }
 
 .class-btn.selected .checkmark{
     display:flex;
 }
 
-/* ================= SUBJECT AREA ================= */
+/* SUBJECT */
 
 .subject-area{
     margin-top:28px;
@@ -431,8 +462,6 @@ header{
     align-items:end;
 }
 
-/* No extra "Subject" label here */
-
 .subject-select-wrap{
     border-radius:14px;
     transition:.2s ease;
@@ -440,10 +469,10 @@ header{
 
 select{
     width:100%;
-    height:50px;
-    padding:0 15px;
+    height:52px;
+    padding:0 16px;
     border:1px solid #d7dee8;
-    border-radius:12px;
+    border-radius:13px;
     background:#fff;
     color:var(--dark);
     font-size:14px;
@@ -458,20 +487,25 @@ select:focus{
 }
 
 .class-status{
-    height:50px;
+    height:52px;
     display:flex;
     align-items:center;
     padding:0 17px;
-    background:#f4f8fd;
-    border:1px solid #e0e8f3;
-    border-radius:12px;
+    background:
+        linear-gradient(
+            135deg,
+            #f5f9ff,
+            #edf4fc
+        );
+    border:1px solid #dce6f2;
+    border-radius:13px;
     color:var(--blue-dark);
     font-size:13px;
     font-weight:700;
     white-space:nowrap;
 }
 
-/* ================= DETAILS ================= */
+/* DETAILS */
 
 .details{
     display:none;
@@ -483,24 +517,24 @@ select:focus{
 }
 
 .subject-header{
-    background:linear-gradient(135deg,#0b5ed7,#176edc);
+    background:var(--gradient-blue);
     color:#fff;
     border-radius:20px;
-    padding:29px;
+    padding:30px;
     position:relative;
     overflow:hidden;
-    box-shadow:0 12px 30px rgba(11,94,215,.18);
+    box-shadow:var(--shadow-blue);
 }
 
 .subject-header:after{
     content:"";
     position:absolute;
-    width:220px;
-    height:220px;
+    width:230px;
+    height:230px;
     border:35px solid rgba(255,255,255,.07);
     border-radius:50%;
     right:-70px;
-    top:-90px;
+    top:-95px;
 }
 
 .subject-kicker{
@@ -538,7 +572,7 @@ select:focus{
     z-index:2;
 }
 
-/* ================= WHAT'S INSIDE ================= */
+/* CONTENT */
 
 .content-grid{
     display:block;
@@ -577,7 +611,12 @@ select:focus{
     width:32px;
     height:32px;
     border-radius:9px;
-    background:var(--blue-light);
+    background:
+        linear-gradient(
+            135deg,
+            #edf5ff,
+            #dcecff
+        );
     color:var(--blue);
     display:flex;
     align-items:center;
@@ -600,7 +639,7 @@ select:focus{
     line-height:1.5;
 }
 
-/* ================= CTA ================= */
+/* CTA */
 
 .cta{
     margin-top:23px;
@@ -628,28 +667,40 @@ select:focus{
 
 .open-btn{
     border:0;
-    background:var(--blue);
+    background:var(--gradient-blue);
     color:#fff;
     padding:14px 23px;
-    border-radius:12px;
+    border-radius:13px;
     font-size:13px;
     font-weight:800;
     cursor:pointer;
     transition:.25s ease;
     white-space:nowrap;
-    box-shadow:0 7px 18px rgba(11,94,215,.18);
+    box-shadow:0 8px 20px rgba(11,94,215,.20);
 }
 
 .open-btn:hover{
-    background:var(--blue-dark);
+    background:
+        linear-gradient(
+            135deg,
+            #053c8d,
+            #0755c2,
+            #347fdc
+        );
+    transform:translateY(-2px);
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-    background:var(--dark);
+    background:
+        linear-gradient(
+            135deg,
+            #101b2d,
+            #172b49
+        );
     color:#fff;
-    padding:28px 20px;
+    padding:30px 20px;
 }
 
 .footer-inner{
@@ -664,9 +715,15 @@ footer{
 }
 
 .footer-line{
-    width:55px;
-    height:2px;
-    background:#4c9aff;
+    width:60px;
+    height:3px;
+    background:
+        linear-gradient(
+            90deg,
+            #176edc,
+            #65a6ff
+        );
+    border-radius:5px;
     margin:15px auto;
 }
 
@@ -675,13 +732,13 @@ footer{
     font-size:12px;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:760px){
 
     .header-inner{
         min-height:68px;
-        padding:0 15px;
+        width:calc(100% - 24px);
     }
 
     .logo{
@@ -703,7 +760,7 @@ footer{
     }
 
     .hero-inner{
-        padding:38px 18px 34px;
+        padding:38px 16px 34px;
     }
 
     .hero h1{
@@ -715,13 +772,13 @@ footer{
     }
 
     .container{
-        width:min(100% - 20px,1100px);
+        width:calc(100% - 20px);
         margin-top:20px;
     }
 
     .progress-card{
-        padding:15px 8px;
-        border-radius:16px;
+        padding:16px 7px;
+        border-radius:17px;
     }
 
     .step-box{
@@ -735,28 +792,20 @@ footer{
     }
 
     .step-circle{
-        width:32px;
-        height:32px;
+        width:34px;
+        height:34px;
         font-size:12px;
     }
 
     .step-label{
-        font-size:9px;
+        font-size:8px;
+        text-align:center;
     }
 
     .step-arrow{
-        margin:0 3px;
-        min-width:20px;
-        max-width:55px;
-        height:32px;
-    }
-
-    .step-arrow span{
-        height:2px;
-    }
-
-    .step-arrow b{
-        font-size:19px;
+        width:34px;
+        height:40px;
+        font-size:29px;
     }
 
     .selection-card{
@@ -773,7 +822,7 @@ footer{
     }
 
     .class-btn{
-        padding:17px;
+        padding:18px;
     }
 
     .subject-row{
@@ -819,15 +868,17 @@ footer{
 @media(max-width:380px){
 
     .step-label{
-        font-size:8px;
+        font-size:7px;
     }
 
     .step-arrow{
-        min-width:14px;
+        width:27px;
+        font-size:25px;
     }
 
-    .step-arrow b{
-        font-size:16px;
+    .step-circle{
+        width:31px;
+        height:31px;
     }
 
     .step-guide-title{
@@ -839,10 +890,9 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
-
     <div class="header-inner">
 
         <div class="brand">
@@ -852,7 +902,6 @@ footer{
             </div>
 
             <div>
-
                 <div class="brand-title">
                     ONLINE MATH ACADEMY
                 </div>
@@ -860,7 +909,6 @@ footer{
                 <div class="brand-sub">
                     Study Notes & Educational Resources
                 </div>
-
             </div>
 
         </div>
@@ -870,11 +918,10 @@ footer{
         </div>
 
     </div>
-
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -885,14 +932,15 @@ footer{
         </div>
 
         <h1>
-            Your Learning Resources,
+            Best Collection of All Subjects Notes
             <br>
-            <span>All in One Place</span>
+            <span>in One Place</span>
         </h1>
 
         <p>
-            Select your class and subject to explore organized
-            study notes, learning resources and subject material.
+            Select your class and subject to explore
+            organized study notes, learning resources
+            and subject material.
         </p>
 
     </div>
@@ -900,7 +948,7 @@ footer{
 </section>
 
 
-<!-- ================= MAIN ================= -->
+<!-- MAIN -->
 
 <main class="container">
 
@@ -918,7 +966,7 @@ footer{
     </div>
 
 
-    <!-- ================= STEPPER ================= -->
+    <!-- FOUR STEPS -->
 
     <div class="progress-card">
 
@@ -936,12 +984,9 @@ footer{
 
             </div>
 
-
             <div class="step-arrow">
-                <span></span>
-                <b>→</b>
+                →
             </div>
-
 
             <div class="step">
 
@@ -955,12 +1000,9 @@ footer{
 
             </div>
 
-
             <div class="step-arrow">
-                <span></span>
-                <b>→</b>
+                →
             </div>
-
 
             <div class="step">
 
@@ -974,12 +1016,9 @@ footer{
 
             </div>
 
-
             <div class="step-arrow">
-                <span></span>
-                <b>→</b>
+                →
             </div>
-
 
             <div class="step">
 
@@ -998,7 +1037,7 @@ footer{
     </div>
 
 
-    <!-- ================= CLASS SELECTION ================= -->
+    <!-- CLASS SELECTION -->
 
     <section class="selection-card">
 
@@ -1013,8 +1052,8 @@ footer{
             </h2>
 
             <p>
-                Start by selecting the class for which you want
-                to access study resources.
+                Start by selecting the class for which
+                you want to access study resources.
             </p>
 
         </div>
@@ -1024,8 +1063,6 @@ footer{
             class="class-selection attention"
             id="classSelection"
         >
-
-            <!-- CLASS 9 -->
 
             <button
                 type="button"
@@ -1043,13 +1080,12 @@ footer{
                 </div>
 
                 <div class="class-description">
-                    Explore Class 9th subjects and study resources.
+                    Explore Class 9th subjects
+                    and study resources.
                 </div>
 
             </button>
 
-
-            <!-- CLASS 10 -->
 
             <button
                 type="button"
@@ -1067,7 +1103,8 @@ footer{
                 </div>
 
                 <div class="class-description">
-                    Explore Class 10th subjects and study resources.
+                    Explore Class 10th subjects
+                    and study resources.
                 </div>
 
             </button>
@@ -1075,7 +1112,7 @@ footer{
         </div>
 
 
-        <!-- ================= SUBJECT SELECTION ================= -->
+        <!-- SUBJECT -->
 
         <div
             class="subject-area"
@@ -1093,19 +1130,14 @@ footer{
                 </h2>
 
                 <p>
-                    Choose a subject of your choice to access
-                    its available learning resources.
+                    Choose a subject of your choice to
+                    access its available learning resources.
                 </p>
 
             </div>
 
 
             <div class="subject-row">
-
-                <!--
-                    IMPORTANT:
-                    The extra "Subject" label has been removed.
-                -->
 
                 <div
                     class="subject-select-wrap attention"
@@ -1140,7 +1172,7 @@ footer{
     </section>
 
 
-    <!-- ================= DETAILS ================= -->
+    <!-- DETAILS -->
 
     <section
         class="details"
@@ -1161,14 +1193,14 @@ footer{
             </h2>
 
             <p id="subjectDescription">
-                Explore study notes, learning resources and
-                revision material.
+                Explore study notes, learning resources
+                and revision material.
             </p>
 
         </div>
 
 
-        <!-- ================= WHAT'S INSIDE ================= -->
+        <!-- WHAT'S INSIDE -->
 
         <div class="content-grid">
 
@@ -1187,16 +1219,14 @@ footer{
                         </div>
 
                         <div>
-
                             <strong>
                                 Study Notes
                             </strong>
 
                             <span>
-                                Organized notes and subject material
-                                for effective learning.
+                                Organized notes and subject
+                                material for effective learning.
                             </span>
-
                         </div>
 
                     </div>
@@ -1209,16 +1239,15 @@ footer{
                         </div>
 
                         <div>
-
                             <strong>
                                 Learning Resources
                             </strong>
 
                             <span>
-                                Useful educational material arranged
-                                according to the selected subject.
+                                Useful educational material
+                                arranged according to the
+                                selected subject.
                             </span>
-
                         </div>
 
                     </div>
@@ -1231,16 +1260,14 @@ footer{
                         </div>
 
                         <div>
-
                             <strong>
                                 Revision Material
                             </strong>
 
                             <span>
-                                Resources designed to support revision
-                                and exam preparation.
+                                Resources designed to support
+                                revision and exam preparation.
                             </span>
-
                         </div>
 
                     </div>
@@ -1253,16 +1280,14 @@ footer{
                         </div>
 
                         <div>
-
                             <strong>
                                 Subject-Wise Organization
                             </strong>
 
                             <span>
-                                All resources are maintained in a
-                                dedicated subject folder.
+                                All resources are maintained
+                                in a dedicated subject folder.
                             </span>
-
                         </div>
 
                     </div>
@@ -1274,7 +1299,7 @@ footer{
         </div>
 
 
-        <!-- ================= CTA ================= -->
+        <!-- CTA -->
 
         <div class="cta">
 
@@ -1285,11 +1310,12 @@ footer{
                 </h3>
 
                 <p>
-                    Open the selected subject's study notes
-                    and start learning.
+                    Open the selected subject's study
+                    notes and start learning.
                 </p>
 
             </div>
+
 
             <button
                 type="button"
@@ -1307,7 +1333,7 @@ footer{
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1330,9 +1356,9 @@ footer{
 
 <script>
 
-/* =====================================================
-   CLASS 9th SUBJECTS
-===================================================== */
+/* =========================================================
+   CLASS 9 SUBJECTS
+========================================================= */
 
 const class9Subjects = [
 
@@ -1434,9 +1460,9 @@ const class9Subjects = [
 ];
 
 
-/* =====================================================
-   CLASS 10th SUBJECTS
-===================================================== */
+/* =========================================================
+   CLASS 10 SUBJECTS
+========================================================= */
 
 const class10Subjects = [
 
@@ -1523,49 +1549,43 @@ const class10Subjects = [
 ];
 
 
-/* =====================================================
+/* =========================================================
    VARIABLES
-===================================================== */
+========================================================= */
 
 let selectedClass = "";
 let selectedSubject = null;
 
 
-/* =====================================================
+/* =========================================================
    SELECT CLASS
-===================================================== */
+========================================================= */
 
 function selectClass(classNumber){
 
     selectedClass = classNumber;
     selectedSubject = null;
 
-    /* Stop class blinking */
-
     document
         .getElementById("classSelection")
-        .classList.remove("attention");
-
-
-    /* Reset selected classes */
+        .classList
+        .remove("attention");
 
     document
         .getElementById("class9")
-        .classList.remove("selected");
+        .classList
+        .remove("selected");
 
     document
         .getElementById("class10")
-        .classList.remove("selected");
-
-
-    /* Select current class */
+        .classList
+        .remove("selected");
 
     document
         .getElementById("class" + classNumber)
-        .classList.add("selected");
+        .classList
+        .add("selected");
 
-
-    /* Get correct subjects */
 
     const subjects =
         classNumber === 9
@@ -1577,47 +1597,41 @@ function selectClass(classNumber){
         document.getElementById("subjectSelect");
 
 
-    /* Reset dropdown */
-
     subjectSelect.innerHTML =
         '<option value="">— Select Subject —</option>';
 
 
-    /* Add subjects */
+    subjects.forEach(
+        (subject,index)=>{
 
-    subjects.forEach((subject,index)=>{
+            const option =
+                document.createElement("option");
 
-        const option =
-            document.createElement("option");
+            option.value = index;
 
-        option.value = index;
+            option.textContent =
+                subject.name +
+                " " +
+                classNumber +
+                "th";
 
-        option.textContent =
-            subject.name +
-            " " +
-            classNumber +
-            "th";
+            subjectSelect.appendChild(option);
 
-        subjectSelect.appendChild(option);
+        }
+    );
 
-    });
-
-
-    /* Show subject area */
 
     document
         .getElementById("subjectArea")
-        .classList.add("show");
+        .classList
+        .add("show");
 
-
-    /* Hide old details */
 
     document
         .getElementById("details")
-        .classList.remove("show");
+        .classList
+        .remove("show");
 
-
-    /* Update class status */
 
     document
         .getElementById("classStatus")
@@ -1627,32 +1641,29 @@ function selectClass(classNumber){
         "th selected";
 
 
-    /* Blink only dropdown */
-
     document
         .getElementById("subjectSelectWrap")
-        .classList.add("attention");
+        .classList
+        .add("attention");
 
 
-    /* Scroll */
-
-    setTimeout(()=>{
-
-        document
-            .getElementById("subjectArea")
-            .scrollIntoView({
-                behavior:"smooth",
-                block:"center"
-            });
-
-    },120);
-
+    setTimeout(
+        ()=>{
+            document
+                .getElementById("subjectArea")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+        },
+        120
+    );
 }
 
 
-/* =====================================================
+/* =========================================================
    SELECT SUBJECT
-===================================================== */
+========================================================= */
 
 function selectSubject(){
 
@@ -1668,24 +1679,23 @@ function selectSubject(){
 
         document
             .getElementById("details")
-            .classList.remove("show");
+            .classList
+            .remove("show");
 
         document
             .getElementById("subjectSelectWrap")
-            .classList.add("attention");
+            .classList
+            .add("attention");
 
         return;
     }
 
 
-    /* Stop dropdown blinking */
-
     document
         .getElementById("subjectSelectWrap")
-        .classList.remove("attention");
+        .classList
+        .remove("attention");
 
-
-    /* Get correct subject list */
 
     const subjects =
         selectedClass == 9
@@ -1697,36 +1707,27 @@ function selectSubject(){
         subjects[parseInt(value)];
 
 
-    /* Class text */
-
     const classText =
         selectedClass == 9
         ? "Class 9th"
         : "Class 10th";
 
 
-    /* Subject title */
-
     document
         .getElementById("subjectTitle")
         .innerHTML =
-
         '<span class="class-code">' +
         classText +
         '</span>' +
-
         '<span class="subject-name">' +
         ' — ' +
         selectedSubject.name +
         '</span>';
 
 
-    /* Description */
-
     document
         .getElementById("subjectDescription")
         .textContent =
-
         "Explore study notes, learning resources and revision material for " +
         classText +
         " " +
@@ -1734,39 +1735,35 @@ function selectSubject(){
         ".";
 
 
-    /* Show details */
-
     document
         .getElementById("details")
-        .classList.add("show");
+        .classList
+        .add("show");
 
-
-    /* Blink Open Notes */
 
     document
         .getElementById("openNotesButton")
-        .classList.add("attention");
+        .classList
+        .add("attention");
 
 
-    /* Scroll */
-
-    setTimeout(()=>{
-
-        document
-            .getElementById("details")
-            .scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-
-    },120);
-
+    setTimeout(
+        ()=>{
+            document
+                .getElementById("details")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+        },
+        120
+    );
 }
 
 
-/* =====================================================
-   OPEN STUDY NOTES
-===================================================== */
+/* =========================================================
+   OPEN NOTES
+========================================================= */
 
 function openNotes(){
 
@@ -1780,20 +1777,16 @@ function openNotes(){
     }
 
 
-    /* Stop button blinking */
-
     document
         .getElementById("openNotesButton")
-        .classList.remove("attention");
+        .classList
+        .remove("attention");
 
-
-    /* Open Google Drive folder */
 
     window.open(
         selectedSubject.url,
         "_blank"
     );
-
 }
 
 </script>
