@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b5ed7">
+
+<title>ONLINE MATH ACADEMY | Study Notes & Resources</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --blue:#0b5ed7;
+    --blue-dark:#073f91;
+    --border:#e2e8f0;
+    --dark:#152238;
+    --text:#344054;
+    --muted:#667085;
+    --bg:#f5f8fc;
+    --white:#fff;
+
+    --gradient-blue:
+        linear-gradient(
+            135deg,
+            #064bb5 0%,
+            #0b5ed7 48%,
+            #4a91f7 100%
+        );
+
+    --gradient-soft:
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #eef5ff 50%,
+            #e7f0fc 100%
+        );
+
+    --shadow:
+        0 12px 35px rgba(16,24,40,.08);
+
+    --shadow-blue:
+        0 10px 28px rgba(11,94,215,.18);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+
+/* HEADER */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-inner{
+    width:min(1180px,calc(100% - 32px));
+    min-height:76px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:44px;
+    height:44px;
+    border-radius:13px;
+    background:var(--gradient-blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:800;
+    box-shadow:0 7px 20px rgba(11,94,215,.22);
+}
+
+.brand-title{
+    color:var(--dark);
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:.35px;
+}
+
+.brand-sub{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:4px;
+}
+
+.header-badge{
+    color:#fff;
+    background:var(--gradient-blue);
+    padding:9px 16px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    box-shadow:0 5px 15px rgba(11,94,215,.16);
+}
+
+/* HERO */
+
+.hero{
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(11,94,215,.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(76,145,247,.13),
+            transparent 27%
+        ),
+        var(--gradient-soft);
+    border-bottom:1px solid var(--border);
+}
+
+.hero-inner{
+    width:min(1180px,calc(100% - 32px));
+    margin:auto;
+    padding:52px 20px 46px;
+    text-align:center;
+}
+
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 16px;
+    background:#fff;
+    color:var(--blue);
+    border:1px solid #d9e6f7;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:800;
+    box-shadow:0 5px 18px rgba(16,24,40,.05);
+}
+
+.hero h1{
+    margin-top:18px;
+    color:var(--dark);
+    font-size:clamp(30px,5vw,52px);
+    line-height:1.1;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.hero h1 span{
+    background:var(--gradient-blue);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:720px;
+    margin:16px auto 0;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* MAIN */
+
+.container{
+    width:min(1100px,calc(100% - 32px));
+    margin:32px auto 65px;
+}
+
+.step-guide{
+    text-align:center;
+    margin-bottom:12px;
+}
+
+.step-guide-title{
+    color:var(--dark);
+    font-size:15px;
+    font-weight:800;
+}
+
+.step-guide-title span{
+    color:var(--blue);
+}
+
+.step-guide-sub{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* STEPPER */
+
+.progress-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px 24px;
+    margin-bottom:24px;
+    box-shadow:var(--shadow);
+}
+
+.step-box{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.step{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-width:145px;
+}
+
+.step-circle{
+    width:42px;
+    height:42px;
+    flex:none;
+    border-radius:50%;
+    background:var(--gradient-blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:800;
+    box-shadow:0 7px 19px rgba(11,94,215,.22);
+}
+
+.step-label{
+    color:var(--blue-dark);
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+/* LARGE BLUE ARROWS — NO LINES */
+
+.step-arrow{
+    flex:0 0 auto;
+    width:64px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--blue);
+    font-size:42px;
+    font-weight:500;
+    line-height:1;
+    text-shadow:0 5px 15px rgba(11,94,215,.18);
+    transition:transform .25s ease;
+}
+
+.step-arrow:hover{
+    transform:translateX(3px);
+}
+
+/* ANIMATIONS */
+
+@keyframes classPulse{
+    0%,100%{
+        box-shadow:0 5px 18px rgba(11,94,215,.07);
+        border-color:var(--border);
+    }
+
+    50%{
+        box-shadow:
+            0 0 0 5px rgba(11,94,215,.11),
+            0 12px 28px rgba(11,94,215,.14);
+        border-color:#80ace9;
+    }
+}
+
+@keyframes subjectPulse{
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(11,94,215,0);
+        border-color:#d7dee8;
+    }
+
+    50%{
+        box-shadow:0 0 0 4px rgba(11,94,215,.12);
+        border-color:var(--blue);
+    }
+}
+
+@keyframes openPulse{
+    0%,100%{
+        box-shadow:0 8px 20px rgba(11,94,215,.18);
+        transform:translateY(0);
+    }
+
+    50%{
+        box-shadow:
+            0 0 0 6px rgba(11,94,215,.12),
+            0 12px 28px rgba(11,94,215,.24);
+        transform:translateY(-2px);
+    }
+}
+
+.class-selection.attention .class-btn{
+    animation:classPulse 1.5s ease-in-out infinite;
+}
+
+.subject-select-wrap.attention{
+    animation:subjectPulse 1.35s ease-in-out infinite;
+    border-radius:14px;
+}
+
+.open-btn.attention{
+    animation:openPulse 1.3s ease-in-out infinite;
+}
+
+/* SELECTION CARD */
+
+.selection-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.section-heading{
+    margin-bottom:22px;
+}
+
+.section-heading .small{
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.section-heading h2{
+    color:var(--dark);
+    font-size:25px;
+    margin-top:6px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    margin-top:7px;
+    font-size:14px;
+}
+
+/* CLASS BUTTONS */
+
+.class-selection{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.class-btn{
+    width:100%;
+    background:#fff;
+    border:2px solid var(--border);
+    border-radius:17px;
+    padding:23px;
+    cursor:pointer;
+    transition:.25s ease;
+    text-align:left;
+    position:relative;
+}
+
+.class-btn:hover{
+    transform:translateY(-3px);
+    border-color:#a5c6f1;
+    box-shadow:0 10px 28px rgba(11,94,215,.10);
+}
+
+.class-btn.selected{
+    border-color:var(--blue);
+    background:
+        linear-gradient(
+            135deg,
+            #f7fbff,
+            #edf5ff
+        );
+    animation:none!important;
+}
+
+.class-number{
+    background:var(--gradient-blue);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    font-size:28px;
+    font-weight:800;
+}
+
+.class-description{
+    margin-top:8px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
+}
+
+.checkmark{
+    position:absolute;
+    right:17px;
+    top:17px;
+    width:27px;
+    height:27px;
+    border-radius:50%;
+    background:var(--gradient-blue);
+    color:#fff;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    box-shadow:0 4px 12px rgba(11,94,215,.20);
+}
+
+.class-btn.selected .checkmark{
+    display:flex;
+}
+
+/* SUBJECT */
+
+.subject-area{
+    margin-top:28px;
+    padding-top:28px;
+    border-top:1px solid var(--border);
+    display:none;
+}
+
+.subject-area.show{
+    display:block;
+}
+
+.subject-row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:16px;
+    align-items:end;
+}
+
+.subject-select-wrap{
+    border-radius:14px;
+    transition:.2s ease;
+}
+
+select{
+    width:100%;
+    height:52px;
+    padding:0 16px;
+    border:1px solid #d7dee8;
+    border-radius:13px;
+    background:#fff;
+    color:var(--dark);
+    font-size:14px;
+    outline:none;
+    cursor:pointer;
+    transition:.2s;
+}
+
+select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(11,94,215,.08);
+}
+
+.class-status{
+    height:52px;
+    display:flex;
+    align-items:center;
+    padding:0 17px;
+    background:
+        linear-gradient(
+            135deg,
+            #f5f9ff,
+            #edf4fc
+        );
+    border:1px solid #dce6f2;
+    border-radius:13px;
+    color:var(--blue-dark);
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+/* DETAILS */
+
+.details{
+    display:none;
+    margin-top:24px;
+}
+
+.details.show{
+    display:block;
+}
+
+.subject-header{
+    background:var(--gradient-blue);
+    color:#fff;
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:var(--shadow-blue);
+}
+
+.subject-header:after{
+    content:"";
+    position:absolute;
+    width:230px;
+    height:230px;
+    border:35px solid rgba(255,255,255,.07);
+    border-radius:50%;
+    right:-70px;
+    top:-95px;
+}
+
+.subject-kicker{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    font-weight:800;
+    opacity:.85;
+}
+
+.subject-header h2{
+    margin-top:8px;
+    font-size:30px;
+    position:relative;
+    z-index:2;
+}
+
+.class-code{
+    font-size:30px;
+    font-weight:800;
+}
+
+.subject-name{
+    display:inline-block;
+    margin-left:4px;
+}
+
+.subject-header p{
+    margin-top:8px;
+    opacity:.9;
+    font-size:14px;
+    max-width:700px;
+    line-height:1.6;
+    position:relative;
+    z-index:2;
+}
+
+/* CONTENT */
+
+.content-grid{
+    display:block;
+    margin-top:22px;
+}
+
+.content-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(16,24,40,.055);
+}
+
+.content-card h3{
+    color:var(--dark);
+    font-size:19px;
+    margin-bottom:16px;
+}
+
+.resource-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px 20px;
+}
+
+.resource-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:13px 0;
+    border-bottom:1px solid #eef1f5;
+}
+
+.resource-icon{
+    width:32px;
+    height:32px;
+    border-radius:9px;
+    background:
+        linear-gradient(
+            135deg,
+            #edf5ff,
+            #dcecff
+        );
+    color:var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    flex:none;
+}
+
+.resource-item strong{
+    display:block;
+    color:var(--dark);
+    font-size:13px;
+}
+
+.resource-item span{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:3px;
+    line-height:1.5;
+}
+
+/* CTA */
+
+.cta{
+    margin-top:23px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    box-shadow:var(--shadow);
+}
+
+.cta-text h3{
+    color:var(--dark);
+    font-size:20px;
+}
+
+.cta-text p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:5px;
+}
+
+.open-btn{
+    border:0;
+    background:var(--gradient-blue);
+    color:#fff;
+    padding:14px 23px;
+    border-radius:13px;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s ease;
+    white-space:nowrap;
+    box-shadow:0 8px 20px rgba(11,94,215,.20);
+}
+
+.open-btn:hover{
+    background:
+        linear-gradient(
+            135deg,
+            #053c8d,
+            #0755c2,
+            #347fdc
+        );
+    transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+    background:
+        linear-gradient(
+            135deg,
+            #101b2d,
+            #172b49
+        );
+    color:#fff;
+    padding:30px 20px;
+}
+
+.footer-inner{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.footer-brand{
+    font-size:16px;
+    font-weight:800;
+}
+
+.footer-line{
+    width:60px;
+    height:3px;
+    background:
+        linear-gradient(
+            90deg,
+            #176edc,
+            #65a6ff
+        );
+    border-radius:5px;
+    margin:15px auto;
+}
+
+.footer-text{
+    color:#aeb8c7;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:760px){
+
+    .header-inner{
+        min-height:68px;
+        width:calc(100% - 24px);
+    }
+
+    .logo{
+        width:38px;
+        height:38px;
+        font-size:19px;
+    }
+
+    .brand-title{
+        font-size:15px;
+    }
+
+    .brand-sub{
+        font-size:9px;
+    }
+
+    .header-badge{
+        display:none;
+    }
+
+    .hero-inner{
+        padding:38px 16px 34px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .container{
+        width:calc(100% - 20px);
+        margin-top:20px;
+    }
+
+    .progress-card{
+        padding:16px 7px;
+        border-radius:17px;
+    }
+
+    .step-box{
+        justify-content:space-between;
+    }
+
+    .step{
+        min-width:auto;
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .step-circle{
+        width:34px;
+        height:34px;
+        font-size:12px;
+    }
+
+    .step-label{
+        font-size:8px;
+        text-align:center;
+    }
+
+    .step-arrow{
+        width:34px;
+        height:40px;
+        font-size:29px;
+    }
+
+    .selection-card{
+        padding:20px 17px;
+    }
+
+    .section-heading h2{
+        font-size:21px;
+    }
+
+    .class-selection{
+        grid-template-columns:1fr;
+        gap:11px;
+    }
+
+    .class-btn{
+        padding:18px;
+    }
+
+    .subject-row{
+        grid-template-columns:1fr;
+    }
+
+    .class-status{
+        width:100%;
+    }
+
+    .subject-header{
+        padding:23px;
+    }
+
+    .subject-header h2{
+        font-size:24px;
+    }
+
+    .class-code{
+        font-size:24px;
+    }
+
+    .resource-list{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .content-card{
+        padding:19px;
+    }
+
+    .cta{
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px;
+    }
+
+    .open-btn{
+        width:100%;
+    }
+}
+
+@media(max-width:380px){
+
+    .step-label{
+        font-size:7px;
+    }
+
+    .step-arrow{
+        width:27px;
+        font-size:25px;
+    }
+
+    .step-circle{
+        width:31px;
+        height:31px;
+    }
+
+    .step-guide-title{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="header-inner">
+
+        <div class="brand">
+
+            <div class="logo">
+                ∑
+            </div>
+
+            <div>
+                <div class="brand-title">
+                    ONLINE MATH ACADEMY
+                </div>
+
+                <div class="brand-sub">
+                    Study Notes & Educational Resources
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header-badge">
+            Academic Resources
+        </div>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-tag">
+            ● STUDY • LEARN • ACHIEVE
+        </div>
+
+        <h1>
+            Best Collection of All Subjects Notes
+            <br>
+            <span>in One Place</span>
+        </h1>
+
+        <p>
+            Select your class and subject to explore
+            organized study notes, learning resources
+            and subject material.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+    <div class="step-guide">
+
+        <div class="step-guide-title">
+            Access Your Study Resources
+            <span>in 4 Simple Steps →</span>
+        </div>
+
+        <div class="step-guide-sub">
+            Follow the steps below to access your study resources.
+        </div>
+
+    </div>
+
+
+    <!-- FOUR STEPS -->
+
+    <div class="progress-card">
+
+        <div class="step-box">
+
+            <div class="step">
+
+                <div class="step-circle">
+                    1
+                </div>
+
+                <div class="step-label">
+                    Select Class
+                </div>
+
+            </div>
+
+            <div class="step-arrow">
+                →
+            </div>
+
+            <div class="step">
+
+                <div class="step-circle">
+                    2
+                </div>
+
+                <div class="step-label">
+                    Select Subject
+                </div>
+
+            </div>
+
+            <div class="step-arrow">
+                →
+            </div>
+
+            <div class="step">
+
+                <div class="step-circle">
+                    3
+                </div>
+
+                <div class="step-label">
+                    View Details
+                </div>
+
+            </div>
+
+            <div class="step-arrow">
+                →
+            </div>
+
+            <div class="step">
+
+                <div class="step-circle">
+                    4
+                </div>
+
+                <div class="step-label">
+                    Open Notes
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CLASS SELECTION -->
+
+    <section class="selection-card">
+
+        <div class="section-heading">
+
+            <div class="small">
+                Step 01
+            </div>
+
+            <h2>
+                Choose Your Class
+            </h2>
+
+            <p>
+                Start by selecting the class for which
+                you want to access study resources.
+            </p>
+
+        </div>
+
+
+        <div
+            class="class-selection attention"
+            id="classSelection"
+        >
+
+            <button
+                type="button"
+                class="class-btn"
+                id="class9"
+                onclick="selectClass(9)"
+            >
+
+                <div class="checkmark">
+                    ✓
+                </div>
+
+                <div class="class-number">
+                    Class 9th
+                </div>
+
+                <div class="class-description">
+                    Explore Class 9th subjects
+                    and study resources.
+                </div>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="class-btn"
+                id="class10"
+                onclick="selectClass(10)"
+            >
+
+                <div class="checkmark">
+                    ✓
+                </div>
+
+                <div class="class-number">
+                    Class 10th
+                </div>
+
+                <div class="class-description">
+                    Explore Class 10th subjects
+                    and study resources.
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <!-- SUBJECT -->
+
+        <div
+            class="subject-area"
+            id="subjectArea"
+        >
+
+            <div class="section-heading">
+
+                <div class="small">
+                    Step 02
+                </div>
+
+                <h2>
+                    Select a Subject
+                </h2>
+
+                <p>
+                    Choose a subject of your choice to
+                    access its available learning resources.
+                </p>
+
+            </div>
+
+
+            <div class="subject-row">
+
+                <div
+                    class="subject-select-wrap attention"
+                    id="subjectSelectWrap"
+                >
+
+                    <select
+                        id="subjectSelect"
+                        onchange="selectSubject()"
+                    >
+
+                        <option value="">
+                            — Select Subject —
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    class="class-status"
+                    id="classStatus"
+                >
+                    No class selected
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DETAILS -->
+
+    <section
+        class="details"
+        id="details"
+    >
+
+        <div class="subject-header">
+
+            <div class="subject-kicker">
+                Selected Learning Area
+            </div>
+
+            <h2 id="subjectTitle">
+                Class 9th
+                <span class="subject-name">
+                    — Mathematics
+                </span>
+            </h2>
+
+            <p id="subjectDescription">
+                Explore study notes, learning resources
+                and revision material.
+            </p>
+
+        </div>
+
+
+        <!-- WHAT'S INSIDE -->
+
+        <div class="content-grid">
+
+            <div class="content-card">
+
+                <h3>
+                    What's Inside?
+                </h3>
+
+                <div class="resource-list">
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Study Notes
+                            </strong>
+
+                            <span>
+                                Organized notes and subject
+                                material for effective learning.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Learning Resources
+                            </strong>
+
+                            <span>
+                                Useful educational material
+                                arranged according to the
+                                selected subject.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Revision Material
+                            </strong>
+
+                            <span>
+                                Resources designed to support
+                                revision and exam preparation.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-item">
+
+                        <div class="resource-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Subject-Wise Organization
+                            </strong>
+
+                            <span>
+                                All resources are maintained
+                                in a dedicated subject folder.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="cta">
+
+            <div class="cta-text">
+
+                <h3>
+                    Ready to Study?
+                </h3>
+
+                <p>
+                    Open the selected subject's study
+                    notes and start learning.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="open-btn attention"
+                id="openNotesButton"
+                onclick="openNotes()"
+            >
+                Open Study Notes →
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+            ONLINE MATH ACADEMY
+        </div>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-text">
+            Study Notes & Educational Resources
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   CLASS 9 SUBJECTS
+========================================================= */
+
+const class9Subjects = [
+
+    {
+        name:"Biology",
+        url:"https://drive.google.com/drive/folders/1_FCrgpeJDqqY5-u8sM-FmpRO87VRGyNS"
+    },
+
+    {
+        name:"Chemistry",
+        url:"https://drive.google.com/drive/folders/1vMrI-EPqPmazDZmCfQyYpJsymygqBrsa"
+    },
+
+    {
+        name:"Civics",
+        url:"https://drive.google.com/drive/folders/1KYYlYIG40NH6ebIAs0hqUVhL7F3IhGsO"
+    },
+
+    {
+        name:"Communication Skills & Personal Grooming",
+        url:"https://drive.google.com/drive/folders/1PsZMcB6st5-1KCs_C3_w0w-wivbD_e0l"
+    },
+
+    {
+        name:"Computer",
+        url:"https://drive.google.com/drive/folders/1q03ew-1xzEWXpQqxN3bvOIwEqnPaRCXr"
+    },
+
+    {
+        name:"Economics",
+        url:"https://drive.google.com/drive/folders/1mVsmpEp_ABnfnXjECjJUqmmNuGb1cbev"
+    },
+
+    {
+        name:"Education",
+        url:"https://drive.google.com/drive/folders/18xHdr2uUd0604SPTxnXWggN3GxawGU0P"
+    },
+
+    {
+        name:"English",
+        url:"https://drive.google.com/drive/folders/1H_2WP6IMPJu5Xrb1pxtJ6pY_IbCQ2apw"
+    },
+
+    {
+        name:"Fashion Design",
+        url:"https://drive.google.com/drive/folders/13pIFAaDGYlbzh8bMVkXsztXtNr7TXqN8"
+    },
+
+    {
+        name:"General Science",
+        url:"https://drive.google.com/drive/folders/1EK7nB-cDqx3Du0WshRjpVYCJIFGaL049"
+    },
+
+    {
+        name:"Health & Physical Education",
+        url:"https://drive.google.com/drive/folders/1kQ7el-SymtJjy7HackIBQqrb_sxbwof-"
+    },
+
+    {
+        name:"Home Economics",
+        url:"https://drive.google.com/drive/folders/1HY5ky3UakCijNhgz6ZOmCaJR7alZ4p5u"
+    },
+
+    {
+        name:"ICT Tech Group",
+        url:"https://drive.google.com/drive/folders/1kbpo3pvQCS75bwfCGp7nMyDzWLPGTiTW"
+    },
+
+    {
+        name:"Islamiyat",
+        url:"https://drive.google.com/drive/folders/1S9wkvWHvBGpctesGDy3XCohmWpXY2KDO"
+    },
+
+    {
+        name:"Islamiyat Ikhtiyari",
+        url:"https://drive.google.com/drive/folders/1t2J7tK9bPwzENbNnf8A98zB-BE3FUGkN"
+    },
+
+    {
+        name:"Mathematics",
+        url:"https://drive.google.com/drive/folders/1WW2Ncquzaz_Fp3-pePwHRw-3qhITDarD"
+    },
+
+    {
+        name:"Physics",
+        url:"https://drive.google.com/drive/folders/1O4vlMLEXd92fhOx6bPAAQcfrdtV6SOfs"
+    },
+
+    {
+        name:"Tarjuma-tul-Quran",
+        url:"https://drive.google.com/drive/folders/12-7dl4fE7Rqemlr9MbHysGhvjxyKANvB"
+    },
+
+    {
+        name:"Urdu",
+        url:"https://drive.google.com/drive/folders/1lxB1DRTqzLEVgObYQWbgS4iJyN6UT1PY"
+    }
+
+];
+
+
+/* =========================================================
+   CLASS 10 SUBJECTS
+========================================================= */
+
+const class10Subjects = [
+
+    {
+        name:"Biology",
+        url:"https://drive.google.com/drive/folders/1POwaFwMpUDmPZxmoIdgimyrmhFO3hr0R"
+    },
+
+    {
+        name:"Chemistry",
+        url:"https://drive.google.com/drive/folders/1ikirwxo-T8mFl748c8QtfJNXjU9ZkTRm"
+    },
+
+    {
+        name:"Civics",
+        url:"https://drive.google.com/drive/folders/18q1vGnFfSUVJQ4TVYH59phFYlbL-L3Sg"
+    },
+
+    {
+        name:"Computer",
+        url:"https://drive.google.com/drive/folders/1lnb27yInY_e7bgAR4bNjWhzE6yE43Xg3"
+    },
+
+    {
+        name:"Computer (Tech)",
+        url:"https://drive.google.com/drive/folders/1VSWlMyzpAZ8sqBU7Y3YmLR08RSxwKlP3"
+    },
+
+    {
+        name:"English",
+        url:"https://drive.google.com/drive/folders/1b1jJcGjU2JAvyDI_rNnNAzcwwuVzJI7u"
+    },
+
+    {
+        name:"General Science",
+        url:"https://drive.google.com/drive/folders/1if_yMGB7vfLSGnuUPqRuNH5RcLk09Daq"
+    },
+
+    {
+        name:"Health and Physical Education",
+        url:"https://drive.google.com/drive/folders/1c42A9B8kIyZstOHbmg6-iNZ_l2-RbTtx"
+    },
+
+    {
+        name:"Home Economics",
+        url:"https://drive.google.com/drive/folders/10O3QUcs4QHb8HNuPrLLbEqFcYR9FM0id"
+    },
+
+    {
+        name:"Ikhlaqiyat (Ethics)",
+        url:"https://drive.google.com/drive/folders/1hBFgBIQif0rgV8WXDb4xyDU87rPsCinE"
+    },
+
+    {
+        name:"Islamiyat Ikhtiyari",
+        url:"https://drive.google.com/drive/folders/186_k8MZsw6JQVCYBbNmfMHO8JNKuBZXx"
+    },
+
+    {
+        name:"Mathematics",
+        url:"https://drive.google.com/drive/folders/12NO5lcA7_iFy2Xzh02uFrIuxk4SyvRyv"
+    },
+
+    {
+        name:"Pakistan Studies",
+        url:"https://drive.google.com/drive/folders/1ADJ2ABoxqcxoGZwzx3000Oe97rdn3-Kt"
+    },
+
+    {
+        name:"Physics",
+        url:"https://drive.google.com/drive/folders/1Yhg84MBQdToCs3DzEbb4Xhx_lJHEaV3k"
+    },
+
+    {
+        name:"Tarjuma-tul-Quran",
+        url:"https://drive.google.com/drive/folders/1wbvbhfhPo1h0NFRgsTSOVZAkaU-4vq3C"
+    },
+
+    {
+        name:"Urdu",
+        url:"https://drive.google.com/drive/folders/10iYyk8CsSZWQN6Mrw2XFDZ7D8a1Q4MYY"
+    }
+
+];
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let selectedClass = "";
+let selectedSubject = null;
+
+
+/* =========================================================
+   SELECT CLASS
+========================================================= */
+
+function selectClass(classNumber){
+
+    selectedClass = classNumber;
+    selectedSubject = null;
+
+    document
+        .getElementById("classSelection")
+        .classList
+        .remove("attention");
+
+    document
+        .getElementById("class9")
+        .classList
+        .remove("selected");
+
+    document
+        .getElementById("class10")
+        .classList
+        .remove("selected");
+
+    document
+        .getElementById("class" + classNumber)
+        .classList
+        .add("selected");
+
+
+    const subjects =
+        classNumber === 9
+        ? class9Subjects
+        : class10Subjects;
+
+
+    const subjectSelect =
+        document.getElementById("subjectSelect");
+
+
+    subjectSelect.innerHTML =
+        '<option value="">— Select Subject —</option>';
+
+
+    subjects.forEach(
+        (subject,index)=>{
+
+            const option =
+                document.createElement("option");
+
+            option.value = index;
+
+            option.textContent =
+                subject.name +
+                " " +
+                classNumber +
+                "th";
+
+            subjectSelect.appendChild(option);
+
+        }
+    );
+
+
+    document
+        .getElementById("subjectArea")
+        .classList
+        .add("show");
+
+
+    document
+        .getElementById("details")
+        .classList
+        .remove("show");
+
+
+    document
+        .getElementById("classStatus")
+        .textContent =
+        "Class " +
+        classNumber +
+        "th selected";
+
+
+    document
+        .getElementById("subjectSelectWrap")
+        .classList
+        .add("attention");
+
+
+    setTimeout(
+        ()=>{
+            document
+                .getElementById("subjectArea")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+        },
+        120
+    );
+}
+
+
+/* =========================================================
+   SELECT SUBJECT
+========================================================= */
+
+function selectSubject(){
+
+    const value =
+        document
+            .getElementById("subjectSelect")
+            .value;
+
+
+    if(value === ""){
+
+        selectedSubject = null;
+
+        document
+            .getElementById("details")
+            .classList
+            .remove("show");
+
+        document
+            .getElementById("subjectSelectWrap")
+            .classList
+            .add("attention");
+
+        return;
+    }
+
+
+    document
+        .getElementById("subjectSelectWrap")
+        .classList
+        .remove("attention");
+
+
+    const subjects =
+        selectedClass == 9
+        ? class9Subjects
+        : class10Subjects;
+
+
+    selectedSubject =
+        subjects[parseInt(value)];
+
+
+    const classText =
+        selectedClass == 9
+        ? "Class 9th"
+        : "Class 10th";
+
+
+    document
+        .getElementById("subjectTitle")
+        .innerHTML =
+        '<span class="class-code">' +
+        classText +
+        '</span>' +
+        '<span class="subject-name">' +
+        ' — ' +
+        selectedSubject.name +
+        '</span>';
+
+
+    document
+        .getElementById("subjectDescription")
+        .textContent =
+        "Explore study notes, learning resources and revision material for " +
+        classText +
+        " " +
+        selectedSubject.name +
+        ".";
+
+
+    document
+        .getElementById("details")
+        .classList
+        .add("show");
+
+
+    document
+        .getElementById("openNotesButton")
+        .classList
+        .add("attention");
+
+
+    setTimeout(
+        ()=>{
+            document
+                .getElementById("details")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+        },
+        120
+    );
+}
+
+
+/* =========================================================
+   OPEN NOTES
+========================================================= */
+
+function openNotes(){
+
+    if(!selectedSubject){
+
+        alert(
+            "Please select a subject first."
+        );
+
+        return;
+    }
+
+
+    document
+        .getElementById("openNotesButton")
+        .classList
+        .remove("attention");
+
+
+    window.open(
+        selectedSubject.url,
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
